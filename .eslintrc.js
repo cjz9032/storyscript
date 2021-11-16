@@ -1,0 +1,32 @@
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
+  plugins: ['prettier', '@typescript-eslint'],
+  extends: ['plugin:prettier/recommended'],
+  rules: {
+    'prettier/prettier': 'error',
+    // 'no-debugger': 'off',
+    // // 'no-undef': 'on',
+    // '@typescript-eslint/ban-ts-ignore': 0,
+    // '@typescript-eslint/ban-ts-comment': 0,
+    // 'ban-ts-comment': 0,
+    // 'ban-ts-ignore': 0,
+    // 'no-unused-vars': 'off',
+    // '@typescript-eslint/no-unused-vars': ['off'],
+    // '@typescript-eslint/no-var-requires': 'off',
+    // '@typescript-eslint/no-explicit-any': 'off',
+    // '@typescript-eslint/no-non-null-assertion': 'off',
+    // '@typescript-eslint/no-empty-function': 'off',
+    // '@typescript-eslint/ban-types': 'off',
+    // '@typescript-eslint/explicit-module-boundary-types': 'off',
+  },
+};

@@ -1,6 +1,6 @@
 var expect = require('chai').expect;
 
-var parse = require('../libs/parser').parse;
+var parse = require('../src/libs/parser').parse;
 
 describe('Parser', () => {
   describe('Content Script', () => {
