@@ -23,20 +23,20 @@ export default {
     }
 
     // get stroy block
-    var blocks = [];
-    var block1 = [];
+    var blocks: any[] = [];
+    var block1: any[] = [];
     for (var LogicBlock of LogicBlock1.children) {
       block1.push(LogicBlock.parse());
     }
     blocks.push(block1);
     for (var LogicBlock2 of LogicBlock2s.children) {
-      var block2 = [];
+      var block2: any[] = [];
       for (var LogicBlock of LogicBlock2.children) {
         block2.push(LogicBlock.parse());
       }
       blocks.push(block2);
     }
-    var block3 = [];
+    var block3: any[] = [];
     if (LogicBlock3.child(0)) {
       for (var LogicBlock of LogicBlock3.child(0).children) {
         block3.push(LogicBlock.parse());
@@ -53,7 +53,7 @@ export default {
   },
   LogicBlock_WHILE(WHILE, LogicBlocks, END) {
     var condition = WHILE.parse();
-    var block = [];
+    var block: any[] = [];
     for (var LogicBlock of LogicBlocks.children) {
       block.push(LogicBlock.parse());
     }
@@ -66,7 +66,7 @@ export default {
   },
   LogicBlock_FOREACH(FOREACH, LogicBlocks, END) {
     var condition = FOREACH.parse();
-    var block = [];
+    var block: any[] = [];
     for (var LogicBlock of LogicBlocks.children) {
       block.push(LogicBlock.parse());
     }

@@ -16,7 +16,7 @@
 
 export default {
   Scripts(n) {
-    var ret = [];
+    var ret: any[] = [];
     for (var child of n.children) {
       ret.push(child.parse());
     }

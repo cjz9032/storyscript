@@ -16,7 +16,10 @@
 
 export default {
   content_mul(kv, space, content) {
-    var ret = {
+    var ret: {
+      flags: any[];
+      params: {};
+    } = {
       flags: [],
       params: {},
     };
@@ -32,7 +35,10 @@ export default {
     return ret;
   },
   content_base(kv) {
-    var ret = {
+    var ret: {
+      flags: any[];
+      params: {};
+    } = {
       flags: [],
       params: {},
     };

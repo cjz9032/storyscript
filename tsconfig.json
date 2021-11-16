@@ -19,7 +19,6 @@
     "outDir": "dist/lib",
     "typeRoots": [
       "node_modules/@types",
-      "node_modules/ohm-js",
     ],
     "noImplicitAny": false
   },

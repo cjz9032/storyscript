@@ -69,7 +69,7 @@ export default {
     return stringContent.parse();
   },
   _iter(children) {
-    var ret = [];
+    var ret: any[] = [];
     var hasObject = false;
     for (var child of children) {
       const value = child.parse();
@@ -79,6 +79,7 @@ export default {
     return hasObject ? ret : ret.join('');
   },
   _terminal() {
+    // @ts-ignore
     return this.primitiveValue;
   },
 };
