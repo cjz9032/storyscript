@@ -13,23 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import * as _ from 'lodash';
 import * as ohm from 'ohm-js';
 import * as actions from '../actions';
 import contents from '../ohm/bks.ohm';
 
-var myGrammar = ohm.grammar(` Arithmetic {
-  Exp = "42"
-}`);
-const matchResult = myGrammar.match('42');
-matchResult.succeeded();
+var myGrammar = ohm.grammar(contents);
+
+const actionsFlattened = _.reduce(
+  actions,
+  (prev, curr) => {
+    return Object.assign(prev, curr);
+  },
+  {}
+);
 
 var mySemantics = myGrammar.createSemantics();
-mySemantics.addOperation<any>('parse', {
-  // AddExp_plus(x, _, y) {
-  //   return x.eval() + y.eval();
-  // },
-  ...actions,
-} as any);
+mySemantics.addOperation<any>('parse', actionsFlattened);
 
 export default {
   parse(string) {

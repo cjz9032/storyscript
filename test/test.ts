@@ -51,7 +51,7 @@ var userInput = `
 #let aaaa = 11
 [name flagC]
 #aaaa = aaaa ^ 2
-`
+`;
 
 const story = new StoryScript();
 story.load(userInput);
@@ -59,11 +59,11 @@ story.load(userInput);
 let i = 0;
 for (var value of story) {
   if (i === 0) {
-    console.log(JSON.stringify(story.getData(), null, '  '))
+    console.log(JSON.stringify(story.getData(), null, '  '));
   }
-  i++
-  console.log(value)
+  i++;
+  console.log(value);
 }
 
-console.log(variable.dump())
-console.log(story.getData())
+console.log(variable.dump());
+console.log(story.getData());
