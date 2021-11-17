@@ -59,6 +59,30 @@ export default class StoryScript {
       }
     }
   }
+  iters(resultList: any[] = []): any {
+    if (!this.CURRENTBLOCK) {
+      throw new Error('CURRENTBLOCK null');
+    }
+    let { value, done } = this.CURRENTBLOCK.next();
+    if (done) {
+      var CURRENTBLOCK = this.BLOCKSTACK.pop();
+      if (CURRENTBLOCK) {
+        this.CURRENTBLOCK = CURRENTBLOCK;
+        variable.popScope();
+        return this.iters(resultList);
+      } else {
+        return resultList;
+      }
+    } else {
+      const retValue = this.handleScript(value);
+      if (retValue) {
+        // handleLogic will return undefined, so should exec next line
+        return this.iters(resultList.concat([retValue]));
+        // { value: retValue, done: false };
+      }
+      return this.iters(resultList);
+    }
+  }
   handleScript(argLine: any) {
     // deep copy
     const line = Object.assign({}, argLine);

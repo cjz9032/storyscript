@@ -18,7 +18,7 @@ module.exports = {
   content_mul(kv, space, content) {
     var ret = {
       flags: [],
-      params: {}
+      params: {},
     };
     var result = kv.parse();
     if (result.length === 1) {
@@ -34,7 +34,7 @@ module.exports = {
   content_base(kv) {
     var ret = {
       flags: [],
-      params: {}
+      params: {},
     };
     var result = kv.parse();
     if (result.length === 1) {
@@ -45,9 +45,9 @@ module.exports = {
     return ret;
   },
   keyValue_param(key, syntex, value) {
-    return [key.parse(), value.parse()]
+    return [key.parse(), value.parse()];
   },
   keyValue_flag(key) {
-    return [key.parse()]
-  }
-}
+    return [key.parse()];
+  },
+};

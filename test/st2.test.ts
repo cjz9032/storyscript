@@ -39,10 +39,7 @@ describe('Dummy test', () => {
     const story = new StoryScript();
     story.load(userInput);
 
-    // @ts-ignore
-    for (var value of story) {
-      console.log(value);
-    }
+    const aa = story.iters();
 
     console.log(variable.dump());
 
