@@ -14,9 +14,15 @@
  * limitations under the License.
  */
 
-var variable = require('./variable');
+import variable from './variable';
 
 class IfBlock {
+  public data: string[];
+  public blockIndex: string[];
+  public currentLine: number = 0;
+  public done: boolean = false;
+  public condition: boolean = false;
+
   constructor(data, blockIndex?) {
     this.reset();
     this.data = data;
@@ -57,6 +63,11 @@ class IfBlock {
 }
 
 class WhileBlock {
+  public data: string[];
+  public currentLine: number = 0;
+  public done: boolean = false;
+  public condition: boolean = false;
+
   constructor(data, condition) {
     this.reset();
     this.data = data;
@@ -103,6 +114,14 @@ class WhileBlock {
 }
 
 class ForeachBlock {
+  public data: string[];
+  public currentLine: number = 0;
+  public done: boolean = false;
+  public condition: boolean = false;
+  public index: number = 0;
+  public children: any;
+  public child: any;
+
   constructor(data, child, children) {
     this.reset();
     this.data = data;

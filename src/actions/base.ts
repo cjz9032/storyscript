@@ -68,7 +68,7 @@ export default {
   string_singleQuote(quoteA, stringContent, quoteB) {
     return stringContent.parse();
   },
-  _iter(children) {
+  _iter(...children) {
     var ret: any[] = [];
     var hasObject = false;
     for (var child of children) {
