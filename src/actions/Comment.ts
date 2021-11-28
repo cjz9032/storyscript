@@ -21,10 +21,10 @@ export default {
       value: text.parse(),
     };
   },
-  Comment_multi(head, text, foot) {
-    return {
-      type: 'comment',
-      value: text.parse(),
-    };
-  },
+  // Comment_multi(head, text, foot) {
+  //   return {
+  //     type: 'comment',
+  //     value: text.parse(),
+  //   };
+  // },
 };

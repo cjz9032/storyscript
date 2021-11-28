@@ -29,7 +29,13 @@ const actionsFlattened = _.reduce(
 );
 
 var mySemantics = myGrammar.createSemantics();
-mySemantics.addOperation<any>('parse', actionsFlattened);
+mySemantics.addOperation<any>('parse', {
+  ...actions.Exp,
+  ...actions.base,
+  ...actions.Comment,
+  ...actions.Declare,
+  ...actions.LogicBlock,
+});
 
 export default {
   parse(string) {

@@ -15,104 +15,126 @@
  */
 
 export default {
-  LogicBlock_IF(IF, LogicBlock1, ELSEIFs, LogicBlock2s, ELSE, LogicBlock3, END) {
-    // get conditions
-    var conditions = [IF.parse()];
-    for (var ELSEIF of ELSEIFs.children) {
-      conditions.push(ELSEIF.parse());
-    }
-
-    // get stroy block
-    var blocks: any[] = [];
-    var block1: any[] = [];
-    for (var LogicBlock of LogicBlock1.children) {
-      block1.push(LogicBlock.parse());
-    }
-    blocks.push(block1);
-    for (var LogicBlock2 of LogicBlock2s.children) {
-      var block2: any[] = [];
-      for (var LogicBlock of LogicBlock2.children) {
-        block2.push(LogicBlock.parse());
-      }
-      blocks.push(block2);
-    }
-    var block3: any[] = [];
-    if (LogicBlock3.child(0)) {
-      for (var LogicBlock of LogicBlock3.child(0).children) {
-        block3.push(LogicBlock.parse());
-      }
-    }
-    blocks.push(block3);
-
+  LogicBlock_FnBlocks(a) {
+    // transfer
+    return a.parse();
+  },
+  FnBlocks(leftBracket, FnBkName, rightBracket, fnContent) {
+    const info = FnBkName.parse();
+    const content = fnContent.parse();
     return {
-      type: 'logic',
-      name: 'if',
-      conditions: conditions,
-      blocks: blocks,
+      ...info,
+      content,
     };
   },
-  LogicBlock_WHILE(WHILE, LogicBlocks, END) {
-    var condition = WHILE.parse();
-    var block: any[] = [];
-    for (var LogicBlock of LogicBlocks.children) {
-      block.push(LogicBlock.parse());
-    }
+  FnBkName_Normal(a) {
     return {
-      type: 'logic',
-      name: 'while',
-      condition: condition,
-      block: block,
+      type: 'normal',
+      name: a.parse(),
     };
   },
-  LogicBlock_FOREACH(FOREACH, LogicBlocks, END) {
-    var condition = FOREACH.parse();
-    var block: any[] = [];
-    for (var LogicBlock of LogicBlocks.children) {
-      block.push(LogicBlock.parse());
-    }
+  FnBkName_Callback(a, b) {
     return {
-      type: 'logic',
-      name: 'foreach',
-      child: condition.child,
-      children: condition.children,
-      block: block,
+      type: 'callback',
+      name: b.parse(),
     };
   },
-  IF(head, Expression) {
-    // condtion Object
-    return Expression.parse();
-  },
-  ELSEIF(head, Expression) {
-    // condtion Object
-    return Expression.parse();
-  },
-  WHILE(head, Expression) {
-    // condtion Object
-    return Expression.parse();
-  },
-  FOREACH(head, childVar, _in, childrenVar) {
-    return {
-      child: childVar.parse(),
-      children: childrenVar.parse(),
-    };
-  },
-  LET_assign(head, variable, operator, Exp) {
-    var explicit = head.parse().length > 1;
-    return {
-      type: 'logic',
-      name: 'let',
-      explicit: explicit,
-      left: variable.parse(),
-      right: Exp.parse(),
-    };
-  },
-  LET_nonAssign(head, variable) {
-    return {
-      type: 'logic',
-      name: 'let',
-      explicit: true,
-      left: variable.parse(),
-      right: { type: 'value', value: null },
-    };
-  },
+  // LogicBlock_IF(IF, LogicBlock1, ELSEIFs, LogicBlock2s, ELSE, LogicBlock3, END) {
+  //   // get conditions
+  //   var conditions = [IF.parse()];
+  //   for (var ELSEIF of ELSEIFs.children) {
+  //     conditions.push(ELSEIF.parse());
+  //   }
+  //   // get stroy block
+  //   var blocks: any[] = [];
+  //   var block1: any[] = [];
+  //   for (var LogicBlock of LogicBlock1.children) {
+  //     block1.push(LogicBlock.parse());
+  //   }
+  //   blocks.push(block1);
+  //   for (var LogicBlock2 of LogicBlock2s.children) {
+  //     var block2: any[] = [];
+  //     for (var LogicBlock of LogicBlock2.children) {
+  //       block2.push(LogicBlock.parse());
+  //     }
+  //     blocks.push(block2);
+  //   }
+  //   var block3: any[] = [];
+  //   if (LogicBlock3.child(0)) {
+  //     for (var LogicBlock of LogicBlock3.child(0).children) {
+  //       block3.push(LogicBlock.parse());
+  //     }
+  //   }
+  //   blocks.push(block3);
+  //   return {
+  //     type: 'logic',
+  //     name: 'if',
+  //     conditions: conditions,
+  //     blocks: blocks,
+  //   };
+  // },
+  // LogicBlock_WHILE(WHILE, LogicBlocks, END) {
+  //   var condition = WHILE.parse();
+  //   var block: any[] = [];
+  //   for (var LogicBlock of LogicBlocks.children) {
+  //     block.push(LogicBlock.parse());
+  //   }
+  //   return {
+  //     type: 'logic',
+  //     name: 'while',
+  //     condition: condition,
+  //     block: block,
+  //   };
+  // },
+  // LogicBlock_FOREACH(FOREACH, LogicBlocks, END) {
+  //   var condition = FOREACH.parse();
+  //   var block: any[] = [];
+  //   for (var LogicBlock of LogicBlocks.children) {
+  //     block.push(LogicBlock.parse());
+  //   }
+  //   return {
+  //     type: 'logic',
+  //     name: 'foreach',
+  //     child: condition.child,
+  //     children: condition.children,
+  //     block: block,
+  //   };
+  // },
+  // IF(head, Expression) {
+  //   // condtion Object
+  //   return Expression.parse();
+  // },
+  // ELSEIF(head, Expression) {
+  //   // condtion Object
+  //   return Expression.parse();
+  // },
+  // WHILE(head, Expression) {
+  //   // condtion Object
+  //   return Expression.parse();
+  // },
+  // FOREACH(head, childVar, _in, childrenVar) {
+  //   return {
+  //     child: childVar.parse(),
+  //     children: childrenVar.parse(),
+  //   };
+  // },
+  // LET_assign(head, variable, operator, Exp) {
+  //   var explicit = head.parse().length > 1;
+  //   return {
+  //     type: 'logic',
+  //     name: 'let',
+  //     explicit: explicit,
+  //     left: variable.parse(),
+  //     right: Exp.parse(),
+  //   };
+  // },
+  // LET_nonAssign(head, variable) {
+  //   return {
+  //     type: 'logic',
+  //     name: 'let',
+  //     explicit: true,
+  //     left: variable.parse(),
+  //     right: { type: 'value', value: null },
+  //   };
+  // },
 };

@@ -20,5 +20,6 @@ export { default as keyvalue } from './keyvalue';
 export { default as story } from './story';
 export { default as Expression } from './Expression';
 export { default as Comment } from './Comment';
+export { default as Declare } from './Declare';
 export { default as LogicBlock } from './LogicBlock';
 export { default as Exp } from './Exp';

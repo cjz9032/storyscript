@@ -1,0 +1,80 @@
+BKS {
+  Scripts
+    =   Declare*     LogicBlock*  
+
+  LogicBlock
+    = Comment 
+        | FnBlocks+                      -- FnBlocks
+        
+        
+        FnBlocks =  "[" FnBkName "]"  FnContent
+        
+        FnBkName =   functionName --NormalCall
+                                | "~"functionName --Callback
+                                
+                     
+        
+        FnContent = ~(("\n" | "\r")"[") FnContentDetail
+        
+        FnContentDetail = IF &ThenDo ActionBlocks --UselessIf    
+        |  IF Exp &ThenDo ActionBlocks (&ElseDo ActionBlocks)?  --IfElse
+         | SayContent --DirectSayContent
+        
+        ActionBlocks =  SayWrap | ActWrap
+        
+        
+        ThenDo = "#SAY"  | "#ACT"
+        ElseDo = "#ELSEACT"  | "#ELSESAY"
+        
+        ActHeader =  "#ELSEACT" | "#ACT"
+        SayHeader =  "#SAY" | "#ELSESAY"
+        
+        SayWrap = SayHeader SayContent
+        ActWrap= ActHeader ActContent
+        SayContent = (letter|number|"\r"|"\n"|" " |"，" | "。"|"？"| "\\" | "/" | "<" | ">" | "@" )+
+        ActContent =  (letter|number|"\r"|"\n")+    
+        
+          IF = "#IF" 
+    ELSE = "#ELSEACT" 
+
+  Exp
+    = CheckExp+
+    
+    CheckExp = CheckVar
+    					|  Checkgold
+                        |  Checkitem
+                        |  Checkpkpoint
+                        |  Checkbaggage
+                        |  Checklevel
+    
+    CheckVar = caseInsensitive<"check"> "["number"]"
+    Checkgold = caseInsensitive<"checkgold"> number
+    Checkitem = caseInsensitive<"checkitem"> "["number"]"
+    Checkpkpoint= caseInsensitive<"checkitem"> number
+    Checkbaggage= caseInsensitive<"checkbaggage">
+    Checklevel= caseInsensitive<"checklevel"> number
+
+        
+    LET = variable "=" variable  -- assign
+    
+    
+   variable = ~number ("$" | "%")? (letter | number | "_")+
+
+
+  
+  Declare =  "(" decItems ")" DDPercent* (listOf<DeclareDetails, " "+>)
+  
+  DeclareDetails =  "+"number
+  
+  number = digit+
+  
+  DDPercent = "%"number
+  
+  decItems = listOf<functionName, " "+>
+  functionName = "@" (letter|number|"_")+
+  
+  Comment = ";" comment_single     -- single
+  
+  comment_single = (~("\n" | "\r") any)+
+
+}

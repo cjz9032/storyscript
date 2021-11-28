@@ -15,11 +15,32 @@
  */
 
 export default {
-  Scripts(n) {
-    var ret: any[] = [];
-    for (var child of n.children) {
-      ret.push(child.parse());
-    }
-    return ret;
+  Scripts(a, b) {
+    const tmp = a.parse();
+    const scripts = b.parse();
+    return {
+      declare: tmp[0],
+      scripts,
+    };
   },
+  // Scripts_Declare(n) {
+  //   // var ret: any[] = [];
+  //   // for (var child of n.children) {
+  //   //   ret.push(child.parse());
+  //   // }
+  //   const tmp = n.parse();
+  //   return {
+  //     Declare: tmp[0],
+  //   };
+  // },
+  // Scripts_LogicBlock(n) {
+  //   var ret: any[] = [];
+  //   for (var child of n.children) {
+  //     ret.push(child.parse());
+  //   }
+  //   return ret;
+  // },
+  // string_doubleQuote(quoteA, stringContent, quoteB) {
+  //   return stringContent.parse();
+  // },
 };
