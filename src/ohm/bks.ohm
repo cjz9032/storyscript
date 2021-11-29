@@ -16,11 +16,17 @@ BKS {
         
         FnContent = ~(("\n" | "\r")"[") FnContentDetail
         
-        FnContentDetail = IF &ThenDo ActionBlocks --UselessIf    
-        |  IF Exp &ThenDo ActionBlocks (&ElseDo ActionBlocks)?  --IfElse
+        FnContentDetail =
+         IfWrap --IfWrap
          | SayContent --DirectSayContent
         
+        IfWrap =  IF ThenDoWrap ElseDoWrap IfBreak --UselessIf    
+        |  IF IfExp ThenDoWrap ElseDoWrap  IfBreak --IfElse
+        
         ActionBlocks =  SayWrap | ActWrap
+        ThenDoWrap = (&ThenDo ActionBlocks)+
+        ElseDoWrap = (&ElseDo ActionBlocks)*
+        IfBreak = "break"?
         
         
         ThenDo = "#SAY"  | "#ACT"
@@ -32,13 +38,16 @@ BKS {
         SayWrap = SayHeader SayContent
         ActWrap= ActHeader ActContent
         SayContent = (letter|number|"\r"|"\n"|" " |"，" | "。"|"？"| "\\" | "/" | "<" | ">" | "@" )+
-        ActContent =  (letter|number|"\r"|"\n")+    
+        ActContent =  (Goto | MonClear | BreakTimeRecall|MoveMap| MoveVar | IncVar | DecVar | SumVar | MoveVarRandom | TakeItem | TakeItemw )+
         
           IF = "#IF" 
     ELSE = "#ELSEACT" 
 
-  Exp
+  IfExp
     = CheckExp+
+    
+    
+    
     
     CheckExp = CheckVar
     					|  Checkgold
@@ -46,21 +55,54 @@ BKS {
                         |  Checkpkpoint
                         |  Checkbaggage
                         |  Checklevel
+                        |  Equal
+                        |  Large
+                        | Checkitemw
+                        | Checkdura
+                        | Istakeitem
+                        | CheckGender
     
-    CheckVar = caseInsensitive<"check"> "["number"]"
-    Checkgold = caseInsensitive<"checkgold"> number
-    Checkitem = caseInsensitive<"checkitem"> "["number"]"
-    Checkpkpoint= caseInsensitive<"checkitem"> number
+    CheckGender = caseInsensitive<"gender"> "man"
+    CheckVar = caseInsensitive<"check"> gVar gVarRange
+    Checkgold = caseInsensitive<"checkgold"> Quantity
+    Checkdura =  caseInsensitive<"checkdura"> ItemName Quantity
+    Checkitem = caseInsensitive<"checkitem"> ItemName Quantity
+    Checkpkpoint= caseInsensitive<"Checkpkpoint"> Quantity
     Checkbaggage= caseInsensitive<"checkbaggage">
-    Checklevel= caseInsensitive<"checklevel"> number
-
-        
-    LET = variable "=" variable  -- assign
+    Checklevel= caseInsensitive<"checklevel"> Quantity
+    Istakeitem = caseInsensitive<"istakeitem"> ItemName
+    Checkitemw = caseInsensitive<"checkitemw"> ItemName Quantity --normal 
+    						|  caseInsensitive<"checkitemw"> WearPlaceName --wears
+    TakeItemw =  caseInsensitive<"takew"> ItemName Quantity --normal 
+    						|  caseInsensitive<"takew"> WearPlaceName --wears
+    
+	Equal = caseInsensitive<"equal"> lVar lVarRange
+    Large = caseInsensitive<"large"> lVar lVarRange
+    
+    MoveVar = caseInsensitive<"mov"> lVar lVarRange
+    IncVar = caseInsensitive<"inc"> lVar lVarRange
+    DecVar = caseInsensitive<"dec"> lVar lVarRange
+    SumVar = caseInsensitive<"sum"> lVar lVar --SumTwoVars
+    					| caseInsensitive<"sum"> lVar --SumToTarget 
+    
+    MoveVarRandom = caseInsensitive<"movr"> lVar lVarRange
+    SetGVar =  caseInsensitive<"set"> gVar gVarRange
+    TakeItem = caseInsensitive<"take"> ItemName Quantity
+    ItemName = letter+
+    WearPlaceName = "[" ("NECKLACE"|"RING") "]"
+    Quantity = number
     
     
-   variable = ~number ("$" | "%")? (letter | number | "_")+
-
-
+    MonClear = caseInsensitive<"monclear"> mapName
+    Goto = caseInsensitive<"goto"> functionName
+    BreakTimeRecall = caseInsensitive<"BreakTimeRecall">
+    MoveMap = caseInsensitive<"Map"> mapName
+    mapName = (letter|number)+
+    
+    gVar ="["number"]"
+    lVar = (caseInsensitive<("p")>|caseInsensitive<("d")>)digit
+    lVarRange = number
+    gVarRange = ("1"|"0")
   
   Declare =  "(" decItems ")" DDPercent* (listOf<DeclareDetails, " "+>)
   
