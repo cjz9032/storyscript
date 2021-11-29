@@ -20,13 +20,13 @@ BKS {
          IfWrap --IfWrap
          | SayContent --DirectSayContent
         
-        IfWrap =  IF ThenDoWrap ElseDoWrap IfBreak --UselessIf    
-        |  IF IfExp ThenDoWrap ElseDoWrap  IfBreak --IfElse
+        IfWrap =  IF ThenDoWrap ElseDoWrap --UselessIf    
+        |  IF IfExp ThenDoWrap ElseDoWrap  --IfElse
         
         ActionBlocks =  SayWrap | ActWrap
         ThenDoWrap = (&ThenDo ActionBlocks)+
         ElseDoWrap = (&ElseDo ActionBlocks)*
-        IfBreak = "break"?
+        DoBreak = "break"
         
         
         ThenDo = "#SAY"  | "#ACT"
@@ -38,7 +38,7 @@ BKS {
         SayWrap = SayHeader SayContent
         ActWrap= ActHeader ActContent
         SayContent = (letter|number|"\r"|"\n"|" " |"，" | "。"|"？"| "\\" | "/" | "<" | ">" | "@" )+
-        ActContent =  (Goto | MonClear | BreakTimeRecall|MoveMap| MoveVar | IncVar | DecVar | SumVar | MoveVarRandom | TakeItem | TakeItemw )+
+        ActContent =  (DoBreak | Goto | MonClear | BreakTimeRecall|MoveMap| MoveVar | IncVar | DecVar | SumVar | MoveVarRandom | TakeItem | TakeItemw )+
         
           IF = "#IF" 
     ELSE = "#ELSEACT" 
