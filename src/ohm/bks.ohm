@@ -14,11 +14,11 @@ BKS {
                                 
                      
         
-        FnContent = ~(("\n" | "\r")"[") FnContentDetail+
+        FnContent = ~(("\n" | "\r")"[") FnContentDetail
         
-        FnContentDetail =
-         IfWrap --IfWrap
-         | SayContent --DirectSayContent
+        FnContentDetail = 
+        ("#SAY"? SayContent)? ("#ACT" ActContent)?
+        IfWrap*
         
         IfWrap =  IF ThenDoWrap ElseDoWrap --UselessIf    
         |  IF IfExp ThenDoWrap ElseDoWrap  --IfElse
@@ -41,8 +41,8 @@ BKS {
         sayBindingWrap = "<"(sayBindingBtn | sayBindingText)">"
         sayBindingBtn = (letter+)"/"fnBkName
         sayBindingText = "$"letter+
-        sayText =  (letter|number|"\r"|"\n"|" " |"，" | "。"|"？"| "\\" | "/" | "！" | "@" | "." )+
-        ActContent =  (DoBreak | Goto | MonClear | BreakTimeRecall | SetGVar | MoveMap| MoveVar | IncVar | DecVar | SumVar | MoveVarRandom | TakeItem | TakeItemw | GiveItem )+
+        sayText =  (letter|number|"\r"|"\n"|" " |"，" | "。"|"？"| "\\" | "/" | "！" | "@" | "." | "," )+
+        ActContent =  (MoveMapPos | DoBreak | Goto | MonClear | BreakTimeRecall | SetGVar | MoveMap| MoveVar | IncVar | DecVar | SumVar | MoveVarRandom | TakeItem | TakeItemw | GiveItem )+
         
           IF = "#IF" 
     ELSE = "#ELSEACT" 
@@ -66,10 +66,14 @@ BKS {
                         | Istakeitem
                         | CheckGender
                         | Daytime
+                        | RandomIs
+                        | Checkunit
     
-    Daytime = caseInsensitive<"daytime"> "sunset"
+    Daytime = caseInsensitive<"daytime"> ("sunset" | "day" | "sunraise" | "night")
+    RandomIs = caseInsensitive<"random"> number
     CheckGender = caseInsensitive<"gender"> "man"
     CheckVar = caseInsensitive<"check"> gVar gVarRange
+    Checkunit = caseInsensitive<"checkunit"> gVar gVarRange
     Checkgold = caseInsensitive<"checkgold"> Quantity
     Checkdura =  caseInsensitive<"checkdura"> ItemName Quantity
     Checkitem = caseInsensitive<"checkitem"> ItemName Quantity
@@ -79,8 +83,8 @@ BKS {
     Istakeitem = caseInsensitive<"istakeitem"> ItemName
     Checkitemw = caseInsensitive<"checkitemw"> ItemName Quantity --normal 
     						|  caseInsensitive<"checkitemw"> WearPlaceName --wears
-    TakeItemw =  caseInsensitive<"takew"> ItemName Quantity --normal 
-    						|  caseInsensitive<"takew"> WearPlaceName --wears
+    TakeItemw = caseInsensitive<"takew"> WearPlaceName --wears 
+    						|  caseInsensitive<"takew"> ItemName Quantity --normal 
     
 	Equal = caseInsensitive<"equal"> lVar lVarRange
     Large = caseInsensitive<"large"> lVar lVarRange
@@ -98,7 +102,8 @@ BKS {
     ItemName = letter+
     WearPlaceName = "[" ("NECKLACE"|"RING") "]"
     Quantity = number
-    
+    // person
+    MoveMapPos = caseInsensitive<"mapmove"> mapName number number
     
     MonClear = caseInsensitive<"monclear"> mapName
     Goto = caseInsensitive<"goto"> functionName
