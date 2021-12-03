@@ -7,14 +7,14 @@ BKS {
         | FnBlocks+                      -- FnBlocks
         
         
-        FnBlocks =  "[" FnBkName "]"  FnContent
+        FnBlocks =  "[" fnBkName "]"  FnContent
         
-        FnBkName =   functionName --NormalCall
+        fnBkName =   functionName --NormalCall
                                 | "~"functionName --Callback
                                 
                      
         
-        FnContent = ~(("\n" | "\r")"[") FnContentDetail
+        FnContent = ~(("\n" | "\r")"[") FnContentDetail+
         
         FnContentDetail =
          IfWrap --IfWrap
@@ -37,8 +37,12 @@ BKS {
         
         SayWrap = SayHeader SayContent
         ActWrap= ActHeader ActContent
-        SayContent = (letter|number|"\r"|"\n"|" " |"，" | "。"|"？"| "\\" | "/" | "<" | ">" | "@" )+
-        ActContent =  (DoBreak | Goto | MonClear | BreakTimeRecall|MoveMap| MoveVar | IncVar | DecVar | SumVar | MoveVarRandom | TakeItem | TakeItemw )+
+        SayContent = (sayBindingWrap | sayText)+
+        sayBindingWrap = "<"(sayBindingBtn | sayBindingText)">"
+        sayBindingBtn = (letter+)"/"fnBkName
+        sayBindingText = "$"letter+
+        sayText =  (letter|number|"\r"|"\n"|" " |"，" | "。"|"？"| "\\" | "/" | "！" | "@" | "." )+
+        ActContent =  (DoBreak | Goto | MonClear | BreakTimeRecall | SetGVar | MoveMap| MoveVar | IncVar | DecVar | SumVar | MoveVarRandom | TakeItem | TakeItemw | GiveItem )+
         
           IF = "#IF" 
     ELSE = "#ELSEACT" 
@@ -61,7 +65,9 @@ BKS {
                         | Checkdura
                         | Istakeitem
                         | CheckGender
+                        | Daytime
     
+    Daytime = caseInsensitive<"daytime"> "sunset"
     CheckGender = caseInsensitive<"gender"> "man"
     CheckVar = caseInsensitive<"check"> gVar gVarRange
     Checkgold = caseInsensitive<"checkgold"> Quantity
@@ -87,7 +93,8 @@ BKS {
     
     MoveVarRandom = caseInsensitive<"movr"> lVar lVarRange
     SetGVar =  caseInsensitive<"set"> gVar gVarRange
-    TakeItem = caseInsensitive<"take"> ItemName Quantity
+    TakeItem = caseInsensitive<"take"> ItemName Quantity?
+    GiveItem = caseInsensitive<"give"> ItemName Quantity?
     ItemName = letter+
     WearPlaceName = "[" ("NECKLACE"|"RING") "]"
     Quantity = number
@@ -104,7 +111,7 @@ BKS {
     lVarRange = number
     gVarRange = ("1"|"0")
   
-  Declare =  "(" decItems ")" DDPercent* (listOf<DeclareDetails, " "+>)
+  Declare =  "(" decItems ")" DDPercent* (listOf<DeclareDetails, (" "|  "\n" | "\r" )+>)
   
   DeclareDetails =  "+"number
   
@@ -113,7 +120,7 @@ BKS {
   DDPercent = "%"number
   
   decItems = listOf<functionName, " "+>
-  functionName = "@" (letter|number|"_")+
+  functionName = "@" (letter|number|"_"|"-")+
   
   Comment = ";" comment_single     -- single
   
