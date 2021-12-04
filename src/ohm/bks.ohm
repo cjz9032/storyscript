@@ -42,7 +42,7 @@ BKS {
         sayBindingBtn = (letter+)"/"fnBkName
         sayBindingText = "$"letter+
         sayText =  (letter|number|"\r"|"\n"|" " |"，" | "。"|"？"| "\\" | "/" | "！" | "@" | "." | "," )+
-        ActContent =  (MoveMapPos | DoBreak | Goto | MonClear | BreakTimeRecall | SetGVar | MoveMap| MoveVar | IncVar | DecVar | SumVar | MoveVarRandom | TakeItem | TakeItemw | GiveItem )+
+        ActContent =  (MoveMapPos | DoBreak | Goto | MonClear | BreakTimeRecall | SetGVar | MoveMap| MoveVar | IncVar | DecVar | SumVar | MoveVarRandom | TakeItemw | TakeItem  | GiveItem )+
         
           IF = "#IF" 
     ELSE = "#ELSEACT" 
@@ -55,13 +55,13 @@ BKS {
     
     CheckExp = CheckVar
     					|  Checkgold
-                        |  Checkitem
+                        |  Checkitemw 
                         |  Checkpkpoint
                         |  Checkbaggage
                         |  Checklevel
                         |  Equal
                         |  Large
-                        | Checkitemw
+                        |  Checkitem
                         | Checkdura
                         | Istakeitem
                         | CheckGender
@@ -83,8 +83,8 @@ BKS {
     Istakeitem = caseInsensitive<"istakeitem"> ItemName
     Checkitemw = caseInsensitive<"checkitemw"> ItemName Quantity --normal 
     						|  caseInsensitive<"checkitemw"> WearPlaceName --wears
-    TakeItemw = caseInsensitive<"takew"> WearPlaceName --wears 
-    						|  caseInsensitive<"takew"> ItemName Quantity --normal 
+    TakeItemw =   caseInsensitive<"takew"> ItemName Quantity --normal 
+               |  caseInsensitive<"takew"> WearPlaceName --wears 
     
 	Equal = caseInsensitive<"equal"> lVar lVarRange
     Large = caseInsensitive<"large"> lVar lVarRange
