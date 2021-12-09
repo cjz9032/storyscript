@@ -1,6 +1,6 @@
 BKS {
   Scripts
-    =   Declare*     LogicBlock*  
+    =   Declare     LogicBlock*  
 
   LogicBlock
     = Comment 
@@ -25,37 +25,40 @@ BKS {
         
 
         FnContentDetail = 
-        (("#SAY" | "#say")? SayContent)? (("#ACT" | "#act") ActContent)?
+        ((("#SAY" | "#say")? SayContent)? (("#ACT" | "#act") ActContent)?) (("#SAY" | "#say")? SayContent)? // todo not strict
         IfWrap*
         
         IfWrap =  IF ThenDoWrap ElseDoWrap --UselessIf    
         |  IF IfExp ThenDoWrap ElseDoWrap  --IfElse
         
         ActionBlocks =  SayWrap | ActWrap
-        ThenDoWrap = (&ThenDo ActionBlocks)+
-        ElseDoWrap = (&ElseDo ActionBlocks)*
+        ThenDoWrap = (&ThenDo ActionBlocks)+ // multi : #SAY... #ACT...
+        ElseDoWrap = ElseDo | XXX // 0 :no else ; multi: same as abobe, ? only HEADER
+        XXX = ((&ElseDo ActionBlocks)*)
         DoBreak = "break"
         
         
         ThenDo = ("#SAY" | "#say")  | ("#ACT" | "#act")
         ElseDo = "#ELSEACT"  | "#ELSESAY"
         
-        ActHeader =  "#ELSEACT" | "#ACT"
+        ActHeader =  "#ELSEACT" | "#ACT" // todo case #caseInsensitive<"ELSEACT">
         SayHeader =  "#SAY" | "#ELSESAY"
         
         SayWrap = SayHeader SayContent
         ActWrap= ActHeader ActContent
-        SayContent = (sayBindingWrap | sayText)+
+        SayContent =  (~"#") (sayBindingWrap | sayText)+
         sayBindingWrap = "<"spaces(sayStrBindingLVar | sayBindingBtn | sayBindingText )spaces">"
-        sayBindingBtn = (letter|number)+"/"fnBkName
+        sayBindingBtn = sayTextChars+ "/" fnBkName
         sayBindingText = "$"letter+
         sayStrBindingLVar =  "$STR("lVar")" //  <$STR(D0)> \
-        sayText =  (letter|number|"\r"|"\n"|" " |"，" | "。"|"？"| "\\" | "/" | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" )+
+        sayText =  (sayTextChars | "\r"|"\n"| "/" )+
+        sayTextChars = letter|number | "，" | "。"|"？"| "\\"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "
         ActContent =  (
           MonGen 
         | Takecheckitem 
         | Batchmove | Addbatch | BatchDelay | Playdice | MoveMapPos | DoBreak | Goto | MonClear 
-        | BreakTimeRecall | SetGVar | MoveMap| MoveVar | IncVar | DecVar | SumVar 
+        | SetGVar | MoveMap| MoveVar | IncVar | DecVar | SumVar 
+        | TimeRecallByMins | BreakTimeRecall
         | Param1  |   Param2  | Param3  
         | CloseWindow
         | MoveVarRandom | TakeItemw | TakeItem  | GiveItem )+
@@ -85,6 +88,8 @@ BKS {
                         | RandomIs
                         | Checkunit
                         | Checkmonmap
+                        | Checkhum
+                        | Checkjob
     
     Daytime = caseInsensitive<"daytime"> ("sunset" | "day" | "sunraise" | "night")
     RandomIs = caseInsensitive<"random"> number
@@ -92,17 +97,20 @@ BKS {
     CheckVar = caseInsensitive<"check"> gVar gVarRange
     Checkunit = caseInsensitive<"checkunit"> gVar gVarRange
     Checkgold = caseInsensitive<"checkgold"> quantity
-    Checkdura =  caseInsensitive<"checkdura"> itemName quantity
+    Checkdura =  (caseInsensitive<"checkduraeva"> | caseInsensitive<"checkdura">) itemName quantity // both are one thing
     Checkitem = caseInsensitive<"checkitem"> itemName quantity
     Checkpkpoint= caseInsensitive<"Checkpkpoint"> quantity
     Checkbaggage= caseInsensitive<"checkbaggage">
     Checklevel= caseInsensitive<"checklevel"> quantity
+    Checkjob= caseInsensitive<"checkjob"> jobsEnum
+    Checkhum= caseInsensitive<"checkhum"> mapName quantity
     BatchDelay = caseInsensitive<"batchDelay"> quantity
     Checkmonmap = caseInsensitive<"checkmonmap"> mapName quantity
     Addbatch  = caseInsensitive<"addbatch"> mapName
     Batchmove  = caseInsensitive<"batchmove">
 
     Istakeitem = caseInsensitive<"istakeitem"> itemName
+    TimeRecallByMins = caseInsensitive<"timeRecall"> quantity // 5mins 
     Checkitemw = caseInsensitive<"checkitemw"> itemName quantity --normal 
     						|  caseInsensitive<"checkitemw"> WearPlaceName --wears
     TakeItemw =   caseInsensitive<"takew"> itemName quantity --normal 
@@ -148,8 +156,9 @@ BKS {
     lVar = (caseInsensitive<("p")>|caseInsensitive<("d")>)digit
     lVarRange = number
     gVarRange = ("1"|"0")
+    jobsEnum= (caseInsensitive<("warrior")> | caseInsensitive<("wizard")> | caseInsensitive<("taoist")>)
   
-  Declare =  ("(" decItems ")") DDPercent* (listOf<DeclareDetails, (" "|  "\n" | "\r" )+>)
+  Declare = Comment* ("(" decItems ")")? DDPercent? (listOf<DeclareDetails, (" "|  "\n" | "\r" )+>)
   
   DeclareDetails =  "+"number
   
