@@ -10,7 +10,7 @@ BKS {
         
         FnBlocks =  "[" fnBkName "]"  FnContent
 
-        GoodsBlock =  "[goods]" goodsItem+
+        GoodsBlock =  "["caseInsensitive<"goods">"]" goodsItem*
 
 		noLineSpace = (" "  | "	" |"\t") *
         goodsItem =  ( noLineSpace  itemName noLineSpace  quantity noLineSpace  quantity  noLineSpace "\n" )
@@ -24,46 +24,45 @@ BKS {
 
         
 
-        FnContentDetail = 
-        ((("#SAY" | "#say")? SayContent)? (("#ACT" | "#act") ActContent)?) (("#SAY" | "#say")? SayContent)? // todo not strict
+        FnContentDetail =  ((( "#"caseInsensitive<"say"> )? SayContent)? (( "#"caseInsensitive<"act"> ) ActContent)?) (( "#"caseInsensitive<"say"> )? SayContent)? // todo not strict
         IfWrap*
+
+        IF = "#"caseInsensitive<"IF">
         
         IfWrap =  IF ThenDoWrap ElseDoWrap --UselessIf    
         |  IF IfExp ThenDoWrap ElseDoWrap  --IfElse
         
         ActionBlocks =  SayWrap | ActWrap
         ThenDoWrap = (&ThenDo ActionBlocks)+ // multi : #SAY... #ACT...
-        ElseDoWrap = ElseDo | XXX // 0 :no else ; multi: same as abobe, ? only HEADER
-        XXX = ((&ElseDo ActionBlocks)*)
+        ElseDoWrap = (&ElseDo ActionBlocks)* // 0 :no else ; multi: same as abobe, ? only HEADER
         DoBreak = "break"
         
         
-        ThenDo = ("#SAY" | "#say")  | ("#ACT" | "#act")
-        ElseDo = "#ELSEACT"  | "#ELSESAY"
+        ThenDo = ("#"caseInsensitive<"say">)  | ("#"caseInsensitive<"act">)
+        ElseDo = ("#"caseInsensitive<"elseAct">)  | ("#"caseInsensitive<"elseSay">)
         
-        ActHeader =  "#ELSEACT" | "#ACT" // todo case #caseInsensitive<"ELSEACT">
-        SayHeader =  "#SAY" | "#ELSESAY"
+        ActHeader =  ("#"caseInsensitive<"elseAct">) | ("#"caseInsensitive<"act">) // todo case #caseInsensitive<"ELSEACT">
+        SayHeader =  ("#"caseInsensitive<"say">) | ("#"caseInsensitive<"elseSay">)
         
         SayWrap = SayHeader SayContent
         ActWrap= ActHeader ActContent
-        SayContent =  (~"#") (sayBindingWrap | sayText)+
+        SayContent =  (~"#") (Comment | sayBindingWrap | sayText)+
         sayBindingWrap = "<"spaces(sayStrBindingLVar | sayBindingBtn | sayBindingText )spaces">"
         sayBindingBtn = sayTextChars+ "/" fnBkName
         sayBindingText = "$"letter+
         sayStrBindingLVar =  "$STR("lVar")" //  <$STR(D0)> \
         sayText =  (sayTextChars | "\r"|"\n"| "/" )+
-        sayTextChars = letter|number | "，" | "。"|"？"| "\\"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "
+        sayTextChars = letter|number | "，" | "。"|"？"| "?"| "\\"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "  | "->" | "-" | "{" | "}" | ":" | "%" | "~" | "“" | "”" | "：" | "'" | "；"
         ActContent =  (
           MonGen 
         | Takecheckitem 
         | Batchmove | Addbatch | BatchDelay | Playdice | MoveMapPos | DoBreak | Goto | MonClear 
-        | SetGVar | MoveMap| MoveVar | IncVar | DecVar | SumVar 
+        | SetGVar | MoveMap| MoveVar | IncVar | DecVar | SumVar | ResetGVar
         | TimeRecallByMins | BreakTimeRecall
         | Param1  |   Param2  | Param3  
         | CloseWindow
-        | MoveVarRandom | TakeItemw | TakeItem  | GiveItem )+
-          IF = "#IF" 
-    ELSE = "#ELSEACT" 
+        | MoveVarRandom | TakeItemw | TakeItem  | GiveItem )*
+        
 
   IfExp
     = CheckExp+
@@ -91,7 +90,8 @@ BKS {
                         | Checkhum
                         | Checkjob
     
-    Daytime = caseInsensitive<"daytime"> ("sunset" | "day" | "sunraise" | "night")
+    Daytime = caseInsensitive<"daytime"> dayTimeEnum
+    dayTimeEnum =  caseInsensitive<"sunset"> | caseInsensitive<"day"> | caseInsensitive<"sunraise"> | caseInsensitive<"night">
     RandomIs = caseInsensitive<"random"> number
     CheckGender = caseInsensitive<"gender"> "man"
     CheckVar = caseInsensitive<"check"> gVar gVarRange
@@ -131,6 +131,7 @@ BKS {
     MoveVar = caseInsensitive<"mov"> lVar lVarRange
     IncVar = caseInsensitive<"inc"> lVar lVarRange
     DecVar = caseInsensitive<"dec"> lVar lVarRange
+    ResetGVar = caseInsensitive<"reset"> gVar lVarRange
     SumVar = caseInsensitive<"sum"> lVar lVar --SumTwoVars
     					| caseInsensitive<"sum"> lVar --SumToTarget 
     
