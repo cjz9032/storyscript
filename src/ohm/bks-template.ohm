@@ -24,8 +24,10 @@ BKS {
 
         
 
-        FnContentDetail =  ((( "#"caseInsensitive<"say"> )? SayContent)? (( "#"caseInsensitive<"act"> ) ActContent)?) (( "#"caseInsensitive<"say"> )? SayContent)? // todo not strict
-        IfWrap*
+        FnContentDetail =  SayContentWrap? ActContentWrap? SayContentWrap? IfWrap* // todo not strict
+        ActContentWrap = ( "#"caseInsensitive<"act"> ) ActContent
+        SayContentWrap = ( "#"caseInsensitive<"say"> )? SayContent
+        
 
         IF = "#"caseInsensitive<"IF">
         
@@ -49,10 +51,11 @@ BKS {
         SayContent =  (~"#") (Comment | sayBindingWrap | sayText)+
         sayBindingWrap = "<"spaces(sayStrBindingLVar | sayBindingBtn | sayBindingText )spaces">"
         sayBindingBtn = sayTextChars+ "/" fnBkName
-        sayBindingText = "$"letter+
+        sayBindingText = "$"("LORD "| "OWNERGUILD" | "USERNAME")
         sayStrBindingLVar =  "$STR("lVar")" //  <$STR(D0)> \
-        sayText =  (sayTextChars | "\r"|"\n"| "/" )+
-        sayTextChars = letter|number | "，" | "。"|"？"| "?"| "\\"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "  | "->" | "-" | "{" | "}" | ":" | "%" | "~" | "“" | "”" | "：" | "'" | "；"
+        sayText =  (sayNewLine | sayTextChars | "\r"|"\n"| "/" )+
+        sayNewLine = "\\"
+        sayTextChars = letter|number | "，" | "。"|"？"| "?"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "  | "->" | "-" | "{" | "}" | ":" | "%" | "~" | "“" | "”" | "：" | "'" | "；"
         ActContent =  (
           MonGen 
         | Takecheckitem 

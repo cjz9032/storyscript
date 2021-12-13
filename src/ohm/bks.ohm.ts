@@ -17,5 +17,5 @@
 import * as fs from 'fs-extra';
 import * as path from 'path';
 
-const str = fs.readFileSync(path.join(__dirname, './bks.ohm'), 'utf8');
+const str = fs.readFileSync(path.join(__dirname, './bks-template.ohm'), 'utf8');
 export default str;

@@ -7,15 +7,22 @@ import variable from '../src/libs/variable';
 describe('Dummy test', () => {
   it('works if true is truthy', () => {
     var userInput = `
-    (@buy  @sell)
-    %123
-    +1 +2
+
     [@a]
-    123
-    456
-    [~@a]
-    123
-    456
+    #SAy
+    你对那种技能书感兴趣？\ \
+战士可以学习的<技能/@help1>\
+欢迎<$USERNAME>光临赌场。\
+
+道士可以学习的<技能/@help2>\
+术士可以学习的<技能/@help3>\ 123
+    asdsdfsd
+    #IF
+    check [315] 0
+    #ACT
+    SET [315] 1
+    #SAY
+    asdsa
   `;
 
     const story = new StoryScript();

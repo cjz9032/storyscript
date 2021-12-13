@@ -15,11 +15,11 @@
  */
 
 export default {
-  Scripts(a, b) {
-    const tmp = a.parse();
-    const scripts = b.parse();
+  Scripts(Declare, LogicBlock) {
+    const tmp = Declare.parse();
+    const scripts = LogicBlock.parse();
     return {
-      declare: tmp[0],
+      declare: tmp,
       scripts,
     };
   },

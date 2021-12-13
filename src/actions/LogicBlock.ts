@@ -14,31 +14,127 @@
  * limitations under the License.
  */
 
+interface FnActionPart {
+  type: string;
+}
+
+interface FnNameInfo {
+  isCallback: boolean;
+  name: string;
+}
+
 export default {
   LogicBlock_FnBlocks(a) {
     // transfer
     return a.parse();
   },
-  FnBlocks(leftBracket, FnBkName, rightBracket, fnContent) {
-    const info = FnBkName.parse();
+  FnBlocks(leftBracket, fnBkName, rightBracket, fnContent) {
+    const fnInfo = fnBkName.parse() as FnNameInfo;
     const content = fnContent.parse();
     return {
-      ...info,
+      fnInfo,
       content,
     };
   },
-  FnBkName_Normal(a) {
+  fnBkName_NormalCall(name): FnNameInfo {
     return {
-      type: 'normal',
-      name: a.parse(),
+      isCallback: false,
+      name: name.parse(),
     };
   },
-  FnBkName_Callback(a, b) {
+  fnBkName_Callback(a, name): FnNameInfo {
     return {
-      type: 'callback',
-      name: b.parse(),
+      isCallback: true,
+      name: name.parse(),
     };
   },
+  // FnContent is wrap
+  FnContentDetail(SayContentWrap1, ActContentWrap, SayContentWrap2, IfWrapAny) {
+    const say1 = SayContentWrap1.parse();
+    const act = ActContentWrap.parse();
+    const say2 = SayContentWrap2.parse();
+    const ifs = IfWrapAny.parse();
+
+    // eval directly
+    const directs: FnActionPart[] = [say1, act, say2].filter(Boolean);
+
+    return {
+      directs,
+      ifs,
+    };
+  },
+  ActContentWrap(_s, _c, ActContent) {
+    return ActContent;
+  },
+  ActContent(action) {
+    return {
+      type: 'act',
+      content: action.parse(),
+    };
+  },
+  SayContentWrap(_s, _c, SayContent) {
+    return SayContent.parse();
+  },
+  sayBindingWrap(_s1, sayStrBindingLVar, sayBindingBtn, sayBindingText, _s2) {
+    return {
+      sayStrBindingLVar: sayStrBindingLVar.parse(),
+      sayBindingBtn: sayBindingBtn.parse(),
+      sayBindingText: sayBindingText.parse(),
+    };
+  },
+  sayBindingText($, localVar) {
+    return localVar.parse();
+  },
+  sayStrBindingLVar(_$str, lVar, _r) {
+    return {
+      lVar: lVar.parse(),
+    };
+  },
+  sayBindingBtn(sayTextChars, _A, fnBkName) {
+    return {
+      fnInfo: fnBkName.parse() as FnNameInfo, // supposes must not callback
+      text: sayTextChars.parse(),
+    };
+  },
+  SayContent(SayContent) {
+    return SayContent.parse();
+  },
+  lVar(pd, num) {
+    return pd.parse() + num;
+  },
+  IfWrap_UselessIf(a, ThenDoWrap, ElseDoWrap) {
+    return {
+      type: 'IfWrap_UselessIf',
+      content: ElseDoWrap.parse(),
+    };
+  },
+  IfWrap_IfElse(a, IfExp, ThenDoWrap, ElseDoWrap) {
+    return {
+      type: 'IfWrap_IfElse',
+      content: ThenDoWrap.parse(),
+    };
+  },
+  ThenDoWrap(_t, ThenDoWrap) {
+    return ThenDoWrap.parse();
+  },
+  ActWrap(_Header, ActContent) {
+    return ActContent.parse();
+  },
+  SayWrap(_Header, SayContent) {
+    return SayContent.parse();
+  },
+  // SetGVar
+  SetGVar(set, gVar, gVarRange) {
+    return {
+      type: 'SetGlobalVar',
+      name: gVar.parse(),
+      value: gVarRange.parse(),
+    };
+  },
+  gVar(leftBracket, name, rightBracket) {
+    return name.parse();
+  },
+
   // LogicBlock_IF(IF, LogicBlock1, ELSEIFs, LogicBlock2s, ELSE, LogicBlock3, END) {
   //   // get conditions
   //   var conditions = [IF.parse()];

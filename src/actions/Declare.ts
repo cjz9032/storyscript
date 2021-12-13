@@ -15,7 +15,7 @@
  */
 
 export default {
-  Declare(parenthesesL, decItemsList, parenthesesR, DDPercent, DeclareDetailsWrap) {
+  Declare(Comment, parenthesesL, decItemsList, parenthesesR, DDPercent, DeclareDetailsWrap) {
     var ret: any[] = [];
     const declareDetails = DeclareDetailsWrap.asIteration().children.map((c) => {
       return c.parse();
