@@ -13,9 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import Comment from './Comment';
 interface FnActionPart {
   type: string;
+}
+
+interface FnBlock {
+  info: FnNameInfo;
+  content: any;
 }
 
 interface FnNameInfo {
@@ -23,29 +28,35 @@ interface FnNameInfo {
   name: string;
 }
 
-export default {
+enum GAME_CONST {
+  $LORD = '$LORD',
+  $OWNERGUILD = '$OWNERGUILD',
+  $USERNAME = '$USERNAME',
+}
+
+const obj = {
   LogicBlock_FnBlocks(a) {
     // transfer
     return a.parse();
   },
-  FnBlocks(leftBracket, fnBkName, rightBracket, fnContent) {
-    const fnInfo = fnBkName.parse() as FnNameInfo;
+  FnBlocks(leftBracket, fnBkName, rightBracket, fnContent): FnBlock {
+    const info = fnBkName.parse() as FnNameInfo;
     const content = fnContent.parse();
     return {
-      fnInfo,
+      info,
       content,
     };
   },
   fnBkName_NormalCall(name): FnNameInfo {
     return {
       isCallback: false,
-      name: name.parse(),
+      name: name.parse() as string,
     };
   },
   fnBkName_Callback(a, name): FnNameInfo {
     return {
       isCallback: true,
-      name: name.parse(),
+      name: name.parse() as string,
     };
   },
   // FnContent is wrap
@@ -73,34 +84,45 @@ export default {
     };
   },
   SayContentWrap(_s, _c, SayContent) {
-    return SayContent.parse();
+    return SayContent.parse() as ReturnType<typeof obj.SayContent>;
   },
   sayBindingWrap(_s1, sayStrBindingLVar, sayBindingBtn, sayBindingText, _s2) {
     return {
-      sayStrBindingLVar: sayStrBindingLVar.parse(),
-      sayBindingBtn: sayBindingBtn.parse(),
-      sayBindingText: sayBindingText.parse(),
+      sayStrBindingLVar: sayStrBindingLVar.parse() as ReturnType<typeof obj.sayStrBindingLVar>,
+      sayBindingBtn: sayBindingBtn.parse() as ReturnType<typeof obj.sayBindingBtn>,
+      sayBindingText: sayBindingText.parse() as ReturnType<typeof obj.sayBindingText>,
     };
   },
-  sayBindingText($, localVar) {
-    return localVar.parse();
+  sayBindingText($, gconst): GAME_CONST {
+    return gconst.parse();
+  },
+  sayText(a) {
+    return {
+      text: a.parse() as string,
+    };
+  },
+  sayNewLine(a) {
+    return '\n';
   },
   sayStrBindingLVar(_$str, lVar, _r) {
     return {
-      lVar: lVar.parse(),
+      format: '$STR',
+      lVar: lVar.parse() as ReturnType<typeof obj.lVar>,
     };
   },
   sayBindingBtn(sayTextChars, _A, fnBkName) {
     return {
       fnInfo: fnBkName.parse() as FnNameInfo, // supposes must not callback
-      text: sayTextChars.parse(),
+      text: sayTextChars.parse() as string,
     };
   },
   SayContent(SayContent) {
-    return SayContent.parse();
+    return SayContent.parse() as ReturnType<
+      typeof Comment.Comment_single | typeof obj.sayBindingWrap | typeof obj.sayText
+    >;
   },
   lVar(pd, num) {
-    return pd.parse() + num;
+    return (pd.parse() + num) as string;
   },
   IfWrap_UselessIf(a, ThenDoWrap, ElseDoWrap) {
     return {
@@ -121,18 +143,20 @@ export default {
     return ActContent.parse();
   },
   SayWrap(_Header, SayContent) {
-    return SayContent.parse();
+    return SayContent.parse() as ReturnType<typeof obj.SayContent>;
   },
-  // SetGVar
-  SetGVar(set, gVar, gVarRange) {
+  SetGVar(_set, gVar, gVarRange) {
     return {
       type: 'SetGlobalVar',
-      name: gVar.parse(),
-      value: gVarRange.parse(),
+      name: gVar.parse() as ReturnType<typeof obj.gVar>,
+      value: gVarRange.parse() as ReturnType<typeof obj.gVarRange>,
     };
   },
+  gVarRange(t) {
+    return parseInt(t.parse());
+  },
   gVar(leftBracket, name, rightBracket) {
-    return name.parse();
+    return name.parse() as string;
   },
 
   // LogicBlock_IF(IF, LogicBlock1, ELSEIFs, LogicBlock2s, ELSE, LogicBlock3, END) {
@@ -234,3 +258,4 @@ export default {
   //   };
   // },
 };
+export default obj;

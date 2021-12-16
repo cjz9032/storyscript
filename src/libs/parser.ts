@@ -43,7 +43,7 @@ export default {
     if (m.succeeded()) {
       return mySemantics(m).parse();
     } else {
-      throw m.message;
+      throw new Error(m.message);
     }
   },
 };
