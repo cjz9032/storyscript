@@ -17,8 +17,8 @@ import * as _ from 'lodash';
 import * as ohm from 'ohm-js';
 import * as actions from '../actions';
 import contents from '../ohm/bks.ohm';
-
-var myGrammar = ohm.grammar(contents);
+import myGrammar, { BKSActionDict } from '../ohm/bks-template.ohm-bundle';
+// var myGrammar = ohm.grammar(contents);
 
 const actionsFlattened = _.reduce(
   actions,
@@ -28,22 +28,34 @@ const actionsFlattened = _.reduce(
   {}
 );
 
+console.log(myGrammar);
+
 var mySemantics = myGrammar.createSemantics();
 mySemantics.addOperation<any>('parse', {
-  ...actions.Exp,
+  // ...actions.Exp,
   ...actions.base,
-  ...actions.Comment,
+  // ...actions.Comment,
   ...actions.Declare,
   ...actions.LogicBlock,
+  Comment_single(head, text, c) {
+    return {
+      type: 'comment',
+      value: text.parse(),
+    };
+  },
+  // asd(_) {
+  //   return parseFloat(this.sourceString);
+  // },
 });
 
 export default {
   parse(string) {
-    var m = myGrammar.match(string);
-    if (m.succeeded()) {
-      return mySemantics(m).parse();
+    var matchResult = myGrammar.match(string);
+    if (matchResult.succeeded()) {
+      var aa = mySemantics(matchResult);
+      return aa.parse();
     } else {
-      throw new Error(m.message);
+      throw new Error(matchResult.message);
     }
   },
 };
