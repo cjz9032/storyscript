@@ -28,21 +28,13 @@ const actionsFlattened = _.reduce(
   {}
 );
 
-console.log(myGrammar);
-
 var mySemantics = myGrammar.createSemantics();
 mySemantics.addOperation<any>('parse', {
-  // ...actions.Exp,
+  ...actions.Exp,
   ...actions.base,
-  // ...actions.Comment,
+  ...actions.Comment,
   ...actions.Declare,
   ...actions.LogicBlock,
-  Comment_single(head, text, c) {
-    return {
-      type: 'comment',
-      value: text.parse(),
-    };
-  },
   // asd(_) {
   //   return parseFloat(this.sourceString);
   // },

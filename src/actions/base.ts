@@ -67,7 +67,7 @@ export default {
   //   return stringContent.parse();
   // },
   number(a) {
-    return a.parse();
+    return +a.parse();
   },
   nonemptyListOf(a, b, c) {
     return [a.parse(), ...c.parse()];

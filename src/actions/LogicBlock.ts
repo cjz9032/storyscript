@@ -35,9 +35,11 @@ enum GAME_CONST {
 }
 
 const obj = {
-  LogicBlock_FnBlocks(a) {
-    // transfer
-    return a.parse();
+  LogicBlock_FnBlocks(FnBlocks) {
+    return {
+      type: 'FnBlocks',
+      FnBlocks: FnBlocks.parse(),
+    };
   },
   FnBlocks(leftBracket, fnBkName, rightBracket, fnContent): FnBlock {
     const info = fnBkName.parse() as FnNameInfo;
@@ -61,9 +63,9 @@ const obj = {
   },
   // FnContent is wrap
   FnContentDetail(SayContentWrap1, ActContentWrap, SayContentWrap2, IfWrapAny) {
-    const say1 = SayContentWrap1.parse();
-    const act = ActContentWrap.parse();
-    const say2 = SayContentWrap2.parse();
+    const say1 = SayContentWrap1.parse()[0];
+    const act = ActContentWrap.parse()[0];
+    const say2 = SayContentWrap2.parse()[0];
     const ifs = IfWrapAny.parse();
 
     // eval directly
@@ -79,7 +81,7 @@ const obj = {
   },
   ActContent(action) {
     return {
-      type: 'act',
+      type: 'ActContent',
       content: action.parse(),
     };
   },
@@ -117,28 +119,101 @@ const obj = {
     };
   },
   SayContent(SayContent) {
-    return SayContent.parse() as ReturnType<
-      typeof Comment.Comment_single | typeof obj.sayBindingWrap | typeof obj.sayText
-    >;
+    return {
+      type: 'SayContent',
+      content: SayContent.parse() as ReturnType<
+        typeof Comment.Comment_single | typeof obj.sayBindingWrap | typeof obj.sayText
+      >,
+    };
   },
   lVar(pd, num) {
     return (pd.parse() + num) as string;
   },
-  IfWrap_UselessIf(a, ThenDoWrap, ElseDoWrap) {
+  IfWrap_UselessIf(_header, ThenDoWrap, ElseDoWrap) {
     return {
       type: 'IfWrap_UselessIf',
-      content: ElseDoWrap.parse(),
+      exp: true,
+      then: ThenDoWrap.parse(),
+      else: ElseDoWrap.parse(),
     };
   },
-  IfWrap_IfElse(a, IfExp, ThenDoWrap, ElseDoWrap) {
+  IfWrap_IfElse(_IF, IfExp, ThenDoWrap, ElseDoWrap) {
     return {
       type: 'IfWrap_IfElse',
-      content: ThenDoWrap.parse(),
+      exp: IfExp.parse(),
+      then: ThenDoWrap.parse(),
+      else: ElseDoWrap.parse(),
+    };
+  },
+  // IfExp
+  // CheckExp
+  Checkpkpoint(_吗呀, quantity) {
+    return {
+      type: 'Checkpkpoint',
+      quantity: quantity.parse(),
+    };
+  },
+  MoveMapPos(_t, mapName, x, y) {
+    return {
+      type: 'MoveMapPos',
+      mapName: mapName.parse(),
+      x: x.parse(),
+      y: y.parse(),
     };
   },
   ThenDoWrap(_t, ThenDoWrap) {
     return ThenDoWrap.parse();
   },
+  ElseDoWrap(_t, ElseDoWrap) {
+    return ElseDoWrap.parse();
+  },
+  CheckVar(_header, gVar, gVarRange) {
+    return {
+      type: 'CheckGlobalVar',
+      name: gVar.parse() as ReturnType<typeof obj.gVar>,
+      value: gVarRange.parse() as ReturnType<typeof obj.gVarRange>,
+    };
+  },
+  RandomIs(_Header, num) {
+    return {
+      type: 'RandomIs',
+      // range: [0, 100],
+      detect: num.parse(),
+    };
+  },
+  Goto(_Header, fn) {
+    return {
+      type: 'Goto',
+      fnInfo: fn.parse(),
+    };
+  },
+  Checkgold(_Header, quantity) {
+    return {
+      type: 'Checkgold',
+      quantity: quantity.parse(),
+    };
+  },
+  TakeItem(_Header, itemName, quantity) {
+    return {
+      type: 'TakeItem',
+      itemName: itemName.parse(),
+      quantity: quantity.parse(),
+    };
+  },
+  GoodsBlock(_a, _b, _c, goodsItemList) {
+    return {
+      type: 'GoodsBlock',
+      goodsItemList: goodsItemList.parse(),
+    };
+  },
+  goodsItem(_noLineSpace, itemName, _noLineSpace2, price, _noLineSpace3, quantity, _noLineSpace4, _newLine) {
+    return {
+      type: 'goodsItem',
+      price: price.parse(),
+      quantity: quantity.parse(),
+    };
+  },
+  // ActionBlocks
   ActWrap(_Header, ActContent) {
     return ActContent.parse();
   },

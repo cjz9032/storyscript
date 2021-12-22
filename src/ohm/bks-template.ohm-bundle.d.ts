@@ -32,8 +32,9 @@ export interface BKSActionDict<T> extends ActionDict<T> {
     arg4: NonterminalNode,
     arg5: NonterminalNode,
     arg6: NonterminalNode,
-    arg7: TerminalNode
+    arg7: NonterminalNode
   ) => T;
+  newLine?: (this: NonterminalNode, arg0: TerminalNode) => T;
   fnBkName_NormalCall?: (this: NonterminalNode, arg0: NonterminalNode) => T;
   fnBkName_Callback?: (this: NonterminalNode, arg0: TerminalNode, arg1: NonterminalNode) => T;
   fnBkName?: (this: NonterminalNode, arg0: NonterminalNode) => T;

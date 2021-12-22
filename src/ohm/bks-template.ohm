@@ -13,14 +13,12 @@ BKS {
         GoodsBlock =  "["caseInsensitive<"goods">"]" goodsItem*
 
 		noLineSpace = (" "  | "	" |"\t") *
-        goodsItem =  ( noLineSpace  itemName noLineSpace  quantity noLineSpace  quantity  noLineSpace "\n" )
-        
+        goodsItem =  ( noLineSpace  itemName noLineSpace  quantity noLineSpace  quantity  noLineSpace newLine )
+        newLine = ("\n" | "\r")
         fnBkName =   functionName --NormalCall
                                 | "~"functionName --Callback
                                 
-                     
-        
-        FnContent = ~(("\n" | "\r")"[") FnContentDetail
+        FnContent = ~(newLine"[") FnContentDetail
 
         
 
@@ -55,7 +53,7 @@ BKS {
         sayStrBindingLVar =  "$STR("lVar")" //  <$STR(D0)> \
         sayText =  (sayNewLine | sayTextChars | "\r"|"\n"| "/" )+
         sayNewLine = "\\"
-        sayTextChars = letter|number | "，" | "。"|"？"| "?"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "  | "->" | "-" | "{" | "}" | ":" | "%" | "~" | "“" | "”" | "：" | "'" | "；"
+        sayTextChars = letter|number | "，" | "+" | "。"|"？"| "?"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "  | "->" | "-" | "{" | "}" | ":" | "%" | "~" | "“" | "”" | "：" | "'" | "；"
         ActContent =  (
           MonGen 
         | Takecheckitem 
@@ -175,6 +173,6 @@ BKS {
   
   Comment = ";" comment_single     -- single
   
-  comment_single = (~("\n" | "\r") any)+
+  comment_single = (~newLine any)+
 
 }
