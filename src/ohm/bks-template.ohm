@@ -49,7 +49,7 @@ BKS {
         SayContent =  (~"#") (Comment | sayBindingWrap | sayText)+
         sayBindingWrap = "<"spaces(sayStrBindingLVar | sayBindingBtn | sayBindingText )spaces">"
         sayBindingBtn = sayTextChars+ "/" fnBkName
-        sayBindingText = "$"("LORD "| "OWNERGUILD" | "USERNAME")
+        sayBindingText = "$"("LORD23"| "OWNERGUILD" | "USERNAME")
         sayStrBindingLVar =  "$STR("lVar")" //  <$STR(D0)> \
         sayText =  (sayNewLine | sayTextChars | "\r"|"\n"| "/" )+
         sayNewLine = "\\"

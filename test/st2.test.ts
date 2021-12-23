@@ -18,7 +18,7 @@ describe('Dummy test', () => {
 
       const aa = story.iters();
 
-      console.log(variable.dump());
+      // console.log(variable.dump());
     });
 
     expect(true).toBeTruthy();

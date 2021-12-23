@@ -4,7 +4,6 @@
   "description": "",
   "keywords": [],
   "main": "dist/st2.umd.js",
-  "module": "dist/st2.es5.js",
   "typings": "dist/types/st2.d.ts",
   "files": [
     "dist"
@@ -21,7 +20,8 @@
   "scripts": {
     "lint": "eslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
-    "gen-ohm": "npx ohm generateBundles --withTypes ./src/ohm/bks-template.ohm",
+    "gen-ohm": "node  ./gen-ohm.mjs",
+    "inner-gen-ohm": "npx ohm generateBundles --withTypes ./src/ohm/bks-template.ohm",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest",
@@ -120,6 +120,8 @@
   },
   "dependencies": {
     "@types/klaw-sync": "^6.0.1",
-    "klaw-sync": "^6.0.0"
+    "execa": "^6.0.0",
+    "klaw-sync": "^6.0.0",
+    "watch": "^1.0.2"
   }
 }

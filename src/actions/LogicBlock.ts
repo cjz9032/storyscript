@@ -147,9 +147,30 @@ const obj = {
   },
   // IfExp
   // CheckExp
-  Checkpkpoint(_吗呀, quantity) {
+  Checkpkpoint(_t, quantity) {
     return {
       type: 'Checkpkpoint',
+      quantity: quantity.parse(),
+    };
+  },
+  Checkdura(_t, itemName, quantity) {
+    return {
+      type: 'Checkdura',
+      itemName: itemName.parse(),
+      quantity: quantity.parse(),
+    };
+  },
+  GiveItem(_t, itemName, quantity) {
+    return {
+      type: 'GiveItem',
+      itemName: itemName.parse(),
+      quantity: quantity.parse(),
+    };
+  },
+  Checkitem(_t, itemName, quantity) {
+    return {
+      type: 'Checkitem',
+      itemName: itemName.parse(),
       quantity: quantity.parse(),
     };
   },
