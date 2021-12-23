@@ -49,20 +49,21 @@ BKS {
         SayContent =  (~"#") (Comment | sayBindingWrap | sayText)+
         sayBindingWrap = "<"spaces(sayStrBindingLVar | sayBindingBtn | sayBindingText )spaces">"
         sayBindingBtn = sayTextChars+ "/" fnBkName
-        sayBindingText = "$"("LORD23"| "OWNERGUILD" | "USERNAME")
+        sayBindingText = "$"("LORD"| "OWNERGUILD" | "USERNAME" | "UPGRADEWEAPONFEE" | "USERWEAPON")
         sayStrBindingLVar =  "$STR("lVar")" //  <$STR(D0)> \
-        sayText =  (sayNewLine | sayTextChars | "\r"|"\n"| "/" )+
+        sayText = (sayNewLine | sayTextChars | "\r"|"\n"| "/" )+
         sayNewLine = "\\"
-        sayTextChars = letter|number | "，" | "+" | "。"|"？"| "?"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "  | "->" | "-" | "{" | "}" | ":" | "%" | "~" | "“" | "”" | "：" | "'" | "；"
+        sayTextChars = letter|number | "－" | "[" | "]" | "^"  | "_" | "。"| "…"  | "、" | "，" | "+"  | "\"" | "。"|"？"| "?"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "  | "->" | "-" | "{" | "}" | ":" | "%" | "~" | "“" | "”" | "：" | "'" | "；"
         ActContent =  (
           MonGen 
         | Takecheckitem 
-        | Batchmove | Addbatch | BatchDelay | Playdice | MoveMapPos | DoBreak | Goto | MonClear 
-        | SetGVar | MoveMap| MoveVar | IncVar | DecVar | SumVar | ResetGVar
-        | TimeRecallByMins | BreakTimeRecall
+        | Batchmove | Addbatch | BatchDelay | Playdice | MoveMapPos  | Goto | MonClear 
+        | SetGVar | MoveMap| MoveLVar | IncLVar | DecLVar | SumVar | ResetGVar | ExchangeMap
+        | TimeRecallByMins | BreakTimeRecall | Recallmap
         | Param1  |   Param2  | Param3  
         | CloseWindow
-        | MoveVarRandom | TakeItemw | TakeItem  | GiveItem )*
+        | DoBreak
+        | MoveLVarRandom | TakeItemw | TakeItem  | GiveItem | Comment )*
         
 
   IfExp
@@ -71,31 +72,37 @@ BKS {
     
     
     
-    CheckExp = CheckVar
+    CheckExp = CheckGVar
     					|  Checkgold
                         |  Checkitemw 
                         |  Checkpkpoint
                         |  Checkbaggage
                         |  Checklevel
-                        |  Equal
-                        |  Large
-                        | Small
+                        |  EqualLVar
+                        |  LargeLVar
+                        | SmallLVar
                         |  Checkitem
                         | Checkdura
                         | Istakeitem
                         | CheckGender
-                        | Daytime
+                        | CheckDaytime
                         | RandomIs
                         | Checkunit
                         | Checkmonmap
                         | Checkhum
                         | Checkjob
+                        | Checkluckypoint
+                        | CheckDayofweek
+                        | CheckHour
     
-    Daytime = caseInsensitive<"daytime"> dayTimeEnum
-    dayTimeEnum =  caseInsensitive<"sunset"> | caseInsensitive<"day"> | caseInsensitive<"sunraise"> | caseInsensitive<"night">
+    CheckDaytime = caseInsensitive<"daytime"> dayTimeEnum
+    CheckHour = caseInsensitive<"hour"> number number?
+    CheckDayofweek = caseInsensitive<"dayofweek"> ("Sunday" | "Monday" | "Tuesday" |  "Wednesday"  |  "Thursday" |  "Friday" | "Saturday")
+    Checkluckypoint = caseInsensitive<"Checkluckypoint"> number
+    dayTimeEnum =  caseInsensitive<"sunset"> | caseInsensitive<"day">  |  caseInsensitive<"sunrise">| caseInsensitive<"sunraise"> | caseInsensitive<"night">
     RandomIs = caseInsensitive<"random"> number
     CheckGender = caseInsensitive<"gender"> "man"
-    CheckVar = caseInsensitive<"check"> gVar gVarRange
+    CheckGVar = caseInsensitive<"check"> gVar gVarRange
     Checkunit = caseInsensitive<"checkunit"> gVar gVarRange
     Checkgold = caseInsensitive<"checkgold"> quantity
     Checkdura =  (caseInsensitive<"checkduraeva"> | caseInsensitive<"checkdura">) itemName quantity // both are one thing
@@ -123,20 +130,21 @@ BKS {
     Param3  = caseInsensitive<"param3"> number  // y
     MonGen  = caseInsensitive<"mongen"> monsterName quantity quantity  // range quantity
     CloseWindow = caseInsensitive<"close"> // close windows
-
+    ExchangeMap = caseInsensitive<"ExchangeMap"> mapName
+    Recallmap = caseInsensitive<"Recallmap"> mapName
     
-	  Equal = caseInsensitive<"equal"> lVar lVarRange
-    Large = caseInsensitive<"large"> lVar lVarRange
-    Small = caseInsensitive<"small"> lVar lVarRange // 小于某函数值
+	  EqualLVar = caseInsensitive<"equal"> lVar lVarRange
+    LargeLVar = caseInsensitive<"large"> lVar lVarRange
+    SmallLVar = caseInsensitive<"small"> lVar lVarRange // 小于某函数值
 
-    MoveVar = caseInsensitive<"mov"> lVar lVarRange
-    IncVar = caseInsensitive<"inc"> lVar lVarRange
-    DecVar = caseInsensitive<"dec"> lVar lVarRange
-    ResetGVar = caseInsensitive<"reset"> gVar lVarRange
+    MoveLVar = caseInsensitive<"mov"> lVar lVarRange
+    IncLVar = caseInsensitive<"inc"> lVar lVarRange
+    DecLVar = caseInsensitive<"dec"> lVar lVarRange
+    ResetGVar = caseInsensitive<"reset"> gVar gVarRange
     SumVar = caseInsensitive<"sum"> lVar lVar --SumTwoVars
     					| caseInsensitive<"sum"> lVar --SumToTarget 
     
-    MoveVarRandom = caseInsensitive<"movr"> lVar lVarRange
+    MoveLVarRandom = caseInsensitive<"movr"> lVar lVarRange
     SetGVar =  caseInsensitive<"set"> gVar gVarRange
     TakeItem = caseInsensitive<"take"> itemName quantity?
     Takecheckitem = caseInsensitive<"takecheckitem">
@@ -157,19 +165,19 @@ BKS {
     gVar ="["number"]"
     lVar = (caseInsensitive<("p")>|caseInsensitive<("d")>)digit
     lVarRange = number
-    gVarRange = ("1"|"0")
+    gVarRange = number
     jobsEnum= (caseInsensitive<("warrior")> | caseInsensitive<("wizard")> | caseInsensitive<("taoist")>)
   
-  Declare = Comment* ("(" decItems ")")? DDPercent? (listOf<DeclareDetails, (" "|  "\n" | "\r" )+>)
+  Declare = Comment* ("(" decItems ")")? DDPercent? (listOf<DeclareDetails, (" "|  "\n" | "\r"  | Comment )+>)
   
   DeclareDetails =  "+"number
   
-  number = digit+
+  number = "-"?digit+
   
   DDPercent = "%"number
   
   decItems = listOf<functionName, " "+>
-  functionName = "@" (letter|number|"_"|"-")+
+  functionName = "@" (letter|number|"_"|"-")*
   
   Comment = ";" comment_single     -- single
   

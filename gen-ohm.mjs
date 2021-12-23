@@ -27,12 +27,15 @@ watch.watchTree(path.join(__dirname, './src/ohm/'), function (f, curr, prev) {
   // }
 });
 const runnder = async () => {
-  const { stdout } = await execa('npm run inner-gen-ohm', [], {
-    cwd: path.join(__dirname, './'),
-    preferLocal: true,
-  });
-  console.log(stdout);
+  try {
+    const { stdout } = await execa('npm run inner-gen-ohm', [], {
+      cwd: path.join(__dirname, './'),
+      preferLocal: true,
+    });
+    console.log(stdout);
+  } catch (e) {
+    console.log(e);
+  }
 };
-const runnderThrottle = lodash.throttle(runnder, 2000, {
-});
+const runnderThrottle = lodash.throttle(runnder, 2000, {});
 runnderThrottle();

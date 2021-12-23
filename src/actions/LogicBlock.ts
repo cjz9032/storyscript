@@ -32,6 +32,32 @@ enum GAME_CONST {
   $LORD = '$LORD',
   $OWNERGUILD = '$OWNERGUILD',
   $USERNAME = '$USERNAME',
+  $UPGRADEWEAPONFEE = '$UPGRADEWEAPONFEE',
+  $USERWEAPON = '$USERWEAPON',
+}
+
+enum JOB {
+  warrior = 'warrior',
+  wizard = 'wizard',
+  taoist = 'taoist',
+}
+
+enum DAY_TIME {
+  sunraise = 'sunraise',
+  sunset = 'sunset',
+  day = 'day',
+  sunrise = 'sunrise',
+  night = 'night',
+}
+
+enum DayofWeek {
+  Sunday = 'Sunday',
+  Monday = 'Monday',
+  Tuesday = 'Tuesday',
+  Wednesday = 'Wednesday',
+  Thursday = 'Thursday',
+  Friday = 'Friday',
+  Saturday = 'Saturday',
 }
 
 const obj = {
@@ -160,11 +186,186 @@ const obj = {
       quantity: quantity.parse(),
     };
   },
+  CheckDaytime(_t, dayTime) {
+    return {
+      type: 'CheckDaytime',
+      dayTime: dayTime.parse().toLowerCase() as DAY_TIME,
+    };
+  },
+
+  EqualLVar(_t, lVar, lVarRange) {
+    return {
+      type: 'EqualLVar',
+      lVar: lVar.parse(),
+      lVarRange: lVarRange.parse(),
+    };
+  },
+  MoveLVar(_t, lVar, lVarRange) {
+    return {
+      type: 'MoveLVar',
+      lVar: lVar.parse(),
+      lVarRange: lVarRange.parse(),
+    };
+  },
+  LargeLVar(_t, lVar, lVarRange) {
+    return {
+      type: 'LargeLVar',
+      lVar: lVar.parse(),
+      lVarRange: lVarRange.parse(),
+    };
+  },
+  SmallLVar(_t, lVar, lVarRange) {
+    return {
+      type: 'SmallLVar',
+      lVar: lVar.parse(),
+      lVarRange: lVarRange.parse(),
+    };
+  },
+  SumVar_SumTwoVars(_t, lVar, lVar2) {
+    return {
+      type: 'SumVar_SumTwoVars',
+      lVar: lVar.parse(),
+      lVar2: lVar2.parse(),
+    };
+  },
+  SumVar_SumToTarget(_t, lVar) {
+    return {
+      type: 'SumVar_SumToTarget',
+      lVar: lVar.parse(),
+    };
+  },
+  MoveLVarRandom(_t, lVar, lVarRange) {
+    return {
+      type: 'MoveLVarRandom',
+      lVar: lVar.parse(),
+      lVarRange: lVarRange.parse(),
+    };
+  },
+  ExchangeMap(_t, mapName) {
+    return {
+      type: 'ExchangeMap',
+      mapName: mapName.parse(),
+    };
+  },
+  Recallmap(_t, mapName) {
+    return {
+      type: 'Recallmap',
+      mapName: mapName.parse(),
+    };
+  },
+  Checkhum(_t, mapName, quantity) {
+    return {
+      type: 'Checkhum',
+      mapName: mapName.parse(),
+      quantity: quantity.parse(),
+    };
+  },
+  IncLVar(_t, lVar, lVarRange) {
+    return {
+      type: 'IncLVar',
+      lVar: lVar.parse(),
+      lVarRange: lVarRange.parse(),
+    };
+  },
+  DecLVar(_t, lVar, lVarRange) {
+    return {
+      type: 'DecLVar',
+      lVar: lVar.parse(),
+      lVarRange: lVarRange.parse(),
+    };
+  },
+  MonClear(_t, mapName) {
+    return {
+      type: 'MonClear',
+      mapName: mapName.parse(),
+    };
+  },
+  Checkmonmap(_t, mapName, quantity) {
+    return {
+      type: 'Checkmonmap',
+      mapName: mapName.parse(),
+      quantity: quantity.parse(),
+    };
+  },
+  MonGen(_t, monsterName, range, quantity) {
+    return {
+      type: 'MonGen',
+      monsterName: monsterName.parse(),
+      range: range.parse(),
+      quantity: quantity.parse(),
+    };
+  },
+  Param1(_t, mapName) {
+    return {
+      mapName: mapName.parse(),
+    };
+  },
+  Param2(_t, x) {
+    return {
+      x: x.parse(),
+    };
+  },
+  Param3(_t, y) {
+    return {
+      y: y.parse(),
+    };
+  },
   GiveItem(_t, itemName, quantity) {
     return {
       type: 'GiveItem',
       itemName: itemName.parse(),
       quantity: quantity.parse(),
+    };
+  },
+  Playdice(_t, number, fnInfo) {
+    return {
+      type: 'Playdice',
+      number: number.parse(),
+      fnInfo: fnInfo.parse(),
+    };
+  },
+  BatchDelay(_t, number) {
+    return {
+      type: 'BatchDelay',
+      number: number.parse(),
+    };
+  },
+  Addbatch(_t, mapName) {
+    return {
+      type: 'Addbatch',
+      mapName: mapName.parse(),
+    };
+  },
+  Checkluckypoint(_t, number) {
+    return {
+      type: 'Checkluckypoint',
+      mapName: number.parse(),
+    };
+  },
+  CheckDayofweek(_t, day) {
+    return {
+      type: 'CheckDayofweek',
+      day: day.parse() as DayofWeek,
+    };
+  },
+  CheckHour(_t, hour, hour2) {
+    return {
+      type: 'CheckHour',
+      hour: hour.parse(),
+      hour2: hour2.parse(),
+    };
+  },
+  Checklevel(_t, quantity) {
+    return {
+      type: 'Checklevel',
+      level: quantity.parse(),
+    };
+  },
+  ResetGVar(_t, gVar, gVarRange) {
+    return {
+      type: 'ResetGVar',
+      gVar: gVar.parse(),
+      gVarRange: gVarRange.parse(),
     };
   },
   Checkitem(_t, itemName, quantity) {
@@ -174,6 +375,63 @@ const obj = {
       quantity: quantity.parse(),
     };
   },
+  Checkjob(_t, jobsEnum) {
+    return {
+      type: 'Checkitem',
+      jobsEnum: jobsEnum.parse(),
+    };
+  },
+  jobsEnum(job) {
+    return job.parse().toLowerCase() as JOB;
+  },
+  Checkunit(_t, gVar, gVarRange) {
+    return {
+      type: 'Checkunit',
+      gVar: gVar.parse(),
+      gVarRange: gVarRange.parse(),
+    };
+  },
+  TakeItemw_normal(_t, itemName, quantity) {
+    return {
+      type: 'TakeItemw_normal',
+      itemName: itemName.parse(),
+      quantity: quantity.parse(),
+    };
+  },
+  TakeItemw_wears(_t, WearPlaceName) {
+    return {
+      type: 'TakeItemw_normal',
+      WearPlaceName: WearPlaceName.parse(),
+    };
+  },
+  CheckGender(_t, gender) {
+    return {
+      type: 'CheckGender',
+      gender: gender.parse(),
+    };
+  },
+  Istakeitem(_t, itemName) {
+    return {
+      type: 'Istakeitem',
+      itemName: itemName.parse(),
+    };
+  },
+  Checkitemw_normal(_t, itemName, quantity) {
+    return {
+      type: 'Checkitemw_normal',
+      itemName: itemName.parse(),
+      quantity: quantity.parse(),
+    };
+  },
+  Checkitemw_wears(_t, WearPlaceName) {
+    return {
+      type: 'Checkitemw_wears',
+      WearPlaceName: WearPlaceName.parse(),
+    };
+  },
+  WearPlaceName(_t, name, _w) {
+    return name.parse();
+  },
   MoveMapPos(_t, mapName, x, y) {
     return {
       type: 'MoveMapPos',
@@ -182,15 +440,27 @@ const obj = {
       y: y.parse(),
     };
   },
+  MoveMap(_t, mapName) {
+    return {
+      type: 'MoveMap',
+      mapName: mapName.parse(),
+    };
+  },
+  TimeRecallByMins(_t, quantity) {
+    return {
+      type: 'TimeRecallByMins',
+      quantity: quantity.parse(),
+    };
+  },
   ThenDoWrap(_t, ThenDoWrap) {
     return ThenDoWrap.parse();
   },
   ElseDoWrap(_t, ElseDoWrap) {
     return ElseDoWrap.parse();
   },
-  CheckVar(_header, gVar, gVarRange) {
+  CheckGVar(_header, gVar, gVarRange) {
     return {
-      type: 'CheckGlobalVar',
+      type: 'CheckGVar',
       name: gVar.parse() as ReturnType<typeof obj.gVar>,
       value: gVarRange.parse() as ReturnType<typeof obj.gVarRange>,
     };
@@ -249,6 +519,9 @@ const obj = {
     };
   },
   gVarRange(t) {
+    return parseInt(t.parse());
+  },
+  lVarRange(t) {
     return parseInt(t.parse());
   },
   gVar(leftBracket, name, rightBracket) {

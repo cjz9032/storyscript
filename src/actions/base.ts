@@ -66,8 +66,9 @@ export default {
   // string_singleQuote(quoteA, stringContent, quoteB) {
   //   return stringContent.parse();
   // },
-  number(a) {
-    return +a.parse();
+  number(navFlag, a) {
+    const nav = !!navFlag.parse() ? 1 : -1;
+    return a.parse() * nav;
   },
   nonemptyListOf(a, b, c) {
     return [a.parse(), ...c.parse()];
@@ -84,6 +85,6 @@ export default {
   },
   _terminal() {
     // @ts-ignore
-    return this.primitiveValue;
+    return this.sourceString;
   },
 };

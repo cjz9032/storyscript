@@ -86,11 +86,14 @@ export interface BKSActionDict<T> extends ActionDict<T> {
   ActContent?: (this: NonterminalNode, arg0: IterationNode) => T;
   IfExp?: (this: NonterminalNode, arg0: IterationNode) => T;
   CheckExp?: (this: NonterminalNode, arg0: NonterminalNode) => T;
-  Daytime?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
+  CheckDaytime?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
+  CheckHour?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: IterationNode) => T;
+  CheckDayofweek?: (this: NonterminalNode, arg0: NonterminalNode, arg1: TerminalNode) => T;
+  Checkluckypoint?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
   dayTimeEnum?: (this: NonterminalNode, arg0: NonterminalNode) => T;
   RandomIs?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
   CheckGender?: (this: NonterminalNode, arg0: NonterminalNode, arg1: TerminalNode) => T;
-  CheckVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
+  CheckGVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
   Checkunit?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
   Checkgold?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
   Checkdura?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
@@ -124,17 +127,19 @@ export interface BKSActionDict<T> extends ActionDict<T> {
     arg3: NonterminalNode
   ) => T;
   CloseWindow?: (this: NonterminalNode, arg0: NonterminalNode) => T;
-  Equal?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
-  Large?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
-  Small?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
-  MoveVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
-  IncVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
-  DecVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
+  ExchangeMap?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
+  Recallmap?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
+  EqualLVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
+  LargeLVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
+  SmallLVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
+  MoveLVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
+  IncLVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
+  DecLVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
   ResetGVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
   SumVar_SumTwoVars?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
   SumVar_SumToTarget?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
   SumVar?: (this: NonterminalNode, arg0: NonterminalNode) => T;
-  MoveVarRandom?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
+  MoveLVarRandom?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
   SetGVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
   TakeItem?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: IterationNode) => T;
   Takecheckitem?: (this: NonterminalNode, arg0: NonterminalNode) => T;
@@ -158,7 +163,7 @@ export interface BKSActionDict<T> extends ActionDict<T> {
   gVar?: (this: NonterminalNode, arg0: TerminalNode, arg1: NonterminalNode, arg2: TerminalNode) => T;
   lVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
   lVarRange?: (this: NonterminalNode, arg0: NonterminalNode) => T;
-  gVarRange?: (this: NonterminalNode, arg0: TerminalNode) => T;
+  gVarRange?: (this: NonterminalNode, arg0: NonterminalNode) => T;
   jobsEnum?: (this: NonterminalNode, arg0: NonterminalNode) => T;
   Declare?: (
     this: NonterminalNode,
@@ -170,7 +175,7 @@ export interface BKSActionDict<T> extends ActionDict<T> {
     arg5: NonterminalNode
   ) => T;
   DeclareDetails?: (this: NonterminalNode, arg0: TerminalNode, arg1: NonterminalNode) => T;
-  number?: (this: NonterminalNode, arg0: IterationNode) => T;
+  number?: (this: NonterminalNode, arg0: IterationNode, arg1: IterationNode) => T;
   DDPercent?: (this: NonterminalNode, arg0: TerminalNode, arg1: NonterminalNode) => T;
   decItems?: (this: NonterminalNode, arg0: NonterminalNode) => T;
   functionName?: (this: NonterminalNode, arg0: TerminalNode, arg1: IterationNode) => T;

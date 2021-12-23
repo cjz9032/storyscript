@@ -20,7 +20,7 @@
   "scripts": {
     "lint": "eslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
-    "gen-ohm": "node  ./gen-ohm.mjs",
+    "dev": "node  ./gen-ohm.mjs",
     "inner-gen-ohm": "npx ohm generateBundles --withTypes ./src/ohm/bks-template.ohm",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
     "start": "rollup -c rollup.config.ts -w",
@@ -48,7 +48,7 @@
   },
   "jest": {
     "transform": {
-      ".(ts|tsx)": "ts-jest"
+      ".(ts|tsx)": "@swc/jest"
     },
     "testEnvironment": "node",
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
@@ -82,6 +82,8 @@
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
     "@ohm-js/cli": "^1.0.0",
+    "@swc/core": "^1.2.122",
+    "@swc/jest": "^0.2.15",
     "@types/jest": "^23.3.2",
     "@types/node": "^10.11.0",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
@@ -96,7 +98,7 @@
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^1.0.1",
-    "jest": "^23.6.0",
+    "jest": "^27.4.5",
     "jest-config": "^23.6.0",
     "lint-staged": "^8.0.0",
     "lodash.camelcase": "^4.3.0",

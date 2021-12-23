@@ -10,12 +10,19 @@ describe('Dummy test', () => {
   it('works if true is truthy', () => {
     const paths = klawSync(path.join(__dirname, '../src/dist'));
     const txts = paths.map((p) => {
-      return fs.readFileSync(p.path, 'utf8');
+      return {
+        txt: fs.readFileSync(p.path, 'utf8'),
+        p,
+      };
     });
-    txts.forEach((userInput) => {
+    txts.forEach(({ txt, p }) => {
       const story = new StoryScript();
-      story.load(userInput);
-
+      try {
+        story.load(txt);
+      } catch (e) {
+        console.log(p.path, e);
+        throw e;
+      }
       const aa = story.iters();
 
       // console.log(variable.dump());
