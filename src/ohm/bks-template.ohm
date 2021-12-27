@@ -53,7 +53,7 @@ BKS {
         sayStrBindingLVar =  "$STR("lVar")" //  <$STR(D0)> \
         sayText = (sayNewLine | sayTextChars | "\r"|"\n"| "/" )+
         sayNewLine = "\\"
-        sayTextChars = letter|number | "－" | "[" | "]" | "^"  | "_" | "。"| "…"  | "、" | "，" | "+"  | "\"" | "。"|"？"| "?"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "  | "->" | "-" | "{" | "}" | ":" | "%" | "~" | "“" | "”" | "：" | "'" | "；"
+        sayTextChars = (~"[@") (letter|number | "《" |  "　" | "》"  | "－" | "[" | "]" | "^"  | "_" | "。"| "…"  | "、" | "，" | "+"  | "\"" | "。"|"？"| "?"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "  | "->" | "-" | "{" | "}" | ":" | "%" | "~" | "“" | "”" | "：" | "'" | "；")
         ActContent =  (
           MonGen 
         | Takecheckitem 
@@ -97,7 +97,8 @@ BKS {
     
     CheckDaytime = caseInsensitive<"daytime"> dayTimeEnum
     CheckHour = caseInsensitive<"hour"> number number?
-    CheckDayofweek = caseInsensitive<"dayofweek"> ("Sunday" | "Monday" | "Tuesday" |  "Wednesday"  |  "Thursday" |  "Friday" | "Saturday")
+    CheckDayofweek = caseInsensitive<"dayofweek"> dayEnum
+    dayEnum = (caseInsensitive<"Sunday"> | caseInsensitive<"Monday"> | caseInsensitive<"Tuesday"> |  caseInsensitive<"Wednesday">  |  caseInsensitive<"Thursday"> |  caseInsensitive<"Friday"> | caseInsensitive<"Saturday">)
     Checkluckypoint = caseInsensitive<"Checkluckypoint"> number
     dayTimeEnum =  caseInsensitive<"sunset"> | caseInsensitive<"day">  |  caseInsensitive<"sunrise">| caseInsensitive<"sunraise"> | caseInsensitive<"night">
     RandomIs = caseInsensitive<"random"> number
@@ -177,7 +178,7 @@ BKS {
   DDPercent = "%"number
   
   decItems = listOf<functionName, " "+>
-  functionName = "@" (letter|number|"_"|"-")*
+  functionName = "@"? (letter|number|"_"|"-")*
   
   Comment = ";" comment_single     -- single
   

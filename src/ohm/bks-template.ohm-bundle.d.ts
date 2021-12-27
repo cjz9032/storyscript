@@ -88,7 +88,8 @@ export interface BKSActionDict<T> extends ActionDict<T> {
   CheckExp?: (this: NonterminalNode, arg0: NonterminalNode) => T;
   CheckDaytime?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
   CheckHour?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: IterationNode) => T;
-  CheckDayofweek?: (this: NonterminalNode, arg0: NonterminalNode, arg1: TerminalNode) => T;
+  CheckDayofweek?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
+  dayEnum?: (this: NonterminalNode, arg0: NonterminalNode) => T;
   Checkluckypoint?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
   dayTimeEnum?: (this: NonterminalNode, arg0: NonterminalNode) => T;
   RandomIs?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
@@ -178,7 +179,7 @@ export interface BKSActionDict<T> extends ActionDict<T> {
   number?: (this: NonterminalNode, arg0: IterationNode, arg1: IterationNode) => T;
   DDPercent?: (this: NonterminalNode, arg0: TerminalNode, arg1: NonterminalNode) => T;
   decItems?: (this: NonterminalNode, arg0: NonterminalNode) => T;
-  functionName?: (this: NonterminalNode, arg0: TerminalNode, arg1: IterationNode) => T;
+  functionName?: (this: NonterminalNode, arg0: IterationNode, arg1: IterationNode) => T;
   Comment_single?: (this: NonterminalNode, arg0: TerminalNode, arg1: NonterminalNode) => T;
   Comment?: (this: NonterminalNode, arg0: NonterminalNode) => T;
   comment_single?: (this: NonterminalNode, arg0: IterationNode) => T;
