@@ -67,7 +67,7 @@ export default {
   //   return stringContent.parse();
   // },
   number(navFlag, a) {
-    const nav = !!navFlag.parse() ? 1 : -1;
+    const nav = !!navFlag.parse() ? -1 : 1;
     return a.parse() * nav;
   },
   nonemptyListOf(a, b, c) {

@@ -30,6 +30,7 @@ export default class StoryScript {
     const system = new IfBlock(result);
     this.CURRENTBLOCK = system;
     this.BLOCKSTACK = [];
+    return result;
     // variable.reset();
   }
   [Symbol.iterator]() {
