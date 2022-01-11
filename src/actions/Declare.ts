@@ -22,7 +22,7 @@ export default {
     });
     const dPercent = DDPercent.parse();
 
-    const declareFns = decItemsList.parse();
+    const declareFns = decItemsList.parse()[0] ?? [];
 
     return {
       declareDetails,
@@ -37,6 +37,10 @@ export default {
     return tmp;
   },
   functionName(atSymbol, chars) {
+    const n = chars.parse();
+    return '@' + n;
+  },
+  functionNameSPNO(atSymbol, chars) {
     const n = chars.parse();
     return '@' + n;
   },

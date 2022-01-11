@@ -3,6 +3,7 @@ import variable from '../src/libs/variable';
 import fs from 'fs-extra';
 import path from 'path';
 import klawSync from 'klaw-sync';
+import { convertDeclare } from './other';
 /**
  * Dummy test
  */
@@ -28,23 +29,17 @@ describe('Dummy test', () => {
           console.log(p.path, e);
           throw e;
         }
-        const aa = story.iters();
-        const id = path.basename(p.path, path.extname(p.path));
+        // const aa = story.iters();
+        const id = path.basename(p.path, path.extname(p.path)).replace('-', '_');
 
-        // todo map to name or not?
+        // todo id map to name or not?
+
         var str = `
-        public class NPCS${id}: MonoBehaviour
+        public class NPC_SCT_${id}: MonoBehaviour
         {
           // props
-          // public string name = "";
-          // public int hp = 0;
-          // public int mp = 0;
+          ${convertDeclare(res.declare, res)}
           
-          ${res.declare.declareDetails
-            .map((d, idx) => {
-              return `public int declareDetails_${idx} = ${d};`;
-            })
-            .join('\n')}
         }
         `;
 

@@ -180,6 +180,7 @@ export interface BKSActionDict<T> extends ActionDict<T> {
   DDPercent?: (this: NonterminalNode, arg0: TerminalNode, arg1: NonterminalNode) => T;
   decItems?: (this: NonterminalNode, arg0: NonterminalNode) => T;
   functionName?: (this: NonterminalNode, arg0: IterationNode, arg1: IterationNode) => T;
+  functionNameSPNO?: (this: NonterminalNode, arg0: IterationNode, arg1: IterationNode) => T;
   Comment_single?: (this: NonterminalNode, arg0: TerminalNode, arg1: NonterminalNode) => T;
   Comment?: (this: NonterminalNode, arg0: NonterminalNode) => T;
   comment_single?: (this: NonterminalNode, arg0: IterationNode) => T;

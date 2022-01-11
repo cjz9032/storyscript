@@ -48,7 +48,7 @@ BKS {
         ActWrap= ActHeader ActContent
         SayContent =  (~"#") (Comment | sayBindingWrap | sayText)+
         sayBindingWrap = "<"spaces(sayStrBindingLVar | sayBindingBtn | sayBindingText )spaces">"
-        sayBindingBtn = sayTextChars+ "/" fnBkName
+        sayBindingBtn = sayTextChars+ "/" functionNameSPNO
         sayBindingText = "$"("LORD"| "OWNERGUILD" | "USERNAME" | "UPGRADEWEAPONFEE" | "USERWEAPON")
         sayStrBindingLVar =  "$STR("lVar")" //  <$STR(D0)> \
         sayText = (sayNewLine | sayTextChars | "\r"|"\n"| "/" )+
@@ -178,7 +178,9 @@ BKS {
   DDPercent = "%"number
   
   decItems = listOf<functionName, " "+>
-  functionName = "@"? (letter|number|"_"|"-")*
+  functionName = "@"? (letter|number|"_"|"-")+
+  functionNameSPNO = "@"? (letter|number|"_"|"-")*
+
   
   Comment = ";" comment_single     -- single
   
