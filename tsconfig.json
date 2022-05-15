@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "target": "es2017",
-    "module": "es2015",
+    "target": "es2020",
+    "module": "commonjs",
     "lib": [
       "es2015",
       "es2016",
@@ -13,6 +13,7 @@
     "sourceMap": true,
     "declaration": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -20,6 +21,7 @@
     "outDir": "dist/lib",
     "typeRoots": [
       "node_modules/@types",
+      "./types"
     ],
     "noImplicitAny": false
   },

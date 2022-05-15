@@ -14,27 +14,6 @@
  * limitations under the License.
  */
 import Comment from './Comment';
-interface FnActionPart {
-  type: string;
-}
-
-interface FnBlock {
-  info: FnNameInfo;
-  content: any;
-}
-
-interface FnNameInfo {
-  isCallback: boolean;
-  name: string;
-}
-
-enum GAME_CONST {
-  $LORD = '$LORD',
-  $OWNERGUILD = '$OWNERGUILD',
-  $USERNAME = '$USERNAME',
-  $UPGRADEWEAPONFEE = '$UPGRADEWEAPONFEE',
-  $USERWEAPON = '$USERWEAPON',
-}
 
 enum JOB {
   warrior = 'warrior',
@@ -64,7 +43,7 @@ const obj = {
   LogicBlock_FnBlocks(FnBlocks) {
     return {
       type: 'FnBlocks',
-      FnBlocks: FnBlocks.parse(),
+      fnBlocks: FnBlocks.parse(),
     };
   },
   FnBlocks(leftBracket, fnBkName, rightBracket, fnContent): FnBlock {
@@ -95,7 +74,7 @@ const obj = {
     const ifs = IfWrapAny.parse();
 
     // eval directly
-    const directs: FnActionPart[] = [say1, act, say2].filter(Boolean);
+    const directs: ActionBlock[] = [say1, act, say2].filter(Boolean);
 
     return {
       directs,
@@ -116,6 +95,7 @@ const obj = {
   },
   sayBindingWrap(_s1, sayStrBindingLVar, sayBindingBtn, sayBindingText, _s2) {
     return {
+      type: 'SayBindingWrap',
       sayStrBindingLVar: sayStrBindingLVar.parse() as ReturnType<typeof obj.sayStrBindingLVar>,
       sayBindingBtn: sayBindingBtn.parse() as ReturnType<typeof obj.sayBindingBtn>,
       sayBindingText: sayBindingText.parse() as ReturnType<typeof obj.sayBindingText>,
@@ -126,6 +106,7 @@ const obj = {
   },
   sayText(a) {
     return {
+      type: 'SayText',
       text: a.parse() as string,
     };
   },
@@ -146,14 +127,14 @@ const obj = {
   },
   SayContent(SayContent) {
     return {
-      type: 'SayContent',
+      type: 'sayContent',
       content: SayContent.parse() as ReturnType<
         typeof Comment.Comment_single | typeof obj.sayBindingWrap | typeof obj.sayText
       >,
     };
   },
   lVar(pd, num) {
-    return (pd.parse() + num) as string;
+    return ((pd.parse() as string).toLocaleLowerCase() + num) as string;
   },
   IfWrap_UselessIf(_header, ThenDoWrap, ElseDoWrap) {
     return {

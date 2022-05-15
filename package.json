@@ -18,6 +18,7 @@
     "node": ">=6.0.0"
   },
   "scripts": {
+    "t": "ts-node ./test/test.ts",
     "lint": "eslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
     "dev": "node  ./gen-ohm.mjs",

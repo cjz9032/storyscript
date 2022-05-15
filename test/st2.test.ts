@@ -1,9 +1,9 @@
 import StoryScript from '../src/st2';
-import variable from '../src/libs/variable';
+// import variable from '../src/libs/variable';
 import fs from 'fs-extra';
 import path from 'path';
 import klawSync from 'klaw-sync';
-import { convertDeclare } from './other';
+import { convertDeclare, convertFns } from './other';
 /**
  * Dummy test
  */
@@ -39,7 +39,8 @@ describe('Dummy test', () => {
         {
           // props
           ${convertDeclare(res.declare, res)}
-          
+          // fns
+          ${convertFns(res.declare, res)}
         }
         `;
 
