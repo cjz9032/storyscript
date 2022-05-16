@@ -111,7 +111,7 @@ const obj = {
     };
   },
   sayNewLine(a) {
-    return '\n';
+    return '@@NL@@';
   },
   sayStrBindingLVar(_$str, lVar, _r) {
     return {
@@ -121,13 +121,16 @@ const obj = {
   },
   sayBindingBtn(sayTextChars, _A, fnBkName) {
     return {
-      fnInfo: fnBkName.parse() as FnNameInfo, // supposes must not callback
+      fnInfo: {
+        isCallback: false,
+        name: fnBkName.parse(),
+      }, // supposes must not callback
       text: sayTextChars.parse() as string,
     };
   },
   SayContent(SayContent) {
     return {
-      type: 'sayContent',
+      type: 'SayContent',
       content: SayContent.parse() as ReturnType<
         typeof Comment.Comment_single | typeof obj.sayBindingWrap | typeof obj.sayText
       >,

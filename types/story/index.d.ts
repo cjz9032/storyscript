@@ -40,11 +40,15 @@ type Goto = {
   fnInfo: FnNameInfo;
 };
 
-type ActContent = Goto;
+type XXACT = {
+  type: 'XXACT';
+};
+
+type ActContent = Goto | XXACT;
 
 interface ActContentWrap {
   type: 'ActContent';
-  content: ActContent[];
+  content: ActContent;
 }
 
 type LVar = 'p0' | 'p1' | 'p2' | 'p3' | 'p4' | 'p5' | 'p6' | 'p7' | 'p8' | 'p9';
@@ -80,7 +84,7 @@ interface Comment_single {
 
 interface SayContentWrap {
   type: 'SayContent';
-  content: Comment_single | SayBindingWrap | SayText;
+  content: (Comment_single | SayBindingWrap | SayText)[];
 }
 
 type ActionBlock = ActContentWrap | SayContentWrap;
