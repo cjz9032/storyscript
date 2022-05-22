@@ -111,7 +111,7 @@ const obj = {
     };
   },
   sayNewLine(a) {
-    return '@@NL@@';
+    return '\\r\\n';
   },
   sayStrBindingLVar(_$str, lVar, _r) {
     return {
@@ -298,14 +298,17 @@ const obj = {
     return {
       type: 'GiveItem',
       itemName: itemName.parse(),
-      quantity: quantity.parse(),
+      quantity: quantity.parse() ? +quantity.parse() : 1,
     };
   },
   Playdice(_t, number, fnInfo) {
     return {
       type: 'Playdice',
       number: number.parse(),
-      fnInfo: fnInfo.parse(),
+      fnInfo: {
+        isCallback: false,
+        name: fnInfo.parse(),
+      },
     };
   },
   BatchDelay(_t, number) {
@@ -459,7 +462,15 @@ const obj = {
   Goto(_Header, fn) {
     return {
       type: 'Goto',
-      fnInfo: fn.parse(),
+      fnInfo: {
+        isCallback: false,
+        name: fn.parse(),
+      },
+    };
+  },
+  DoBreak(_Headaer) {
+    return {
+      type: 'Break',
     };
   },
   Checkgold(_Header, quantity) {
@@ -469,10 +480,11 @@ const obj = {
     };
   },
   TakeItem(_Header, itemName, quantity) {
+    const a = quantity.parse();
     return {
       type: 'TakeItem',
       itemName: itemName.parse(),
-      quantity: quantity.parse(),
+      quantity: quantity.parse() ? +quantity.parse() : 1,
     };
   },
   GoodsBlock(_a, _b, _c, goodsItemList) {
@@ -481,11 +493,12 @@ const obj = {
       goodsItemList: goodsItemList.parse(),
     };
   },
-  goodsItem(_noLineSpace, itemName, _noLineSpace2, price, _noLineSpace3, quantity, _noLineSpace4, _newLine) {
+  goodsItem(_noLineSpace, itemName, _noLineSpace2, price, _noLineSpace3, time, _noLineSpace4, _newLine) {
     return {
       type: 'goodsItem',
+      itemName: price.parse(),
       price: price.parse(),
-      quantity: quantity.parse(),
+      time: time.parse(),
     };
   },
   // ActionBlocks
@@ -497,7 +510,7 @@ const obj = {
   },
   SetGVar(_set, gVar, gVarRange) {
     return {
-      type: 'SetGlobalVar',
+      type: 'SetGVar',
       name: gVar.parse() as ReturnType<typeof obj.gVar>,
       value: gVarRange.parse() as ReturnType<typeof obj.gVarRange>,
     };
@@ -509,7 +522,7 @@ const obj = {
     return parseInt(t.parse());
   },
   gVar(leftBracket, name, rightBracket) {
-    return name.parse() as string;
+    return name.parse() as number;
   },
 
   // LogicBlock_IF(IF, LogicBlock1, ELSEIFs, LogicBlock2s, ELSE, LogicBlock3, END) {

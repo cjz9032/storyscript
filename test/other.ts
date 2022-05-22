@@ -14,9 +14,19 @@ export const convertDeclare = (declare: StoryDeclare, res: StoryModel) => {
     : '';
 };
 
-const _cbFnCall = (fnName, args) => {
+const _sayCbFnCall = (fnName, args) => {
   // more detail opt
-  return `${fnName}(${args.map((arg, idx) => `"${arg.replaceAll('\n', '')}"`).join(',')});`;
+  return `${fnName}(t, ${args
+    .map((arg, idx) => `"${arg.replaceAll(/\\r\\n\s+/g, '\\r\\n').replaceAll('\n', '')}"`)
+    .join(',')});`;
+};
+
+const _commonCbFnCall = (fnName, args) => {
+  // more detail opt
+  return `${fnName}(${args.map((arg, idx) => `${typeof arg === 'number' ? arg : `"${arg}"`}`).join(',')})`;
+};
+const _commonCbFnCallWithEnd = (a, b) => {
+  return _commonCbFnCall(a, b) + ';';
 };
 
 const convertSay = (say: SayContentWrap, res: StoryModel) => {
@@ -24,18 +34,18 @@ const convertSay = (say: SayContentWrap, res: StoryModel) => {
   return act
     .map((content) => {
       if (content.type === 'SayText') {
-        return _cbFnCall('Say2Content', ['text', content.text]);
+        return _sayCbFnCall('Say2Content', ['text', content.text]);
       } else if (content.type === 'SayBindingWrap') {
         if (content.sayBindingBtn) {
-          return _cbFnCall('Say2Content', [
+          return _sayCbFnCall('Say2Content', [
             'sayBindingBtn',
             content.sayBindingBtn.text,
             content.sayBindingBtn.fnInfo.name,
           ]);
         } else if (content.sayStrBindingLVar) {
-          return _cbFnCall('Say2Content', ['sayStrBindingLVar', content.sayStrBindingLVar.lVar]);
+          return _sayCbFnCall('Say2Content', ['sayStrBindingLVar', content.sayStrBindingLVar.lVar]);
         } else if (content.sayBindingText) {
-          return _cbFnCall('Say2Content', ['sayBindingText', content.sayBindingText]);
+          return _sayCbFnCall('Say2Content', ['sayBindingText', content.sayBindingText]);
         }
       } else if (content.type === 'comment') {
         return `// ${content.value}`;
@@ -47,15 +57,65 @@ const convertSay = (say: SayContentWrap, res: StoryModel) => {
 };
 
 const convertAct = (act: ActContentWrap, res: StoryModel) => {
-  const { content, type } = act;
-  if (content.type === 'Goto') {
-    return `
-      Goto(${content.fnInfo.name});
-    `;
-  } else if (content.type === 'XXACT') {
-    // todo action more
+  const { content } = act;
+  return content
+    .map((t) => {
+      if (t.type === 'Goto') {
+        return `
+      // goto
+      ${t.fnInfo.name}();
+      `;
+      } else if (t.type === 'Break') {
+        return `
+      // break
+      return;`;
+      } else if (t.type === 'TakeItem') {
+        return _commonCbFnCallWithEnd('SuperSc.TakeItem', [t.itemName, t.quantity]);
+      } else if (t.type === 'SetGVar') {
+        return _commonCbFnCallWithEnd('SuperSc.SetGVar', [t.name, t.value]);
+      } else {
+        console.error(content);
+        throw new Error('no convertAct');
+      }
+    })
+    .join('\r\n');
+};
+
+const convertAll = (acs: ActionBlock[], res: StoryModel) => {
+  return acs
+    ? acs
+        .map((direct) => {
+          if (direct.type === 'ActContent') {
+            return convertAct(direct, res);
+          } else if (direct.type === 'SayContent') {
+            return convertSay(direct, res);
+          } else {
+            console.error(direct);
+            throw new Error('no convertFns');
+          }
+        })
+        .join('\r\n')
+    : '';
+};
+
+const convertExp = (exp: IF['exp'], res: StoryModel) => {
+  if (typeof exp === 'boolean') {
+    return exp.toString();
   } else {
-    console.error('no convertAct', content);
+    return exp
+      .map((t) => {
+        if (t.type === 'RandomIs') {
+          return _commonCbFnCall('SuperSc.RandomIs', [t.detect]);
+        } else if (t.type === 'CheckGVar') {
+          return _commonCbFnCall('SuperSc.CheckGVar', [t.name, t.value]);
+        } else if (t.type === 'Checkgold') {
+          return _commonCbFnCall('SuperSc.Checkgold', [t.quantity]);
+        } else {
+          console.error(t);
+          throw new Error('no convertExp');
+        }
+      })
+      .join(' && ');
   }
 };
 
@@ -64,20 +124,34 @@ export const convertFns = (fnBlocks: FnBlocks[], res: StoryModel) => {
     return fnBlock.fnBlocks
       .map((fnBlock) => {
         return `
-      public void ${fnBlock.info.name}()
+      public ${fnBlock.info.name === '@main' ? 'override' : ''} void ${fnBlock.info.name}()
       {
-        ${fnBlock.content.directs.map((direct) => {
-          if (direct.type === 'ActContent') {
-            return convertAct(direct, res);
-          } else if (direct.type === 'SayContent') {
-            return convertSay(direct, res);
-          } else {
-            console.error('no convertFns', direct);
-          }
-        })}
+        // directs
+        ${convertAll(fnBlock.content.directs, res)}
+        // ifs
+        ${(fnBlock.content.ifs || [])
+          .map((tif) => {
+            if (tif.type === 'IfWrap_UselessIf') {
+              return `
+            // IfWrap_UselessIf
+            ${convertAll(tif.then, res)}`;
+            } else if (tif.type === 'IfWrap_IfElse') {
+              return `
+            // IfWrap_IfElse
+            if(${convertExp(tif.exp, res)})
+            {
+              ${convertAll(tif.then, res)}
+            }
+            else {
+              ${convertAll(tif.else, res)}
+            }
+            `;
+            }
+          })
+          .join('\r\n')}
       }`;
       })
-      .join('\n\n');
+      .join('\r\n');
   });
   // return declare
   //   ? `
@@ -86,4 +160,10 @@ export const convertFns = (fnBlocks: FnBlocks[], res: StoryModel) => {
   //     };
   //   `
   //   : '';
+};
+
+export const convertGoods = (goodsBlock: GoodsBlock, res: StoryModel) => {
+  return goodsBlock.goodsItemList.map((b) => {
+    return `${b.itemName} ${b.price}`;
+  });
 };
