@@ -1,3 +1,4 @@
+import { sortBy } from 'lodash';
 export const convertDeclare = (declare: StoryDeclare, res: StoryModel) => {
   return declare
     ? `
@@ -36,16 +37,13 @@ const convertSay = (say: SayContentWrap, res: StoryModel) => {
       if (content.type === 'SayText') {
         return _sayCbFnCall('Say2Content', ['text', content.text]);
       } else if (content.type === 'SayBindingWrap') {
-        if (content.sayBindingBtn) {
-          return _sayCbFnCall('Say2Content', [
-            'sayBindingBtn',
-            content.sayBindingBtn.text,
-            content.sayBindingBtn.fnInfo.name,
-          ]);
-        } else if (content.sayStrBindingLVar) {
-          return _sayCbFnCall('Say2Content', ['sayStrBindingLVar', content.sayStrBindingLVar.lVar]);
-        } else if (content.sayBindingText) {
-          return _sayCbFnCall('Say2Content', ['sayBindingText', content.sayBindingText]);
+        const cc = content.content;
+        if (cc.type === 'SayBindingBtn') {
+          return _sayCbFnCall('Say2Content', ['sayBindingBtn', cc.text, cc.fnInfo.name]);
+        } else if (cc.type === 'SayStrBindingLVar') {
+          return _sayCbFnCall('Say2Content', ['sayStrBindingLVar', cc.lVar]);
+        } else if (cc.type === 'sayBindingText') {
+          return _sayCbFnCall('Say2Content', ['sayBindingText', cc.value]);
         }
       } else if (content.type === 'comment') {
         return `// ${content.value}`;
@@ -58,9 +56,14 @@ const convertSay = (say: SayContentWrap, res: StoryModel) => {
 
 const convertAct = (act: ActContentWrap, res: StoryModel) => {
   const { content } = act;
-  return content
+  return (content || [])
     .map((t) => {
-      if (t.type === 'Goto') {
+      if (t.type === 'CloseWindow') {
+        return `
+        SuperSc.CloseWindow();
+          return;
+        `;
+      } else if (t.type === 'Goto') {
         return `
       // goto
       ${t.fnInfo.name}();
@@ -69,10 +72,40 @@ const convertAct = (act: ActContentWrap, res: StoryModel) => {
         return `
       // break
       return;`;
+      } else if (t.type === 'BreakTimeRecall') {
+        return `
+        SuperSc.BreakTimeRecall();
+        `;
       } else if (t.type === 'TakeItem') {
         return _commonCbFnCallWithEnd('SuperSc.TakeItem', [t.itemName, t.quantity]);
       } else if (t.type === 'SetGVar') {
         return _commonCbFnCallWithEnd('SuperSc.SetGVar', [t.name, t.value]);
+      } else if (t.type === 'MoveMapPos') {
+        return _commonCbFnCallWithEnd('SuperSc.SetGVar', [t.mapName, t.x, t.y]);
+      } else if (t.type === 'Takecheckitem') {
+        return _commonCbFnCallWithEnd('SuperSc.Takecheckitem', []);
+      } else if (t.type === 'GiveItem') {
+        return _commonCbFnCallWithEnd('SuperSc.GiveItem', [t.itemName, t.quantity]);
+      } else if (t.type === 'ResetGVar') {
+        return _commonCbFnCallWithEnd('SuperSc.ResetGVar', [t.gVar, t.gVarRange]);
+      } else if (t.type === 'TakeItemw_normal') {
+        return _commonCbFnCallWithEnd('SuperSc.TakeItemw_normal', [t.itemName, t.quantity]);
+      } else if (t.type === 'TakeItemw_wears') {
+        return _commonCbFnCallWithEnd('SuperSc.TakeItemw_wears', [t.WearPlaceName]);
+      } else if (t.type === 'MoveMap') {
+        return _commonCbFnCallWithEnd('SuperSc.MoveMap', [t.mapName]);
+      } else if (t.type === 'comment') {
+        return `// ${t.value}`;
+      } else if (t.type === 'MoveLVar') {
+        return _commonCbFnCallWithEnd('SuperSc.MoveLVar', [t.lVar, t.lVarRange]);
+      } else if (t.type === 'MoveLVarRandom') {
+        return _commonCbFnCallWithEnd('SuperSc.MoveLVarRandom', [t.lVar, t.lVarRange]);
+      } else if (t.type === 'IncLVar') {
+        return _commonCbFnCallWithEnd('SuperSc.IncLVar', [t.lVar, t.lVarRange]);
+      } else if (t.type === 'DecLVar') {
+        return _commonCbFnCallWithEnd('SuperSc.DecLVar', [t.lVar, t.lVarRange]);
+      } else if (t.type === 'Playdice') {
+        return _commonCbFnCallWithEnd('SuperSc.Playdice', [t.number, t.fnInfo.name]);
       } else {
         console.error(content);
         throw new Error('no convertAct');
@@ -104,12 +137,27 @@ const convertExp = (exp: IF['exp'], res: StoryModel) => {
   } else {
     return exp
       .map((t) => {
-        if (t.type === 'RandomIs') {
-          return _commonCbFnCall('SuperSc.RandomIs', [t.detect]);
-        } else if (t.type === 'CheckGVar') {
-          return _commonCbFnCall('SuperSc.CheckGVar', [t.name, t.value]);
-        } else if (t.type === 'Checkgold') {
-          return _commonCbFnCall('SuperSc.Checkgold', [t.quantity]);
+        if (t.type) {
+          const sort = ['name', 'itemName', 'value', 'quantity', 'dayTime', 'WearPlaceName', 'lVar', 'lVarRange'];
+
+          if (t.type) {
+            let args: string[] = [];
+            for (const s in t) {
+              if (s === 'type') continue;
+              if (!sort.includes(s)) {
+                console.error(s);
+                throw new Error('no args');
+              }
+              args.push(t[s]);
+            }
+            // sort
+            args = sortBy(args, [
+              function (o) {
+                return sort.indexOf(o);
+              },
+            ]);
+            if (sort) return _commonCbFnCall(`SuperSc.${t.type}`, args);
+          }
         } else {
           console.error(t);
           throw new Error('no convertExp');
@@ -163,7 +211,14 @@ export const convertFns = (fnBlocks: FnBlocks[], res: StoryModel) => {
 };
 
 export const convertGoods = (goodsBlock: GoodsBlock, res: StoryModel) => {
-  return goodsBlock.goodsItemList.map((b) => {
-    return `${b.itemName} ${b.price}`;
-  });
+  return `
+  public static List<GoodsItem> goodsItems = new List<GoodsItem>(new GoodsItem[]
+    {
+      ${(goodsBlock?.goodsItemList || [])
+        .map((b) => {
+          return `new ${_commonCbFnCall('GoodsItem', [b.itemName, b.price, b.time])},`;
+        })
+        .join('\r\n')}
+    }
+  `;
 };

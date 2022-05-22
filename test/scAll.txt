@@ -1,0 +1,55 @@
+
+  #region
+  
+        public class NpcScript_test: NpcScriptBase
+        {
+          // props
+          
+    public int dPercent = 100;
+
+    public int[] declareDetails = new int[] { 
+        
+      };  
+
+    public string[] declareFns = new string[] { 
+      
+    }; 
+    
+          // goods
+          
+  public static List<GoodsItem> goodsItems = new List<GoodsItem>(new GoodsItem[]
+    {
+      
+    }
+  
+          // fns that 
+          
+      public override void @main()
+      {
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(SuperSc.EqualLVar("p9",0))
+            {
+              
+      // goto
+      @main-1();
+      
+
+        SuperSc.BreakTimeRecall();
+        
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+      }
+        }
+        
+  #endregion
+  

@@ -82,7 +82,7 @@ const obj = {
     };
   },
   ActContentWrap(_s, _c, ActContent) {
-    return ActContent;
+    return ActContent.parse();
   },
   ActContent(action) {
     return {
@@ -96,13 +96,14 @@ const obj = {
   sayBindingWrap(_s1, sayStrBindingLVar, sayBindingBtn, sayBindingText, _s2) {
     return {
       type: 'SayBindingWrap',
-      sayStrBindingLVar: sayStrBindingLVar.parse() as ReturnType<typeof obj.sayStrBindingLVar>,
-      sayBindingBtn: sayBindingBtn.parse() as ReturnType<typeof obj.sayBindingBtn>,
-      sayBindingText: sayBindingText.parse() as ReturnType<typeof obj.sayBindingText>,
+      content: sayBindingBtn.parse() || sayBindingText.parse() || sayBindingText.parse(),
     };
   },
-  sayBindingText($, gconst): GAME_CONST {
-    return gconst.parse();
+  sayBindingText($, gconst): sayBindingText {
+    return {
+      type: 'sayBindingText',
+      value: gconst.parse(),
+    };
   },
   sayText(a) {
     return {
@@ -115,12 +116,14 @@ const obj = {
   },
   sayStrBindingLVar(_$str, lVar, _r) {
     return {
+      type: 'sayStrBindingLVar',
       format: '$STR',
       lVar: lVar.parse() as ReturnType<typeof obj.lVar>,
     };
   },
   sayBindingBtn(sayTextChars, _A, fnBkName) {
     return {
+      type: 'SayBindingBtn',
       fnInfo: {
         isCallback: false,
         name: fnBkName.parse(),
@@ -137,7 +140,9 @@ const obj = {
     };
   },
   lVar(pd, num) {
-    return ((pd.parse() as string).toLocaleLowerCase() + num) as string;
+    const str = pd.parse();
+    const res = str + num.parse().toString();
+    return res;
   },
   IfWrap_UselessIf(_header, ThenDoWrap, ElseDoWrap) {
     return {
@@ -176,7 +181,11 @@ const obj = {
       dayTime: dayTime.parse().toLowerCase() as DAY_TIME,
     };
   },
-
+  Takecheckitem(_t) {
+    return {
+      type: 'Takecheckitem',
+    };
+  },
   EqualLVar(_t, lVar, lVarRange) {
     return {
       type: 'EqualLVar',
@@ -345,7 +354,7 @@ const obj = {
   Checklevel(_t, quantity) {
     return {
       type: 'Checklevel',
-      level: quantity.parse(),
+      value: quantity.parse(),
     };
   },
   ResetGVar(_t, gVar, gVarRange) {
@@ -364,8 +373,8 @@ const obj = {
   },
   Checkjob(_t, jobsEnum) {
     return {
-      type: 'Checkitem',
-      jobsEnum: jobsEnum.parse(),
+      type: 'Checkjob',
+      value: jobsEnum.parse(),
     };
   },
   jobsEnum(job) {
@@ -374,8 +383,8 @@ const obj = {
   Checkunit(_t, gVar, gVarRange) {
     return {
       type: 'Checkunit',
-      gVar: gVar.parse(),
-      gVarRange: gVarRange.parse(),
+      name: gVar.parse(),
+      value: gVarRange.parse(),
     };
   },
   TakeItemw_normal(_t, itemName, quantity) {
@@ -387,14 +396,14 @@ const obj = {
   },
   TakeItemw_wears(_t, WearPlaceName) {
     return {
-      type: 'TakeItemw_normal',
+      type: 'TakeItemw_wears',
       WearPlaceName: WearPlaceName.parse(),
     };
   },
   CheckGender(_t, gender) {
     return {
       type: 'CheckGender',
-      gender: gender.parse(),
+      value: gender.parse(),
     };
   },
   Istakeitem(_t, itemName) {
@@ -456,7 +465,7 @@ const obj = {
     return {
       type: 'RandomIs',
       // range: [0, 100],
-      detect: num.parse(),
+      value: num.parse(),
     };
   },
   Goto(_Header, fn) {
@@ -466,6 +475,21 @@ const obj = {
         isCallback: false,
         name: fn.parse(),
       },
+    };
+  },
+  CloseWindow(_Header) {
+    return {
+      type: 'CloseWindow',
+    };
+  },
+  Checkbaggage(_Header) {
+    return {
+      type: 'Checkbaggage',
+    };
+  },
+  BreakTimeRecall(_Header) {
+    return {
+      type: 'BreakTimeRecall',
     };
   },
   DoBreak(_Headaer) {
@@ -496,7 +520,7 @@ const obj = {
   goodsItem(_noLineSpace, itemName, _noLineSpace2, price, _noLineSpace3, time, _noLineSpace4, _newLine) {
     return {
       type: 'goodsItem',
-      itemName: price.parse(),
+      itemName: itemName.parse(),
       price: price.parse(),
       time: time.parse(),
     };
