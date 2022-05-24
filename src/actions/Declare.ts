@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+const _prepareFnName = (n: string) => {
+  n = n.match(/^\d/gi) ? `NUM_${n}` : `${n}`;
+  return n ? '@' + n.replace('-', '_').toLocaleLowerCase() : '@main';
+};
 export default {
   Declare(Comment, parenthesesL, decItemsList, parenthesesR, DDPercent, DeclareDetailsWrap) {
     var ret: any[] = [];
@@ -36,13 +39,17 @@ export default {
     });
     return tmp;
   },
+  functionNameGoto(atSymbol, chars) {
+    let n = chars.parse();
+    return _prepareFnName(n);
+  },
   functionName(atSymbol, chars) {
-    const n = chars.parse();
-    return '@' + n;
+    let n = chars.parse();
+    return _prepareFnName(n);
   },
   functionNameSPNO(atSymbol, chars) {
-    const n = chars.parse();
-    return '@' + n;
+    let n = chars.parse();
+    return _prepareFnName(n);
   },
   DDPercent(unit, number) {
     const tmp = number.parse();

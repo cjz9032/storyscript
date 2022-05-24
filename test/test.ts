@@ -59,12 +59,10 @@ fs.writeFileSync(
   path.join(__dirname, './scBaseNameMap.txt'),
   resultMap
     .map(
-      (t) => `
-
-{"${t[0]}", new NpcScript_${t[0]}()}
-`
+      (t) => `{"${t[0]}", new NpcScript_${t[0]}()}
+  `
     )
-    .join('\n')
+    .join(',')
 );
 
 fs.writeFileSync(

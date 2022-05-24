@@ -53,7 +53,7 @@ BKS {
         sayStrBindingLVar =  "$STR("lVar")" //  <$STR(D0)> \
         sayText = (sayNewLine | sayTextChars | "\r"|"\n"| "/" )+
         sayNewLine = "\\"
-        sayTextChars = (~"[") (letter|number | "《" |  "　" | "》"  | "－" | "[" | "]" | "^"  | "_" | "。"| "…"  | "、" | "，" | "+"  | "\"" | "。"|"？"| "?"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "  | "->" | "-" | "{" | "}" | ":" | "%" | "~" | "“" | "”" | "：" | "'" | "；")
+        sayTextChars = (~("[@" | "[goods"| "[~")) (letter|number | "《" |  "　" | "》"  | "－" | "[" | "]" | "^"  | "_" | "。"| "…"  | "、" | "，" | "+"  | "\"" | "。"|"？"| "?"  | "！" | "!"| "@" | "." | "," | "(" | ")" |"（" | "）" | " "  | "->" | "-" | "{" | "}" | ":" | "%" | "~" | "“" | "”" | "：" | "'" | "；")
         ActContent =  (
           MonGen 
         | Takecheckitem 
@@ -158,7 +158,7 @@ BKS {
     MoveMapPos = caseInsensitive<"mapmove"> mapName number number
     
     MonClear = caseInsensitive<"monclear"> mapName
-    Goto = caseInsensitive<"goto"> functionName
+    Goto = caseInsensitive<"goto"> functionNameGoto
     BreakTimeRecall = caseInsensitive<"BreakTimeRecall">
     MoveMap = caseInsensitive<"Map"> mapName
     mapName = (letter|number)+
@@ -178,7 +178,8 @@ BKS {
   DDPercent = "%"number
   
   decItems = listOf<functionName, " "+>
-  functionName = "@"? (letter|number|"_"|"-")+
+  functionNameGoto = "@"? (letter|number|"_"|"-")+
+  functionName = "@" (letter|number|"_"|"-")+
   functionNameSPNO = "@"? (letter|number|"_"|"-")*
 
   

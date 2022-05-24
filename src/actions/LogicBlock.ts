@@ -29,16 +29,6 @@ enum DAY_TIME {
   night = 'night',
 }
 
-enum DayofWeek {
-  Sunday = 'Sunday',
-  Monday = 'Monday',
-  Tuesday = 'Tuesday',
-  Wednesday = 'Wednesday',
-  Thursday = 'Thursday',
-  Friday = 'Friday',
-  Saturday = 'Saturday',
-}
-
 const obj = {
   LogicBlock_FnBlocks(FnBlocks) {
     return {
@@ -63,7 +53,7 @@ const obj = {
   fnBkName_Callback(a, name): FnNameInfo {
     return {
       isCallback: true,
-      name: name.parse() as string,
+      name: (name.parse() + '_CB') as string,
     };
   },
   // FnContent is wrap
@@ -108,7 +98,7 @@ const obj = {
   sayText(a) {
     return {
       type: 'SayText',
-      text: a.parse() as string,
+      text: a.parse().replace(/\r\n/g, '').replace(/"/g, '\\"') as string,
     };
   },
   sayNewLine(a) {
@@ -290,16 +280,19 @@ const obj = {
   },
   Param1(_t, mapName) {
     return {
+      type: 'Param1',
       mapName: mapName.parse(),
     };
   },
   Param2(_t, x) {
     return {
+      type: 'Param2',
       x: x.parse(),
     };
   },
   Param3(_t, y) {
     return {
+      type: 'Param3',
       y: y.parse(),
     };
   },
@@ -332,6 +325,11 @@ const obj = {
       mapName: mapName.parse(),
     };
   },
+  Batchmove(_t) {
+    return {
+      type: 'Batchmove',
+    };
+  },
   Checkluckypoint(_t, number) {
     return {
       type: 'Checkluckypoint',
@@ -348,7 +346,7 @@ const obj = {
     return {
       type: 'CheckHour',
       hour: hour.parse(),
-      hour2: hour2.parse(),
+      hour2: hour2.parse() ? +hour2.parse() : null,
     };
   },
   Checklevel(_t, quantity) {
@@ -477,6 +475,7 @@ const obj = {
       },
     };
   },
+
   CloseWindow(_Header) {
     return {
       type: 'CloseWindow',

@@ -24,7 +24,9 @@ const _sayCbFnCall = (fnName, args) => {
 
 const _commonCbFnCall = (fnName, args) => {
   // more detail opt
-  return `${fnName}(${args.map((arg, idx) => `${typeof arg === 'number' ? arg : `"${arg}"`}`).join(',')})`;
+  return `${fnName}(${args
+    .map((arg, idx) => `${arg === null ? 'null' : typeof arg === 'number' ? arg : `"${arg}"`}`)
+    .join(',')})`;
 };
 const _commonCbFnCallWithEnd = (a, b) => {
   return _commonCbFnCall(a, b) + ';';
@@ -61,7 +63,6 @@ const convertAct = (act: ActContentWrap, res: StoryModel) => {
       if (t.type === 'CloseWindow') {
         return `
         SuperSc.CloseWindow();
-          return;
         `;
       } else if (t.type === 'Goto') {
         return `
@@ -81,7 +82,7 @@ const convertAct = (act: ActContentWrap, res: StoryModel) => {
       } else if (t.type === 'SetGVar') {
         return _commonCbFnCallWithEnd('SuperSc.SetGVar', [t.name, t.value]);
       } else if (t.type === 'MoveMapPos') {
-        return _commonCbFnCallWithEnd('SuperSc.SetGVar', [t.mapName, t.x, t.y]);
+        return _commonCbFnCallWithEnd('SuperSc.MoveMapPos', [t.mapName, t.x, t.y]);
       } else if (t.type === 'Takecheckitem') {
         return _commonCbFnCallWithEnd('SuperSc.Takecheckitem', []);
       } else if (t.type === 'GiveItem') {
@@ -106,6 +107,32 @@ const convertAct = (act: ActContentWrap, res: StoryModel) => {
         return _commonCbFnCallWithEnd('SuperSc.DecLVar', [t.lVar, t.lVarRange]);
       } else if (t.type === 'Playdice') {
         return _commonCbFnCallWithEnd('SuperSc.Playdice', [t.number, t.fnInfo.name]);
+      } else if (t.type === 'BatchDelay') {
+        return _commonCbFnCallWithEnd('SuperSc.BatchDelay', [t.number]);
+      } else if (t.type === 'Addbatch') {
+        return _commonCbFnCallWithEnd('SuperSc.Addbatch', [t.mapName]);
+      } else if (t.type === 'Batchmove') {
+        return _commonCbFnCallWithEnd('SuperSc.Batchmove', []);
+      } else if (t.type === 'TimeRecallByMins') {
+        return _commonCbFnCallWithEnd('SuperSc.TimeRecallByMins', [t.quantity]);
+      } else if (t.type === 'SumVar_SumTwoVars') {
+        return _commonCbFnCallWithEnd('SuperSc.SumVar_SumTwoVars', [t.lVar, t.lVar2]);
+      } else if (t.type === 'SumVar_SumToTarget') {
+        return _commonCbFnCallWithEnd('SuperSc.SumVar_SumToTarget', [t.lVar]);
+      } else if (t.type === 'ExchangeMap') {
+        return _commonCbFnCallWithEnd('SuperSc.ExchangeMap', [t.mapName]);
+      } else if (t.type === 'Recallmap') {
+        return _commonCbFnCallWithEnd('SuperSc.Recallmap', [t.mapName]);
+      } else if (t.type === 'MonClear') {
+        return _commonCbFnCallWithEnd('SuperSc.MonClear', [t.mapName]);
+      } else if (t.type === 'Param1') {
+        return _commonCbFnCallWithEnd('SuperSc.Param1', [t.mapName]);
+      } else if (t.type === 'Param2') {
+        return _commonCbFnCallWithEnd('SuperSc.Param2', [t.x]);
+      } else if (t.type === 'Param3') {
+        return _commonCbFnCallWithEnd('SuperSc.Param3', [t.y]);
+      } else if (t.type === 'MonGen') {
+        return _commonCbFnCallWithEnd('SuperSc.MonGen', [t.monsterName, t.range, t.quantity]);
       } else {
         console.error(content);
         throw new Error('no convertAct');
@@ -138,25 +165,45 @@ const convertExp = (exp: IF['exp'], res: StoryModel) => {
     return exp
       .map((t) => {
         if (t.type) {
-          const sort = ['name', 'itemName', 'value', 'quantity', 'dayTime', 'WearPlaceName', 'lVar', 'lVarRange'];
+          const sort = [
+            'mapName',
+            'name',
+            'itemName',
+            'value',
+            'quantity',
+            'dayTime',
+            'WearPlaceName',
+            'lVar',
+            'lVarRange',
+            'day',
+            'hour',
+            'hour2',
+          ];
 
           if (t.type) {
-            let args: string[] = [];
+            let args: any[] = [];
             for (const s in t) {
               if (s === 'type') continue;
               if (!sort.includes(s)) {
                 console.error(s);
                 throw new Error('no args');
               }
-              args.push(t[s]);
+              args.push([s, t[s]]);
             }
             // sort
             args = sortBy(args, [
               function (o) {
-                return sort.indexOf(o);
+                return sort.indexOf(o[0]);
               },
             ]);
-            if (sort) return _commonCbFnCall(`SuperSc.${t.type}`, args);
+            if (sort)
+              return `
+                // ${args.map((t) => [0]).join(',')}
+                ${_commonCbFnCall(
+                  `SuperSc.${t.type}`,
+                  args.map((t) => t[1])
+                )}
+              `;
           }
         } else {
           console.error(t);
@@ -168,10 +215,11 @@ const convertExp = (exp: IF['exp'], res: StoryModel) => {
 };
 
 export const convertFns = (fnBlocks: FnBlocks[], res: StoryModel) => {
-  return fnBlocks.map((fnBlock) => {
-    return fnBlock.fnBlocks
-      .map((fnBlock) => {
-        return `
+  return fnBlocks
+    .map((fnBlock) => {
+      return fnBlock.fnBlocks
+        .map((fnBlock) => {
+          return `
       public ${fnBlock.info.name === '@main' ? 'override' : ''} void ${fnBlock.info.name}()
       {
         // directs
@@ -198,9 +246,10 @@ export const convertFns = (fnBlocks: FnBlocks[], res: StoryModel) => {
           })
           .join('\r\n')}
       }`;
-      })
-      .join('\r\n');
-  });
+        })
+        .join('\r\n');
+    })
+    .join('\r\n');
   // return declare
   //   ? `
   //     public int[] declareFns = new string[] {
@@ -220,5 +269,6 @@ export const convertGoods = (goodsBlock: GoodsBlock, res: StoryModel) => {
         })
         .join('\r\n')}
     }
+  );
   `;
 };

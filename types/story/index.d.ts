@@ -43,6 +43,16 @@ interface FnNameInfo {
   name: string;
 }
 
+enum DayofWeek {
+  Sunday = 'Sunday',
+  Monday = 'Monday',
+  Tuesday = 'Tuesday',
+  Wednesday = 'Wednesday',
+  Thursday = 'Thursday',
+  Friday = 'Friday',
+  Saturday = 'Saturday',
+}
+
 type WearPlaceName = 'NECKLACE' | 'RING';
 
 interface CheckWrap {
@@ -118,10 +128,21 @@ interface CheckWrap {
     type: 'Checkbaggage';
   };
 
+  CheckDayofweek: {
+    type: 'CheckDayofweek';
+    day: DayofWeek;
+  };
+
   EqualLVar: {
     type: 'Checkbaggage';
     lVar: string;
     lVarRange: number;
+  };
+
+  CheckHour: {
+    type: 'CheckHour';
+    hour: number;
+    hour2: number;
   };
 }
 
@@ -226,6 +247,72 @@ interface AcsWrap {
     type: 'Playdice';
     number: number;
     fnInfo: FnNameInfo;
+  };
+
+  BatchDelay: {
+    type: 'BatchDelay';
+    number: number;
+  };
+
+  Addbatch: {
+    type: 'Addbatch';
+    mapName: string;
+  };
+
+  Batchmove: {
+    type: 'Batchmove';
+  };
+  TimeRecallByMins: {
+    type: 'TimeRecallByMins';
+    quantity: number;
+  };
+
+  SumVar_SumTwoVars: {
+    type: 'SumVar_SumTwoVars';
+    lVar: string;
+    lVar2: string;
+  };
+
+  SumVar_SumToTarget: {
+    type: 'SumVar_SumToTarget';
+    lVar: string;
+  };
+
+  ExchangeMap: {
+    type: 'ExchangeMap';
+    mapName: string;
+  };
+
+  Recallmap: {
+    type: 'Recallmap';
+    mapName: string;
+  };
+
+  MonClear: {
+    type: 'MonClear';
+    mapName: string;
+  };
+
+  Param1: {
+    type: 'Param1';
+    mapName: string;
+  };
+
+  Param2: {
+    type: 'Param2';
+    x: number;
+  };
+
+  Param3: {
+    type: 'Param3';
+    y: number;
+  };
+
+  MonGen: {
+    type: 'MonGen';
+    monsterName: string;
+    range: number;
+    quantity: number;
   };
 
   Comment_single: Comment_single;
