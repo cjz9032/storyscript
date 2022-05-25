@@ -1,4 +1,4 @@
-import { sortBy } from 'lodash';
+import { sortBy, flattenDeep } from 'lodash';
 export const convertDeclare = (declare: StoryDeclare, res: StoryModel) => {
   return declare
     ? `
@@ -222,6 +222,7 @@ export const convertFns = (fnBlocks: FnBlocks[], res: StoryModel) => {
           return `
       public ${fnBlock.info.name === '@main' ? 'override' : ''} void ${fnBlock.info.name}()
       {
+        onFnStart();
         // directs
         ${convertAll(fnBlock.content.directs, res)}
         // ifs
@@ -245,6 +246,7 @@ export const convertFns = (fnBlocks: FnBlocks[], res: StoryModel) => {
             }
           })
           .join('\r\n')}
+          onFnEnd();
       }`;
         })
         .join('\r\n');
@@ -257,6 +259,26 @@ export const convertFns = (fnBlocks: FnBlocks[], res: StoryModel) => {
   //     };
   //   `
   //   : '';
+};
+
+export const convertFnMaps = (fnBlocks: FnBlocks[], res: StoryModel) => {
+  const all = flattenDeep(
+    fnBlocks.map((fnBlock) => {
+      return fnBlock.fnBlocks.map((fnBlock) => {
+        return fnBlock.info.name;
+      });
+    })
+  );
+  return `
+  public override void callFnMaps(string fnName){
+    switch(fnName){
+      ${all.map((fnName) => `case "${fnName}": ${fnName}(); break;`).join('\r\n')}
+      default:
+        base.@quit();
+        break;
+    }
+  }
+  `;
 };
 
 export const convertGoods = (goodsBlock: GoodsBlock, res: StoryModel) => {

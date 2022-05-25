@@ -186,5 +186,4 @@
   ,{"SlaveCaveNPC_0148", new NpcScript_SlaveCaveNPC_0148()}
   ,{"spawn_0139", new NpcScript_spawn_0139()}
   ,{"test_r001", new NpcScript_test_r001()}
-  ,{"test", new NpcScript_test()}
   

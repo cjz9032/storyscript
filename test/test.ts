@@ -1,4 +1,4 @@
-import { convertDeclare, convertFns, convertGoods } from './other';
+import { convertDeclare, convertFnMaps, convertFns, convertGoods } from './other';
 import StoryScript from '../src/st2';
 import clipboard from 'clipboardy';
 import fs from 'fs-extra';
@@ -21,7 +21,7 @@ const txts = paths.map((p) => {
 });
 txts
   .filter((t) => {
-    return isTest ? t.p.path.includes('test.txt') : true;
+    return isTest ? t.p.path.includes('test.txt') : !t.p.path.includes('test.txt');
   })
   .forEach(({ txt, p }) => {
     const story = new StoryScript();
@@ -47,6 +47,8 @@ txts
           ${convertGoods(goodsBlock[0], res)}
           // fns 
           ${convertFns(fnBlocks, res)}
+          // btns maps
+          ${convertFnMaps(fnBlocks, res)}
         }
         `;
     resultMap.push([id, str]);
