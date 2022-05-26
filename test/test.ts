@@ -41,6 +41,7 @@ txts
     var str = `
         public class NpcScript_${id}: NpcScriptBase
         {
+          public string scName = "${id}";
           // declare
           ${convertDeclare(res.declare, res)}
           // goods

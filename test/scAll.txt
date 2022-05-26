@@ -3,6 +3,7 @@
   
         public class NpcScript_1Ame_3: NpcScriptBase
         {
+          public string scName = "1Ame_3";
           // declare
           
     public int dPercent = 100;
@@ -270,6 +271,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_1Bme_0: NpcScriptBase
         {
+          public string scName = "1Bme_0";
           // declare
           
     public int dPercent = 100;
@@ -362,6 +364,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_1Bme_0102: NpcScriptBase
         {
+          public string scName = "1Bme_0102";
           // declare
           
     public int dPercent = 100;
@@ -769,6 +772,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_1Gme_0: NpcScriptBase
         {
+          public string scName = "1Gme_0";
           // declare
           
     public int dPercent = 100;
@@ -1073,6 +1077,7 @@ case "@meathelp": @meathelp(); break;
 
         public class NpcScript_1Mme_3: NpcScriptBase
         {
+          public string scName = "1Mme_3";
           // declare
           
     public int dPercent = 100;
@@ -1570,6 +1575,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_1Tme_0: NpcScriptBase
         {
+          public string scName = "1Tme_0";
           // declare
           
     public int dPercent = 100;
@@ -1875,6 +1881,7 @@ case "@meathelp": @meathelp(); break;
 
         public class NpcScript_2Are_0151: NpcScriptBase
         {
+          public string scName = "2Are_0151";
           // declare
           
     public int dPercent = 100;
@@ -1930,6 +1937,7 @@ Say2Content(t, "text","\r\n");
 
         public class NpcScript_2Awe_0151: NpcScriptBase
         {
+          public string scName = "2Awe_0151";
           // declare
           
     public int dPercent = 100;
@@ -2066,6 +2074,7 @@ case "@qweapon": @qweapon(); break;
 
         public class NpcScript_2Bbl_0: NpcScriptBase
         {
+          public string scName = "2Bbl_0";
           // declare
           
     public int dPercent = 100;
@@ -2525,6 +2534,7 @@ case "@rankundo": @rankundo(); break;
 
         public class NpcScript_2BlackSmith1_2: NpcScriptBase
         {
+          public string scName = "2BlackSmith1_2";
           // declare
           
     public int dPercent = 100;
@@ -2657,6 +2667,7 @@ case "@qweapon": @qweapon(); break;
 
         public class NpcScript_2Bwe_0103: NpcScriptBase
         {
+          public string scName = "2Bwe_0103";
           // declare
           
     public int dPercent = 100;
@@ -3142,6 +3153,7 @@ case "@kang": @kang(); break;
 
         public class NpcScript_2Ewe_D71650: NpcScriptBase
         {
+          public string scName = "2Ewe_D71650";
           // declare
           
     public int dPercent = 200;
@@ -3219,6 +3231,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_2Gwe_0: NpcScriptBase
         {
+          public string scName = "2Gwe_0";
           // declare
           
     public int dPercent = 100;
@@ -3589,6 +3602,7 @@ case "@qweapon": @qweapon(); break;
 
         public class NpcScript_2Mwe_0159: NpcScriptBase
         {
+          public string scName = "2Mwe_0159";
           // declare
           
     public int dPercent = 100;
@@ -3810,6 +3824,7 @@ case "@qweapon": @qweapon(); break;
 
         public class NpcScript_2Swe_0120: NpcScriptBase
         {
+          public string scName = "2Swe_0120";
           // declare
           
     public int dPercent = 100;
@@ -4031,6 +4046,7 @@ case "@qweapon": @qweapon(); break;
 
         public class NpcScript_2Twe_0: NpcScriptBase
         {
+          public string scName = "2Twe_0";
           // declare
           
     public int dPercent = 100;
@@ -4401,6 +4417,7 @@ case "@qweapon": @qweapon(); break;
 
         public class NpcScript_2Wwe_1: NpcScriptBase
         {
+          public string scName = "2Wwe_1";
           // declare
           
     public int dPercent = 100;
@@ -4508,6 +4525,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_2Wwe_1001: NpcScriptBase
         {
+          public string scName = "2Wwe_1001";
           // declare
           
     public int dPercent = 100;
@@ -4627,6 +4645,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Adr_0155: NpcScriptBase
         {
+          public string scName = "3Adr_0155";
           // declare
           
     public int dPercent = 100;
@@ -4775,6 +4794,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Ahe_0155: NpcScriptBase
         {
+          public string scName = "3Ahe_0155";
           // declare
           
     public int dPercent = 100;
@@ -4915,6 +4935,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Bdr_0106: NpcScriptBase
         {
+          public string scName = "3Bdr_0106";
           // declare
           
     public int dPercent = 100;
@@ -5660,6 +5681,7 @@ case "@eppuni_sad_story": @eppuni_sad_story(); break;
 
         public class NpcScript_3Drapers_shop1_0: NpcScriptBase
         {
+          public string scName = "3Drapers_shop1_0";
           // declare
           
     public int dPercent = 100;
@@ -5855,6 +5877,7 @@ case "@pay2": @pay2(); break;
 
         public class NpcScript_3Edr_D514: NpcScriptBase
         {
+          public string scName = "3Edr_D514";
           // declare
           
     public int dPercent = 100;
@@ -5932,6 +5955,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Edr_D608: NpcScriptBase
         {
+          public string scName = "3Edr_D608";
           // declare
           
     public int dPercent = 200;
@@ -6009,6 +6033,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Edr_D71651: NpcScriptBase
         {
+          public string scName = "3Edr_D71651";
           // declare
           
     public int dPercent = 200;
@@ -6086,6 +6111,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Gdr_0: NpcScriptBase
         {
+          public string scName = "3Gdr_0";
           // declare
           
     public int dPercent = 100;
@@ -6232,6 +6258,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Mdr_0149: NpcScriptBase
         {
+          public string scName = "3Mdr_0149";
           // declare
           
     public int dPercent = 100;
@@ -6518,6 +6545,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Mga_0149: NpcScriptBase
         {
+          public string scName = "3Mga_0149";
           // declare
           
     public int dPercent = 100;
@@ -6795,6 +6823,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Mhe_0149: NpcScriptBase
         {
+          public string scName = "3Mhe_0149";
           // declare
           
     public int dPercent = 100;
@@ -7072,6 +7101,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Sdr_2: NpcScriptBase
         {
+          public string scName = "3Sdr_2";
           // declare
           
     public int dPercent = 100;
@@ -7292,6 +7322,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Tdr_0: NpcScriptBase
         {
+          public string scName = "3Tdr_0";
           // declare
           
     public int dPercent = 100;
@@ -7438,6 +7469,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Wdr_1003: NpcScriptBase
         {
+          public string scName = "3Wdr_1003";
           // declare
           
     public int dPercent = 100;
@@ -7556,6 +7588,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_3Wdr_11: NpcScriptBase
         {
+          public string scName = "3Wdr_11";
           // declare
           
     public int dPercent = 150;
@@ -7609,6 +7642,7 @@ Say2Content(t, "text","\r\n");
 
         public class NpcScript_4Adm_0153: NpcScriptBase
         {
+          public string scName = "4Adm_0153";
           // declare
           
     public int dPercent = 100;
@@ -7795,6 +7829,7 @@ case "@helpitem2": @helpitem2(); break;
 
         public class NpcScript_4Adu_0153: NpcScriptBase
         {
+          public string scName = "4Adu_0153";
           // declare
           
     public int dPercent = 100;
@@ -7944,6 +7979,7 @@ case "@num_322": @num_322(); break;
 
         public class NpcScript_4Bdm_0109: NpcScriptBase
         {
+          public string scName = "4Bdm_0109";
           // declare
           
     public int dPercent = 100;
@@ -8296,6 +8332,7 @@ case "@i_will_do_next_time": @i_will_do_next_time(); break;
 
         public class NpcScript_4Bdu_0: NpcScriptBase
         {
+          public string scName = "4Bdu_0";
           // declare
           
     public int dPercent = 100;
@@ -8386,6 +8423,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_4Bdu_0108: NpcScriptBase
         {
+          public string scName = "4Bdu_0108";
           // declare
           
     public int dPercent = 100;
@@ -8687,6 +8725,7 @@ case "@about_yu_oldman": @about_yu_oldman(); break;
 
         public class NpcScript_4Edu_D5063: NpcScriptBase
         {
+          public string scName = "4Edu_D5063";
           // declare
           
     public int dPercent = 200;
@@ -8762,6 +8801,7 @@ case "@buy": @buy(); break;
 
         public class NpcScript_4Edu_D71653: NpcScriptBase
         {
+          public string scName = "4Edu_D71653";
           // declare
           
     public int dPercent = 200;
@@ -8831,6 +8871,7 @@ case "@buy": @buy(); break;
 
         public class NpcScript_4Gdm_0119: NpcScriptBase
         {
+          public string scName = "4Gdm_0119";
           // declare
           
     public int dPercent = 100;
@@ -9041,6 +9082,7 @@ case "@helpitem2": @helpitem2(); break;
 
         public class NpcScript_4Gdu_0119: NpcScriptBase
         {
+          public string scName = "4Gdu_0119";
           // declare
           
     public int dPercent = 100;
@@ -9597,6 +9639,7 @@ case "@ok_h_order_now": @ok_h_order_now(); break;
 
         public class NpcScript_4Mdu_0160: NpcScriptBase
         {
+          public string scName = "4Mdu_0160";
           // declare
           
     public int dPercent = 100;
@@ -9926,6 +9969,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_4Mdu_3: NpcScriptBase
         {
+          public string scName = "4Mdu_3";
           // declare
           
     public int dPercent = 100;
@@ -10046,6 +10090,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_4Sdu_0117: NpcScriptBase
         {
+          public string scName = "4Sdu_0117";
           // declare
           
     public int dPercent = 100;
@@ -10241,6 +10286,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_4Serpent_valley_reagent_store1_2: NpcScriptBase
         {
+          public string scName = "4Serpent_valley_reagent_store1_2";
           // declare
           
     public int dPercent = 100;
@@ -10346,6 +10392,7 @@ case "@news": @news(); break;
 
         public class NpcScript_4Tdu_0: NpcScriptBase
         {
+          public string scName = "4Tdu_0";
           // declare
           
     public int dPercent = 100;
@@ -10537,6 +10584,7 @@ case "@repairoil": @repairoil(); break;
 
         public class NpcScript_4Wdm_1006: NpcScriptBase
         {
+          public string scName = "4Wdm_1006";
           // declare
           
     public int dPercent = 100;
@@ -10647,6 +10695,7 @@ case "@yellow": @yellow(); break;
 
         public class NpcScript_4Wdu_1: NpcScriptBase
         {
+          public string scName = "4Wdu_1";
           // declare
           
     public int dPercent = 100;
@@ -10861,6 +10910,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_4Wdu_1006: NpcScriptBase
         {
+          public string scName = "4Wdu_1006";
           // declare
           
     public int dPercent = 100;
@@ -10951,6 +11001,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_5Bbo_0104: NpcScriptBase
         {
+          public string scName = "5Bbo_0104";
           // declare
           
     public int dPercent = 100;
@@ -11394,6 +11445,7 @@ case "@help33": @help33(); break;
 
         public class NpcScript_5Bichon_bookstore1_0: NpcScriptBase
         {
+          public string scName = "5Bichon_bookstore1_0";
           // declare
           
     public int dPercent = 100;
@@ -11572,6 +11624,7 @@ case "@help31": @help31(); break;
 
         public class NpcScript_5Mbo_0161: NpcScriptBase
         {
+          public string scName = "5Mbo_0161";
           // declare
           
     public int dPercent = 100;
@@ -11777,6 +11830,7 @@ case "@help31": @help31(); break;
 
         public class NpcScript_5Tbo_0132: NpcScriptBase
         {
+          public string scName = "5Tbo_0132";
           // declare
           
     public int dPercent = 80;
@@ -11983,6 +12037,7 @@ case "@help31": @help31(); break;
 
         public class NpcScript_5Wbo_1004: NpcScriptBase
         {
+          public string scName = "5Wbo_1004";
           // declare
           
     public int dPercent = 100;
@@ -12161,6 +12216,7 @@ case "@help31": @help31(); break;
 
         public class NpcScript_6Awh_0152: NpcScriptBase
         {
+          public string scName = "6Awh_0152";
           // declare
           
     public int dPercent = 100;
@@ -13060,6 +13116,7 @@ case "@zum_bind4_1": @zum_bind4_1(); break;
 
         public class NpcScript_6Bwh_0: NpcScriptBase
         {
+          public string scName = "6Bwh_0";
           // declare
           
     public int dPercent = 100;
@@ -14059,6 +14116,7 @@ case "@zum_bind4_1": @zum_bind4_1(); break;
 
         public class NpcScript_6Bwh_0125: NpcScriptBase
         {
+          public string scName = "6Bwh_0125";
           // declare
           
     public int dPercent = 100;
@@ -15355,6 +15413,7 @@ case "@exhangechesttobars_1": @exhangechesttobars_1(); break;
 
         public class NpcScript_6Ewh_D002: NpcScriptBase
         {
+          public string scName = "6Ewh_D002";
           // declare
           
     public int dPercent = 100;
@@ -15674,6 +15733,7 @@ case "@getback": @getback(); break;
 
         public class NpcScript_6Gwh_0: NpcScriptBase
         {
+          public string scName = "6Gwh_0";
           // declare
           
     public int dPercent = 100;
@@ -16600,6 +16660,7 @@ case "@zum_bind4_1": @zum_bind4_1(); break;
 
         public class NpcScript_6Mwh_0145: NpcScriptBase
         {
+          public string scName = "6Mwh_0145";
           // declare
           
     public int dPercent = 100;
@@ -17526,6 +17587,7 @@ case "@zum_bind4_1": @zum_bind4_1(); break;
 
         public class NpcScript_6Mwh_3: NpcScriptBase
         {
+          public string scName = "6Mwh_3";
           // declare
           
     public int dPercent = 100;
@@ -18452,6 +18514,7 @@ case "@zum_bind4_1": @zum_bind4_1(); break;
 
         public class NpcScript_6Swh_2: NpcScriptBase
         {
+          public string scName = "6Swh_2";
           // declare
           
     public int dPercent = 100;
@@ -19378,6 +19441,7 @@ case "@zum_bind4_1": @zum_bind4_1(); break;
 
         public class NpcScript_6Twh_0140: NpcScriptBase
         {
+          public string scName = "6Twh_0140";
           // declare
           
     public int dPercent = 100;
@@ -20304,6 +20368,7 @@ case "@zum_bind4_1": @zum_bind4_1(); break;
 
         public class NpcScript_6Wrt_1002: NpcScriptBase
         {
+          public string scName = "6Wrt_1002";
           // declare
           
     public int dPercent = 100;
@@ -20718,6 +20783,7 @@ case "@quest2": @quest2(); break;
 
         public class NpcScript_6Wwh_11: NpcScriptBase
         {
+          public string scName = "6Wwh_11";
           // declare
           
     public int dPercent = 100;
@@ -21989,6 +22055,7 @@ case "@exhangechesttobars_1": @exhangechesttobars_1(); break;
 
         public class NpcScript_7Ast_3: NpcScriptBase
         {
+          public string scName = "7Ast_3";
           // declare
           
     public int dPercent = 100;
@@ -22076,6 +22143,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_7Bst_0: NpcScriptBase
         {
+          public string scName = "7Bst_0";
           // declare
           
     public int dPercent = 100;
@@ -22262,6 +22330,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_7Est_3: NpcScriptBase
         {
+          public string scName = "7Est_3";
           // declare
           
     public int dPercent = 150;
@@ -22495,6 +22564,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_7Est_DM001: NpcScriptBase
         {
+          public string scName = "7Est_DM001";
           // declare
           
     public int dPercent = 180;
@@ -22737,6 +22807,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_7Gst_0: NpcScriptBase
         {
+          public string scName = "7Gst_0";
           // declare
           
     public int dPercent = 100;
@@ -22850,6 +22921,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_7Mst_3: NpcScriptBase
         {
+          public string scName = "7Mst_3";
           // declare
           
     public int dPercent = 100;
@@ -22963,6 +23035,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_7Sst_2: NpcScriptBase
         {
+          public string scName = "7Sst_2";
           // declare
           
     public int dPercent = 100;
@@ -23076,6 +23149,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_7Wicked_merchant1_DM011: NpcScriptBase
         {
+          public string scName = "7Wicked_merchant1_DM011";
           // declare
           
     public int dPercent = 180;
@@ -23205,6 +23279,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_7Wst_1007: NpcScriptBase
         {
+          public string scName = "7Wst_1007";
           // declare
           
     public int dPercent = 100;
@@ -23291,6 +23366,7 @@ case "@sell": @sell(); break;
 
         public class NpcScript_8Abr_0154: NpcScriptBase
         {
+          public string scName = "8Abr_0154";
           // declare
           
     public int dPercent = 100;
@@ -23438,6 +23514,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Ane_0154: NpcScriptBase
         {
+          public string scName = "8Ane_0154";
           // declare
           
     public int dPercent = 100;
@@ -23583,6 +23660,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Ari_0154: NpcScriptBase
         {
+          public string scName = "8Ari_0154";
           // declare
           
     public int dPercent = 100;
@@ -23727,6 +23805,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Bbr_0105: NpcScriptBase
         {
+          public string scName = "8Bbr_0105";
           // declare
           
     public int dPercent = 100;
@@ -23872,6 +23951,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Bne_0105: NpcScriptBase
         {
+          public string scName = "8Bne_0105";
           // declare
           
     public int dPercent = 100;
@@ -24094,6 +24174,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Bri_0105: NpcScriptBase
         {
+          public string scName = "8Bri_0105";
           // declare
           
     public int dPercent = 100;
@@ -24316,6 +24397,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Eac_D71652: NpcScriptBase
         {
+          public string scName = "8Eac_D71652";
           // declare
           
     public int dPercent = 200;
@@ -24393,6 +24475,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Mbr_0158: NpcScriptBase
         {
+          public string scName = "8Mbr_0158";
           // declare
           
     public int dPercent = 100;
@@ -24631,6 +24714,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Mne_0158: NpcScriptBase
         {
+          public string scName = "8Mne_0158";
           // declare
           
     public int dPercent = 100;
@@ -24776,6 +24860,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Mri_0158: NpcScriptBase
         {
+          public string scName = "8Mri_0158";
           // declare
           
     public int dPercent = 100;
@@ -24920,6 +25005,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Tbr_0141: NpcScriptBase
         {
+          public string scName = "8Tbr_0141";
           // declare
           
     public int dPercent = 100;
@@ -25065,6 +25151,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Tne_0141: NpcScriptBase
         {
+          public string scName = "8Tne_0141";
           // declare
           
     public int dPercent = 100;
@@ -25210,6 +25297,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Tri_0141: NpcScriptBase
         {
+          public string scName = "8Tri_0141";
           // declare
           
     public int dPercent = 100;
@@ -25354,6 +25442,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_8Wac_1005: NpcScriptBase
         {
+          public string scName = "8Wac_1005";
           // declare
           
     public int dPercent = 100;
@@ -25492,6 +25581,7 @@ case "@repair_CB": @repair_CB(); break;
 
         public class NpcScript_9Aup_0151: NpcScriptBase
         {
+          public string scName = "9Aup_0151";
           // declare
           
     public int dPercent = 100;
@@ -25759,6 +25849,7 @@ case "@getbackupgnow_fail_CB": @getbackupgnow_fail_CB(); break;
 
         public class NpcScript_9Bichon_Teleport_0: NpcScriptBase
         {
+          public string scName = "9Bichon_Teleport_0";
           // declare
           
     public int dPercent = 100;
@@ -25900,6 +25991,7 @@ case "@gwe": @gwe(); break;
 
         public class NpcScript_9Blo_0: NpcScriptBase
         {
+          public string scName = "9Blo_0";
           // declare
           
     public int dPercent = 100;
@@ -25976,6 +26068,7 @@ case "@bingo": @bingo(); break;
 
         public class NpcScript_9Ech_0126: NpcScriptBase
         {
+          public string scName = "9Ech_0126";
           // declare
           
     public int dPercent = 100;
@@ -27247,6 +27340,7 @@ case "@exhangechesttobars_1": @exhangechesttobars_1(); break;
 
         public class NpcScript_9Ech_0146: NpcScriptBase
         {
+          public string scName = "9Ech_0146";
           // declare
           
     public int dPercent = 100;
@@ -28518,6 +28612,7 @@ case "@exhangechesttobars_1": @exhangechesttobars_1(); break;
 
         public class NpcScript_9Ech_0152: NpcScriptBase
         {
+          public string scName = "9Ech_0152";
           // declare
           
     public int dPercent = 100;
@@ -29789,6 +29884,7 @@ case "@exhangechesttobars_1": @exhangechesttobars_1(); break;
 
         public class NpcScript_9Ega_0101: NpcScriptBase
         {
+          public string scName = "9Ega_0101";
           // declare
           
     public int dPercent = 100;
@@ -29950,6 +30046,7 @@ case "@tele": @tele(); break;
 
         public class NpcScript_9Ega_B010: NpcScriptBase
         {
+          public string scName = "9Ega_B010";
           // declare
           
     public int dPercent = 100;
@@ -30217,6 +30314,7 @@ case "@changegold_5": @changegold_5(); break;
 
         public class NpcScript_9Ega_B011: NpcScriptBase
         {
+          public string scName = "9Ega_B011";
           // declare
           
     public int dPercent = 100;
@@ -30376,6 +30474,7 @@ case "@next3": @next3(); break;
 
         public class NpcScript_9Ega_B012: NpcScriptBase
         {
+          public string scName = "9Ega_B012";
           // declare
           
     public int dPercent = 100;
@@ -30536,6 +30635,7 @@ case "@next3": @next3(); break;
 
         public class NpcScript_9Ega_B013: NpcScriptBase
         {
+          public string scName = "9Ega_B013";
           // declare
           
     public int dPercent = 100;
@@ -30696,6 +30796,7 @@ case "@next3": @next3(); break;
 
         public class NpcScript_9Ega_B101: NpcScriptBase
         {
+          public string scName = "9Ega_B101";
           // declare
           
     public int dPercent = 100;
@@ -31119,6 +31220,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B102: NpcScriptBase
         {
+          public string scName = "9Ega_B102";
           // declare
           
     public int dPercent = 100;
@@ -31644,6 +31746,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B103: NpcScriptBase
         {
+          public string scName = "9Ega_B103";
           // declare
           
     public int dPercent = 100;
@@ -32114,6 +32217,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B104: NpcScriptBase
         {
+          public string scName = "9Ega_B104";
           // declare
           
     public int dPercent = 100;
@@ -32696,6 +32800,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B105: NpcScriptBase
         {
+          public string scName = "9Ega_B105";
           // declare
           
     public int dPercent = 100;
@@ -33179,6 +33284,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B106: NpcScriptBase
         {
+          public string scName = "9Ega_B106";
           // declare
           
     public int dPercent = 100;
@@ -33714,6 +33820,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B107: NpcScriptBase
         {
+          public string scName = "9Ega_B107";
           // declare
           
     public int dPercent = 100;
@@ -35706,6 +35813,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B108: NpcScriptBase
         {
+          public string scName = "9Ega_B108";
           // declare
           
     public int dPercent = 100;
@@ -35998,6 +36106,7 @@ case "@move": @move(); break;
 
         public class NpcScript_9Ega_B109: NpcScriptBase
         {
+          public string scName = "9Ega_B109";
           // declare
           
     public int dPercent = 100;
@@ -36519,6 +36628,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B110: NpcScriptBase
         {
+          public string scName = "9Ega_B110";
           // declare
           
     public int dPercent = 100;
@@ -36697,6 +36807,7 @@ case "@move": @move(); break;
 
         public class NpcScript_9Ega_B111: NpcScriptBase
         {
+          public string scName = "9Ega_B111";
           // declare
           
     public int dPercent = 100;
@@ -37357,6 +37468,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B112: NpcScriptBase
         {
+          public string scName = "9Ega_B112";
           // declare
           
     public int dPercent = 100;
@@ -37639,6 +37751,7 @@ case "@move": @move(); break;
 
         public class NpcScript_9Ega_B113: NpcScriptBase
         {
+          public string scName = "9Ega_B113";
           // declare
           
     public int dPercent = 100;
@@ -37943,6 +38056,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B114: NpcScriptBase
         {
+          public string scName = "9Ega_B114";
           // declare
           
     public int dPercent = 100;
@@ -38450,6 +38564,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B115: NpcScriptBase
         {
+          public string scName = "9Ega_B115";
           // declare
           
     public int dPercent = 100;
@@ -38993,6 +39108,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B116: NpcScriptBase
         {
+          public string scName = "9Ega_B116";
           // declare
           
     public int dPercent = 100;
@@ -39526,6 +39642,7 @@ case "@pena": @pena(); break;
 
         public class NpcScript_9Ega_B117: NpcScriptBase
         {
+          public string scName = "9Ega_B117";
           // declare
           
     public int dPercent = 100;
@@ -40116,6 +40233,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B118: NpcScriptBase
         {
+          public string scName = "9Ega_B118";
           // declare
           
     public int dPercent = 100;
@@ -40267,6 +40385,7 @@ case "@quit": @quit(); break;
 
         public class NpcScript_9Ega_B119: NpcScriptBase
         {
+          public string scName = "9Ega_B119";
           // declare
           
     public int dPercent = 100;
@@ -40735,6 +40854,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B120: NpcScriptBase
         {
+          public string scName = "9Ega_B120";
           // declare
           
     public int dPercent = 100;
@@ -42718,6 +42838,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B121: NpcScriptBase
         {
+          public string scName = "9Ega_B121";
           // declare
           
     public int dPercent = 100;
@@ -43186,6 +43307,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B122: NpcScriptBase
         {
+          public string scName = "9Ega_B122";
           // declare
           
     public int dPercent = 100;
@@ -43466,6 +43588,7 @@ case "@move": @move(); break;
 
         public class NpcScript_9Ega_B123: NpcScriptBase
         {
+          public string scName = "9Ega_B123";
           // declare
           
     public int dPercent = 100;
@@ -44217,6 +44340,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B124: NpcScriptBase
         {
+          public string scName = "9Ega_B124";
           // declare
           
     public int dPercent = 100;
@@ -44750,6 +44874,7 @@ case "@pena": @pena(); break;
 
         public class NpcScript_9Ega_B125: NpcScriptBase
         {
+          public string scName = "9Ega_B125";
           // declare
           
     public int dPercent = 100;
@@ -44802,6 +44927,7 @@ SuperSc.MoveMapPos("T125",8,10);
 
         public class NpcScript_9Ega_B126: NpcScriptBase
         {
+          public string scName = "9Ega_B126";
           // declare
           
     public int dPercent = 100;
@@ -44959,6 +45085,7 @@ case "@move": @move(); break;
 
         public class NpcScript_9Ega_B127: NpcScriptBase
         {
+          public string scName = "9Ega_B127";
           // declare
           
     public int dPercent = 100;
@@ -45735,6 +45862,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B128: NpcScriptBase
         {
+          public string scName = "9Ega_B128";
           // declare
           
     public int dPercent = 100;
@@ -46242,6 +46370,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B129: NpcScriptBase
         {
+          public string scName = "9Ega_B129";
           // declare
           
     public int dPercent = 100;
@@ -46949,6 +47078,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B130: NpcScriptBase
         {
+          public string scName = "9Ega_B130";
           // declare
           
     public int dPercent = 100;
@@ -47394,6 +47524,7 @@ case "@posi4": @posi4(); break;
 
         public class NpcScript_9Ega_B131: NpcScriptBase
         {
+          public string scName = "9Ega_B131";
           // declare
           
     public int dPercent = 100;
@@ -47864,6 +47995,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B132: NpcScriptBase
         {
+          public string scName = "9Ega_B132";
           // declare
           
     public int dPercent = 100;
@@ -48332,6 +48464,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B133: NpcScriptBase
         {
+          public string scName = "9Ega_B133";
           // declare
           
     public int dPercent = 100;
@@ -48615,6 +48748,7 @@ case "@move": @move(); break;
 
         public class NpcScript_9Ega_B134: NpcScriptBase
         {
+          public string scName = "9Ega_B134";
           // declare
           
     public int dPercent = 100;
@@ -49084,6 +49218,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B135: NpcScriptBase
         {
+          public string scName = "9Ega_B135";
           // declare
           
     public int dPercent = 100;
@@ -49279,6 +49414,7 @@ case "@posi30": @posi30(); break;
 
         public class NpcScript_9Ega_B136: NpcScriptBase
         {
+          public string scName = "9Ega_B136";
           // declare
           
     public int dPercent = 100;
@@ -49414,6 +49550,7 @@ case "@quit": @quit(); break;
 
         public class NpcScript_9Ega_B137: NpcScriptBase
         {
+          public string scName = "9Ega_B137";
           // declare
           
     public int dPercent = 100;
@@ -49956,6 +50093,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B138: NpcScriptBase
         {
+          public string scName = "9Ega_B138";
           // declare
           
     public int dPercent = 100;
@@ -50121,6 +50259,7 @@ case "@next": @next(); break;
 
         public class NpcScript_9Ega_B139: NpcScriptBase
         {
+          public string scName = "9Ega_B139";
           // declare
           
     public int dPercent = 100;
@@ -50591,6 +50730,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_B140: NpcScriptBase
         {
+          public string scName = "9Ega_B140";
           // declare
           
     public int dPercent = 100;
@@ -50790,6 +50930,7 @@ case "@quit": @quit(); break;
 
         public class NpcScript_9Ega_T118: NpcScriptBase
         {
+          public string scName = "9Ega_T118";
           // declare
           
     public int dPercent = 100;
@@ -51253,6 +51394,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_T125: NpcScriptBase
         {
+          public string scName = "9Ega_T125";
           // declare
           
     public int dPercent = 100;
@@ -51729,6 +51871,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_T1363: NpcScriptBase
         {
+          public string scName = "9Ega_T1363";
           // declare
           
     public int dPercent = 100;
@@ -52146,6 +52289,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega_T138: NpcScriptBase
         {
+          public string scName = "9Ega_T138";
           // declare
           
     public int dPercent = 100;
@@ -52611,6 +52755,7 @@ case "@posi6": @posi6(); break;
 
         public class NpcScript_9Ega1_T105: NpcScriptBase
         {
+          public string scName = "9Ega1_T105";
           // declare
           
     public int dPercent = 100;
@@ -52708,6 +52853,7 @@ case "@next": @next(); break;
 
         public class NpcScript_9Ega2_T105: NpcScriptBase
         {
+          public string scName = "9Ega2_T105";
           // declare
           
     public int dPercent = 100;
@@ -52805,6 +52951,7 @@ case "@next": @next(); break;
 
         public class NpcScript_9Ega3_T105: NpcScriptBase
         {
+          public string scName = "9Ega3_T105";
           // declare
           
     public int dPercent = 100;
@@ -52902,6 +53049,7 @@ case "@next": @next(); break;
 
         public class NpcScript_9Ega4_T105: NpcScriptBase
         {
+          public string scName = "9Ega4_T105";
           // declare
           
     public int dPercent = 100;
@@ -52999,6 +53147,7 @@ case "@next": @next(); break;
 
         public class NpcScript_9Ega5_T105: NpcScriptBase
         {
+          public string scName = "9Ega5_T105";
           // declare
           
     public int dPercent = 100;
@@ -53096,6 +53245,7 @@ case "@next": @next(); break;
 
         public class NpcScript_9Eht_0113: NpcScriptBase
         {
+          public string scName = "9Eht_0113";
           // declare
           
     public int dPercent = 100;
@@ -53266,6 +53416,7 @@ case "@q706_1": @q706_1(); break;
 
         public class NpcScript_9Eht_01132: NpcScriptBase
         {
+          public string scName = "9Eht_01132";
           // declare
           
     public int dPercent = 100;
@@ -53392,6 +53543,7 @@ case "@q707": @q707(); break;
 
         public class NpcScript_9Ehw_0114: NpcScriptBase
         {
+          public string scName = "9Ehw_0114";
           // declare
           
     public int dPercent = 100;
@@ -54057,6 +54209,7 @@ case "@quit": @quit(); break;
 
         public class NpcScript_9Ehw_01141: NpcScriptBase
         {
+          public string scName = "9Ehw_01141";
           // declare
           
     public int dPercent = 100;
@@ -54118,6 +54271,7 @@ SuperSc.SetGVar(209,1);
 
         public class NpcScript_9Ehw_01142: NpcScriptBase
         {
+          public string scName = "9Ehw_01142";
           // declare
           
     public int dPercent = 100;
@@ -54244,6 +54398,7 @@ case "@q707": @q707(); break;
 
         public class NpcScript_9epl_3: NpcScriptBase
         {
+          public string scName = "9epl_3";
           // declare
           
     public int dPercent = 100;
@@ -55312,6 +55467,7 @@ case "@horo_1_1_1_1_1": @horo_1_1_1_1_1(); break;
 
         public class NpcScript_9Equ_0148: NpcScriptBase
         {
+          public string scName = "9Equ_0148";
           // declare
           
     public int dPercent = 100;
@@ -55796,6 +55952,7 @@ case "@q315": @q315(); break;
 
         public class NpcScript_9Equ_D002: NpcScriptBase
         {
+          public string scName = "9Equ_D002";
           // declare
           
     public int dPercent = 100;
@@ -56132,6 +56289,7 @@ case "@q317": @q317(); break;
 
         public class NpcScript_9Equ_E603: NpcScriptBase
         {
+          public string scName = "9Equ_E603";
           // declare
           
     public int dPercent = 200;
@@ -56652,6 +56810,7 @@ case "@untalkwith": @untalkwith(); break;
 
         public class NpcScript_9Equ_Q011: NpcScriptBase
         {
+          public string scName = "9Equ_Q011";
           // declare
           
     public int dPercent = 100;
@@ -56886,6 +57045,7 @@ case "@quest2": @quest2(); break;
 
         public class NpcScript_9Equ_Q016: NpcScriptBase
         {
+          public string scName = "9Equ_Q016";
           // declare
           
     public int dPercent = 100;
@@ -57469,6 +57629,7 @@ case "@q317": @q317(); break;
 
         public class NpcScript_9Ewi_0115: NpcScriptBase
         {
+          public string scName = "9Ewi_0115";
           // declare
           
     public int dPercent = 100;
@@ -57639,6 +57800,7 @@ case "@q706_1": @q706_1(); break;
 
         public class NpcScript_9Ewi_01152: NpcScriptBase
         {
+          public string scName = "9Ewi_01152";
           // declare
           
     public int dPercent = 100;
@@ -57768,6 +57930,7 @@ case "@q707": @q707(); break;
 
         public class NpcScript_9helper_0: NpcScriptBase
         {
+          public string scName = "9helper_0";
           // declare
           
     public int dPercent = 100;
@@ -58491,6 +58654,7 @@ case "@slave": @slave(); break;
 
         public class NpcScript_9match1_3: NpcScriptBase
         {
+          public string scName = "9match1_3";
           // declare
           
     public int dPercent = 100;
@@ -58621,6 +58785,7 @@ case "@rule1": @rule1(); break;
 
         public class NpcScript_9match2_F003: NpcScriptBase
         {
+          public string scName = "9match2_F003";
           // declare
           
     public int dPercent = 100;
@@ -58682,6 +58847,7 @@ case "@back": @back(); break;
 
         public class NpcScript_9match3_2: NpcScriptBase
         {
+          public string scName = "9match3_2";
           // declare
           
     public int dPercent = 100;
@@ -58812,6 +58978,7 @@ case "@rule1": @rule1(); break;
 
         public class NpcScript_9Mlo_3: NpcScriptBase
         {
+          public string scName = "9Mlo_3";
           // declare
           
     public int dPercent = 100;
@@ -58984,6 +59151,7 @@ case "@pay2": @pay2(); break;
 
         public class NpcScript_9Mongchon_Teleport_3: NpcScriptBase
         {
+          public string scName = "9Mongchon_Teleport_3";
           // declare
           
     public int dPercent = 100;
@@ -59110,6 +59278,7 @@ case "@gbo": @gbo(); break;
 
         public class NpcScript_9pigman_D717: NpcScriptBase
         {
+          public string scName = "9pigman_D717";
           // declare
           
     public int dPercent = 100;
@@ -59340,6 +59509,7 @@ case "@num_600": @num_600(); break;
 
         public class NpcScript_9Serpent_Teleport_2: NpcScriptBase
         {
+          public string scName = "9Serpent_Teleport_2";
           // declare
           
     public int dPercent = 100;
@@ -59421,6 +59591,7 @@ case "@gpo": @gpo(); break;
 
         public class NpcScript_9snpc1_0: NpcScriptBase
         {
+          public string scName = "9snpc1_0";
           // declare
           
     public int dPercent = 100;
@@ -59524,6 +59695,7 @@ case "@gongyue3": @gongyue3(); break;
 
         public class NpcScript_9snpc2_3: NpcScriptBase
         {
+          public string scName = "9snpc2_3";
           // declare
           
     public int dPercent = 100;
@@ -59627,6 +59799,7 @@ case "@gongyue3": @gongyue3(); break;
 
         public class NpcScript_9teacher_0111: NpcScriptBase
         {
+          public string scName = "9teacher_0111";
           // declare
           
     public int dPercent = 100;
@@ -60047,6 +60220,7 @@ case "@wuqi3": @wuqi3(); break;
 
         public class NpcScript_9Wae1_11: NpcScriptBase
         {
+          public string scName = "9Wae1_11";
           // declare
           
     public int dPercent = 100;
@@ -60097,6 +60271,7 @@ Say2Content(t, "sayBindingBtn","离开","@exit");
 
         public class NpcScript_9Wae2_11: NpcScriptBase
         {
+          public string scName = "9Wae2_11";
           // declare
           
     public int dPercent = 100;
@@ -60147,6 +60322,7 @@ Say2Content(t, "sayBindingBtn","离开","@exit");
 
         public class NpcScript_9Wae3_11: NpcScriptBase
         {
+          public string scName = "9Wae3_11";
           // declare
           
     public int dPercent = 100;
@@ -60197,6 +60373,7 @@ Say2Content(t, "sayBindingBtn","离开","@exit");
 
         public class NpcScript_9Wae4_11: NpcScriptBase
         {
+          public string scName = "9Wae4_11";
           // declare
           
     public int dPercent = 100;
@@ -60247,6 +60424,7 @@ Say2Content(t, "sayBindingBtn","离开","@exit");
 
         public class NpcScript_9Wae5_11: NpcScriptBase
         {
+          public string scName = "9Wae5_11";
           // declare
           
     public int dPercent = 100;
@@ -60297,6 +60475,7 @@ Say2Content(t, "sayBindingBtn","离开","@exit");
 
         public class NpcScript_9Wae6_11: NpcScriptBase
         {
+          public string scName = "9Wae6_11";
           // declare
           
     public int dPercent = 100;
@@ -60347,6 +60526,7 @@ Say2Content(t, "sayBindingBtn","离开","@exit");
 
         public class NpcScript_9Wbt_D10061: NpcScriptBase
         {
+          public string scName = "9Wbt_D10061";
           // declare
           
     public int dPercent = 100;
@@ -60624,6 +60804,7 @@ case "@next_quest": @next_quest(); break;
 
         public class NpcScript_9woomaoldman_1: NpcScriptBase
         {
+          public string scName = "9woomaoldman_1";
           // declare
           
     public int dPercent = 100;
@@ -60746,6 +60927,7 @@ case "@main1": @main1(); break;
 
         public class NpcScript_9Wqu_1: NpcScriptBase
         {
+          public string scName = "9Wqu_1";
           // declare
           
     public int dPercent = 100;
@@ -61335,6 +61517,7 @@ case "@q309": @q309(); break;
 
         public class NpcScript_9Wtt_11: NpcScriptBase
         {
+          public string scName = "9Wtt_11";
           // declare
           
     public int dPercent = 100;
@@ -61427,6 +61610,7 @@ case "@next": @next(); break;
 
         public class NpcScript_GMservant_r001: NpcScriptBase
         {
+          public string scName = "GMservant_r001";
           // declare
           
     public int dPercent = 100;
@@ -61522,6 +61706,7 @@ case "@getback": @getback(); break;
 
         public class NpcScript_majorcleanup_r001: NpcScriptBase
         {
+          public string scName = "majorcleanup_r001";
           // declare
           
     public int dPercent = 100;
@@ -61927,6 +62112,7 @@ case "@yes": @yes(); break;
 
         public class NpcScript_SlaveCaveNPC_0148: NpcScriptBase
         {
+          public string scName = "SlaveCaveNPC_0148";
           // declare
           
     public int dPercent = 100;
@@ -62035,6 +62221,7 @@ case "@letsgo": @letsgo(); break;
 
         public class NpcScript_spawn_0139: NpcScriptBase
         {
+          public string scName = "spawn_0139";
           // declare
           
     public int dPercent = 100;
@@ -63699,6 +63886,7 @@ case "@rme": @rme(); break;
 
         public class NpcScript_test_r001: NpcScriptBase
         {
+          public string scName = "test_r001";
           // declare
           
     public int dPercent = 100;
