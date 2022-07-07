@@ -18,13 +18,13 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "t": "ts-node ./test/test.ts",
+    "start": "ts-node ./test/test.ts",
     "lint": "eslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
     "dev": "node  ./gen-ohm.mjs",
     "inner-gen-ohm": "npx ohm generateBundles --withTypes ./src/ohm/bks-template.ohm",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
-    "start": "rollup -c rollup.config.ts -w",
+    "start2": "rollup -c rollup.config.ts -w",
     "test": "jest",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",

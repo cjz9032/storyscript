@@ -151,7 +151,7 @@ const convertAll = (acs: ActionBlock[], res: StoryModel) => {
             return convertSay(direct, res);
           } else {
             console.error(direct);
-            throw new Error('no convertFns');
+            throw new Error('no convertAll');
           }
         })
         .join('\r\n')

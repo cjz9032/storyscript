@@ -25906,7 +25906,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("104");
+            SuperSc.MoveMap("0104");
           onFnEnd();
       }
 
@@ -25918,7 +25918,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("102");
+            SuperSc.MoveMap("0102");
           onFnEnd();
       }
 
@@ -25930,7 +25930,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("105");
+            SuperSc.MoveMap("0105");
           onFnEnd();
       }
 
@@ -25942,7 +25942,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("108");
+            SuperSc.MoveMap("0108");
           onFnEnd();
       }
 
@@ -25954,7 +25954,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("106");
+            SuperSc.MoveMap("0106");
           onFnEnd();
       }
 
@@ -25966,7 +25966,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("103");
+            SuperSc.MoveMap("0103");
           onFnEnd();
       }
           // btns maps
@@ -29934,7 +29934,7 @@ Say2Content(t, "text","\r\n");
                 SuperSc.RandomIs(3)
               )
             {
-              SuperSc.MoveMapPos("B10",17,17);
+              SuperSc.MoveMapPos("B010",17,17);
 
       // break
       return;
@@ -29950,7 +29950,7 @@ Say2Content(t, "text","\r\n");
                 SuperSc.RandomIs(3)
               )
             {
-              SuperSc.MoveMapPos("B10",17,61);
+              SuperSc.MoveMapPos("B010",17,61);
 
       // break
       return;
@@ -29966,7 +29966,7 @@ Say2Content(t, "text","\r\n");
                 SuperSc.RandomIs(3)
               )
             {
-              SuperSc.MoveMapPos("B10",67,31);
+              SuperSc.MoveMapPos("B010",67,31);
 
       // break
       return;
@@ -30951,7 +30951,7 @@ SuperSc.MoveLVar("p9",9);
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -31366,7 +31366,7 @@ Say2Content(t, "sayBindingBtn","下一步","@penalty");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -31892,7 +31892,7 @@ Say2Content(t, "sayBindingBtn","下一步","@pena1");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -32361,7 +32361,7 @@ Say2Content(t, "sayBindingBtn","下一步","@penalty");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -32960,7 +32960,7 @@ SuperSc.MoveLVar("p9",1);
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -33428,7 +33428,7 @@ Say2Content(t, "sayBindingBtn","下一步","@pena1");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -34023,7 +34023,7 @@ Say2Content(t, "sayBindingBtn","下一步","@dicestart");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -36062,7 +36062,7 @@ SuperSc.Batchmove();
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -36327,7 +36327,7 @@ Say2Content(t, "sayBindingBtn","下一步","@pre_cube");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -36757,7 +36757,7 @@ Say2Content(t, "sayBindingBtn","移动","@move");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -36989,7 +36989,7 @@ Say2Content(t, "sayBindingBtn","下一步","@main_2");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -37706,7 +37706,7 @@ SuperSc.Batchmove();
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -37877,7 +37877,7 @@ Say2Content(t, "sayBindingBtn","下一步","@cube");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -38203,7 +38203,7 @@ Say2Content(t, "sayBindingBtn","下一步","@apenalty");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -38745,7 +38745,7 @@ SuperSc.MoveMap("T115");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -39230,7 +39230,7 @@ Say2Content(t, "sayBindingBtn","下一步","@race");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -39814,7 +39814,7 @@ case "@pena": @pena(); break;
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -40363,7 +40363,7 @@ SuperSc.MoveLVar("p9",9);
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
           // btns maps
@@ -40543,7 +40543,7 @@ SuperSc.MoveMap("T119");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -41057,7 +41057,7 @@ Say2Content(t, "sayBindingBtn","下一步","@dicestart");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -42966,7 +42966,7 @@ case "@posi6": @posi6(); break;
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -43542,7 +43542,7 @@ SuperSc.Batchmove();
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -43751,7 +43751,7 @@ Say2Content(t, "sayBindingBtn","下一步","@main_2");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -44462,7 +44462,7 @@ Say2Content(t, "sayBindingBtn","下一步","@race");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -45027,7 +45027,7 @@ Say2Content(t, "sayBindingBtn","下一步","@move");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -45275,7 +45275,7 @@ Say2Content(t, "sayBindingBtn","下一步","@penalty");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -46059,7 +46059,7 @@ SuperSc.MoveMapPos("T1283",13,39);
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -46533,7 +46533,7 @@ Say2Content(t, "sayBindingBtn","下一步","@main_2");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -47250,7 +47250,7 @@ case "@posi6": @posi6(); break;
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -47680,7 +47680,7 @@ SuperSc.MoveMapPos("T131",10,10);
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -48153,7 +48153,7 @@ SuperSc.MoveMap("T132");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -48700,7 +48700,7 @@ SuperSc.Batchmove();
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -48905,7 +48905,7 @@ SuperSc.MoveMapPos("T134",33,8);
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -49347,7 +49347,7 @@ SuperSc.MoveLVar("p9",9);
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -49528,7 +49528,7 @@ SuperSc.MoveMap("T1361");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
           // btns maps
@@ -49694,7 +49694,7 @@ Say2Content(t, "sayBindingBtn","下一步","@penalty");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -50190,7 +50190,7 @@ Say2Content(t, "sayBindingBtn","移动","@race");
         
             // IfWrap_UselessIf
             SuperSc.SetGVar(799,0);
-SuperSc.MoveMap("B11");
+SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -50419,7 +50419,7 @@ SuperSc.MoveMapPos("T139",18,25);
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -50907,7 +50907,7 @@ SuperSc.MoveMapPos("0",333,268);
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
           // btns maps
@@ -51084,7 +51084,7 @@ Say2Content(t, "sayBindingBtn","下一步","@race");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -51571,7 +51571,7 @@ Say2Content(t, "sayBindingBtn","返回","@main_1");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -51991,7 +51991,7 @@ Say2Content(t, "sayBindingBtn","下一个","@pre_cube");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -52414,7 +52414,7 @@ case "@posi6": @posi6(); break;
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("B11");
+            SuperSc.MoveMap("B011");
           onFnEnd();
       }
 
@@ -53375,7 +53375,7 @@ Say2Content(t, "text","\r\n");
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkhum("1132",1)
+                SuperSc.Checkhum("01132",1)
               )
             {
               Say2Content(t, "text","现在这里正有一个人在进行试练，\r\n很抱歉，你稍微等一下吧。\r\n\r\n");
@@ -53383,15 +53383,15 @@ Say2Content(t, "sayBindingBtn","离开","@exit");
 Say2Content(t, "text","\r\n");
             }
             else {
-              SuperSc.MonClear("1132");
-SuperSc.Param1("1132");
+              SuperSc.MonClear("01132");
+SuperSc.Param1("01132");
 SuperSc.Param2(10);
 SuperSc.Param3(10);
 SuperSc.MonGen("鹿",10,10);
 SuperSc.MonGen("鸡",20,10);
 SuperSc.MonGen("羊",10,10);
 SuperSc.TimeRecallByMins(5);
-SuperSc.MoveMap("1132");
+SuperSc.MoveMap("01132");
             }
             
           onFnEnd();
@@ -53468,7 +53468,7 @@ case "@q706_1": @q706_1(); break;
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkmonmap("1152",1)
+                SuperSc.Checkmonmap("01152",1)
               )
             {
               Say2Content(t, "text","你还没有杀掉所有动物？已经没有时间了！\r\n快点行动吧，祝你好运！\r\n\r\n");
@@ -53520,7 +53520,7 @@ Say2Content(t, "text","\r\n");
         Say2Content(t, "text","你是不是已经拿到了书？\r\n如果你拿到了治愈术就(双击鼠标左键)\r\n那样书就会渐渐消失同时也学会了这项技能，功能键是按F11\r\n点选上面显示的技能，就可以设置快捷键来使用。\r\n现在你去比奇城找书店老板，\r\n他会告诉你技能的升级方式。\r\n比奇书店的坐标是323，247，快去吧！\r\n");
 Say2Content(t, "sayBindingBtn","离开","@exit");
 Say2Content(t, "text","\r\n");
-SuperSc.MoveMap("113");
+SuperSc.MoveMap("0113");
         // ifs
         
           onFnEnd();
@@ -53798,7 +53798,7 @@ Say2Content(t, "text","\r\n");
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkhum("1142",1)
+                SuperSc.Checkhum("01142",1)
               )
             {
               Say2Content(t, "text","现在有人在接受我的测验，\r\n请你等他测试完，很抱歉。\r\n\r\n");
@@ -53806,15 +53806,15 @@ Say2Content(t, "sayBindingBtn","离开","@exit");
 Say2Content(t, "text","\r\n");
             }
             else {
-              SuperSc.MonClear("1142");
-SuperSc.Param1("1142");
+              SuperSc.MonClear("01142");
+SuperSc.Param1("01142");
 SuperSc.Param2(19);
 SuperSc.Param3(19);
 SuperSc.MonGen("鹿",10,10);
 SuperSc.MonGen("鸡",20,10);
 SuperSc.MonGen("羊",10,10);
 SuperSc.TimeRecallByMins(5);
-SuperSc.MoveMap("1142");
+SuperSc.MoveMap("01142");
             }
             
           onFnEnd();
@@ -54028,7 +54028,7 @@ Say2Content(t, "text","\r\n");
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkhum("1141",1)
+                SuperSc.Checkhum("01141",1)
               )
             {
               Say2Content(t, "text","现在有人正在和魔鬼战斗。\r\n你还是等一会儿再来吧。\r\n\r\n");
@@ -54040,12 +54040,12 @@ Say2Content(t, "text","\r\n");
         SuperSc.CloseWindow();
         
 SuperSc.SetGVar(208,1);
-SuperSc.MonClear("1141");
-SuperSc.Param1("1141");
+SuperSc.MonClear("01141");
+SuperSc.Param1("01141");
 SuperSc.Param2(10);
 SuperSc.Param3(10);
 SuperSc.MonGen("火焰沃玛2",30,10);
-SuperSc.MoveMap("1141");
+SuperSc.MoveMap("01141");
 
       // break
       return;
@@ -54242,14 +54242,14 @@ case "@quit": @quit(); break;
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkmonmap("1141",1)
+                SuperSc.Checkmonmap("01141",1)
               )
             {
               Say2Content(t, "text","哦，魔鬼在作孽，快去把它们消除掉。\r\n\r\n");
 Say2Content(t, "sayBindingBtn","离开","@exit");
             }
             else {
-              SuperSc.MoveMap("114");
+              SuperSc.MoveMap("0114");
 SuperSc.SetGVar(209,1);
             }
             
@@ -54323,7 +54323,7 @@ SuperSc.SetGVar(209,1);
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkmonmap("1142",1)
+                SuperSc.Checkmonmap("01142",1)
               )
             {
               Say2Content(t, "text","你还没有杀掉所有动物？没时间了！！\r\n快点吧.. 祝你好运！\r\n\r\n");
@@ -54375,7 +54375,7 @@ Say2Content(t, "text","\r\n");
         Say2Content(t, "text","你不是已经收到书了吗？如果已收到书，请双击那本基本剑术（双\r\n击鼠标的左键），书会消失，你也已经学到了这个功夫，它会使你\r\n的能力中增加命中率，你的功夫越深你的命中率也就越高。\r\n现在你可以去比奇省的书店，\r\n书店的主人会交你更加厉害技能。\r\n比奇书店的坐标是323，247，快去吧！\r\n\r\n");
 Say2Content(t, "sayBindingBtn","离开","@exit");
 Say2Content(t, "text","\r\n");
-SuperSc.MoveMap("114");
+SuperSc.MoveMap("0114");
         // ifs
         
           onFnEnd();
@@ -56243,7 +56243,7 @@ Say2Content(t, "text","\r\n");
         
             // IfWrap_UselessIf
             SuperSc.SetGVar(316,1);
-SuperSc.MoveMapPos("Q11",13,10);
+SuperSc.MoveMapPos("Q011",13,10);
           onFnEnd();
       }
 
@@ -56654,7 +56654,7 @@ Say2Content(t, "text","\r\n");
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkhum("M1",200)
+                SuperSc.Checkhum("M001",200)
               )
             {
               Say2Content(t, "text","我很想带你进去，但我现在已经筋疲力尽了，\r\n所以我不能把你带过去...稍微等一会吧。\r\n\r\n");
@@ -56663,7 +56663,7 @@ Say2Content(t, "text","\r\n");
             }
             else {
               SuperSc.TimeRecallByMins(180);
-SuperSc.MoveMap("M1");
+SuperSc.MoveMap("M001");
             }
             
           onFnEnd();
@@ -57018,7 +57018,7 @@ Say2Content(t, "text","\r\n");
             Say2Content(t, "text","好，你先进入那个阵看看，\r\n在那里可不能使用随机传送卷。\r\n祝你好运...再见！\r\n\r\n");
 Say2Content(t, "sayBindingBtn","离开","@exit");
 Say2Content(t, "text","\r\n");
-SuperSc.MoveMapPos("Q14",54,54);
+SuperSc.MoveMapPos("Q014",54,54);
           onFnEnd();
       }
           // btns maps
@@ -57341,7 +57341,7 @@ Say2Content(t, "sayBindingBtn","离开","@exit");
 SuperSc.TakeItem("金条",1);
 SuperSc.GiveItem("炼狱",1);
 SuperSc.MoveLVar("p1",1);
-SuperSc.MoveMap("D2");
+SuperSc.MoveMap("D002");
             }
             else {
               Say2Content(t, "text","制作炼狱，需要刚才说的那些材料，\r\n把材料准备好了，才能制作炼狱，\r\n没有材料怎么制作呢？\r\n\r\n");
@@ -57417,7 +57417,7 @@ Say2Content(t, "text","\r\n");
 SuperSc.TakeItem("金条",1);
 SuperSc.GiveItem("银蛇",1);
 SuperSc.MoveLVar("p2",1);
-SuperSc.MoveMap("D2");
+SuperSc.MoveMap("D002");
             }
             else {
               Say2Content(t, "text","制作银蛇，需要刚才说的那些材料，\r\n把材料准备好了，才能制作银蛇，\r\n没有材料怎么制作呢？\r\n\r\n");
@@ -57493,7 +57493,7 @@ Say2Content(t, "text","\r\n");
 SuperSc.TakeItem("金矿",3);
 SuperSc.GiveItem("魔杖",1);
 SuperSc.MoveLVar("p3",1);
-SuperSc.MoveMap("D2");
+SuperSc.MoveMap("D002");
             }
             else {
               Say2Content(t, "text","制作魔杖，需要刚才说的那些材料，\r\n把材料准备好了，才能制作魔杖，\r\n没有材料怎么制作呢？\r\n\r\n");
@@ -57759,7 +57759,7 @@ Say2Content(t, "text","\r\n");
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkhum("1152",1)
+                SuperSc.Checkhum("01152",1)
               )
             {
               Say2Content(t, "text","现在有人在接受我的测验，\r\n请你等他测试完，很抱歉。\r\n\r\n");
@@ -57767,15 +57767,15 @@ Say2Content(t, "sayBindingBtn","离开","@exit");
 Say2Content(t, "text","\r\n");
             }
             else {
-              SuperSc.MonClear("1152");
-SuperSc.Param1("1152");
+              SuperSc.MonClear("01152");
+SuperSc.Param1("01152");
 SuperSc.Param2(19);
 SuperSc.Param3(19);
 SuperSc.MonGen("鹿",10,10);
 SuperSc.MonGen("鸡",20,10);
 SuperSc.MonGen("羊",10,10);
 SuperSc.TimeRecallByMins(5);
-SuperSc.MoveMap("1152");
+SuperSc.MoveMap("01152");
             }
             
           onFnEnd();
@@ -57852,7 +57852,7 @@ case "@q706_1": @q706_1(); break;
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkmonmap("1152",1)
+                SuperSc.Checkmonmap("01152",1)
               )
             {
               Say2Content(t, "text","你还没有杀掉所有动物？没时间了！！\r\n快点吧.. 祝你好运！\r\n\r\n");
@@ -57907,7 +57907,7 @@ Say2Content(t, "text","\r\n");
         Say2Content(t, "text","你不是已经收到书了吗？如果已收到书，请双击那本火球术书（双\r\n击鼠标的左键），书会消失，你也已经学到了这个功夫，按 F11键\r\n就可以确认武功，设定武功的方法是点击武功画面，指定键盘，按\r\n指定键盘就可以发功了。\r\n现在你可以去比奇省的书店，\r\n书店的主人会交你更加厉害技能。\r\n比奇书店的坐标是323，247，快去吧！\r\n");
 Say2Content(t, "sayBindingBtn","离开","@exit");
 Say2Content(t, "text","\r\n");
-SuperSc.MoveMap("115");
+SuperSc.MoveMap("0115");
         // ifs
         
           onFnEnd();
@@ -58728,7 +58728,7 @@ Say2Content(t, "sayBindingBtn","退出","@exit");
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkhum("F3",120)
+                SuperSc.Checkhum("F003",120)
               )
             {
               Say2Content(t, "text","抱歉，现在参赛人数已满\r\n请稍后再来。\r\n");
@@ -58736,7 +58736,7 @@ Say2Content(t, "sayBindingBtn","确定","@exit");
             }
             else {
               SuperSc.TakeItem("金币",1000);
-SuperSc.MoveMap("F3");
+SuperSc.MoveMap("F003");
             }
             
           onFnEnd();
@@ -58921,7 +58921,7 @@ Say2Content(t, "sayBindingBtn","退出","@exit");
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkhum("F3",120)
+                SuperSc.Checkhum("F003",120)
               )
             {
               Say2Content(t, "text","抱歉，现在参赛人数已满\r\n请稍后再来。\r\n");
@@ -58929,7 +58929,7 @@ Say2Content(t, "sayBindingBtn","确定","@exit");
             }
             else {
               SuperSc.TakeItem("金币",1000);
-SuperSc.MoveMap("F3");
+SuperSc.MoveMap("F003");
             }
             
           onFnEnd();
@@ -59206,7 +59206,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("159");
+            SuperSc.MoveMap("0159");
           onFnEnd();
       }
 
@@ -59218,7 +59218,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("149");
+            SuperSc.MoveMap("0149");
           onFnEnd();
       }
 
@@ -59230,7 +59230,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("158");
+            SuperSc.MoveMap("0158");
           onFnEnd();
       }
 
@@ -59242,7 +59242,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("145");
+            SuperSc.MoveMap("0145");
           onFnEnd();
       }
 
@@ -59254,7 +59254,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("161");
+            SuperSc.MoveMap("0161");
           onFnEnd();
       }
           // btns maps
@@ -59558,7 +59558,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("117");
+            SuperSc.MoveMap("0117");
           onFnEnd();
       }
 
@@ -59570,7 +59570,7 @@ Say2Content(t, "text","\r\n");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MoveMap("120");
+            SuperSc.MoveMap("0120");
           onFnEnd();
       }
           // btns maps
@@ -61161,7 +61161,7 @@ Say2Content(t, "sayBindingBtn","进入","@q307_6");
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkhum("Q1",1)
+                SuperSc.Checkhum("Q001",1)
               )
             {
               Say2Content(t, "text","现在有人正受着煎熬，你等一下吧\r\n\r\n");
@@ -61251,13 +61251,13 @@ Say2Content(t, "sayBindingBtn","关闭","@exit");
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MonClear("Q1");
-SuperSc.Param1("Q1");
+            SuperSc.MonClear("Q001");
+SuperSc.Param1("Q001");
 SuperSc.Param2(10);
 SuperSc.Param3(10);
 SuperSc.MonGen("骷髅精灵2",1,10);
 SuperSc.TimeRecallByMins(1);
-SuperSc.MoveMap("Q1");
+SuperSc.MoveMap("Q001");
 SuperSc.SetGVar(308,1);
           onFnEnd();
       }
@@ -61270,13 +61270,13 @@ SuperSc.SetGVar(308,1);
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MonClear("Q2");
-SuperSc.Param1("Q2");
+            SuperSc.MonClear("Q002");
+SuperSc.Param1("Q002");
 SuperSc.Param2(10);
 SuperSc.Param3(10);
 SuperSc.MonGen("半兽勇士2",1,10);
 SuperSc.TimeRecallByMins(1);
-SuperSc.MoveMap("Q2");
+SuperSc.MoveMap("Q002");
 SuperSc.SetGVar(308,1);
           onFnEnd();
       }
@@ -61289,13 +61289,13 @@ SuperSc.SetGVar(308,1);
         // ifs
         
             // IfWrap_UselessIf
-            SuperSc.MonClear("Q3");
-SuperSc.Param1("Q3");
+            SuperSc.MonClear("Q003");
+SuperSc.Param1("Q003");
 SuperSc.Param2(10);
 SuperSc.Param3(10);
 SuperSc.MonGen("巨型多角虫2",1,10);
 SuperSc.TimeRecallByMins(1);
-SuperSc.MoveMap("Q3");
+SuperSc.MoveMap("Q003");
 SuperSc.SetGVar(308,1);
           onFnEnd();
       }
@@ -61379,7 +61379,7 @@ Say2Content(t, "sayBindingBtn","离开","@exit");
             // IfWrap_IfElse
             if(
                 // 0,0
-                SuperSc.Checkhum("Q1",1)
+                SuperSc.Checkhum("Q001",1)
               )
             {
               Say2Content(t, "text","现在有人正受着煎熬，你等一下\r\n\r\n");
@@ -61408,13 +61408,13 @@ Say2Content(t, "sayBindingBtn","离开","@exit");
                 SuperSc.Checkjob("warrior")
               )
             {
-              SuperSc.MonClear("Q1");
-SuperSc.Param1("Q1");
+              SuperSc.MonClear("Q001");
+SuperSc.Param1("Q001");
 SuperSc.Param2(10);
 SuperSc.Param3(10);
 SuperSc.MonGen("骷髅精灵2",1,10);
 SuperSc.TimeRecallByMins(1);
-SuperSc.MoveMap("Q1");
+SuperSc.MoveMap("Q001");
 
       // break
       return;
@@ -61430,13 +61430,13 @@ SuperSc.MoveMap("Q1");
                 SuperSc.Checkjob("wizard")
               )
             {
-              SuperSc.MonClear("Q2");
-SuperSc.Param1("Q2");
+              SuperSc.MonClear("Q002");
+SuperSc.Param1("Q002");
 SuperSc.Param2(10);
 SuperSc.Param3(10);
 SuperSc.MonGen("半兽勇士2",1,10);
 SuperSc.TimeRecallByMins(1);
-SuperSc.MoveMap("Q2");
+SuperSc.MoveMap("Q002");
 
       // break
       return;
@@ -61452,13 +61452,13 @@ SuperSc.MoveMap("Q2");
                 SuperSc.Checkjob("taoist")
               )
             {
-              SuperSc.MonClear("Q3");
-SuperSc.Param1("Q3");
+              SuperSc.MonClear("Q003");
+SuperSc.Param1("Q003");
 SuperSc.Param2(10);
 SuperSc.Param3(10);
 SuperSc.MonGen("巨型多角虫2",1,10);
 SuperSc.TimeRecallByMins(1);
-SuperSc.MoveMap("Q3");
+SuperSc.MoveMap("Q003");
 
       // break
       return;
@@ -61759,70 +61759,70 @@ Say2Content(t, "text","\r\n");
       {
         onFnStart();
         // directs
-        SuperSc.MonClear("122");
-SuperSc.MonClear("110");
-SuperSc.MonClear("112");
-SuperSc.MonClear("102");
-SuperSc.MonClear("108");
-SuperSc.MonClear("109");
-SuperSc.MonClear("104");
-SuperSc.MonClear("107");
-SuperSc.MonClear("125");
-SuperSc.MonClear("126");
-SuperSc.MonClear("103");
-SuperSc.MonClear("105");
-SuperSc.MonClear("106");
-SuperSc.MonClear("101");
-SuperSc.MonClear("100");
-SuperSc.MonClear("128");
-SuperSc.MonClear("129");
-SuperSc.MonClear("123");
-SuperSc.MonClear("124");
-SuperSc.MonClear("114");
-SuperSc.MonClear("1141");
-SuperSc.MonClear("1142");
-SuperSc.MonClear("115");
-SuperSc.MonClear("1152");
-SuperSc.MonClear("113");
-SuperSc.MonClear("1132");
-SuperSc.MonClear("137");
-SuperSc.MonClear("139");
-SuperSc.MonClear("135");
-SuperSc.MonClear("134");
-SuperSc.MonClear("133");
-SuperSc.MonClear("119");
-SuperSc.MonClear("118");
-SuperSc.MonClear("121");
-SuperSc.MonClear("127");
-SuperSc.MonClear("130");
-SuperSc.MonClear("131");
-SuperSc.MonClear("136");
-SuperSc.MonClear("132");
-SuperSc.MonClear("138");
-SuperSc.MonClear("141");
-SuperSc.MonClear("140");
-SuperSc.MonClear("d1");
-SuperSc.MonClear("d2");
-SuperSc.MonClear("dm1");
-SuperSc.MonClear("dm2");
-SuperSc.MonClear("d3");
-SuperSc.MonClear("d11");
-SuperSc.MonClear("d12");
-SuperSc.MonClear("dm11");
-SuperSc.MonClear("d21");
-SuperSc.MonClear("d22");
-SuperSc.MonClear("d32");
-SuperSc.MonClear("d42");
-SuperSc.MonClear("d52");
-SuperSc.MonClear("d23");
-SuperSc.MonClear("d33");
-SuperSc.MonClear("d43");
-SuperSc.MonClear("d53");
-SuperSc.MonClear("d24");
-SuperSc.MonClear("116");
-SuperSc.MonClear("117");
-SuperSc.MonClear("120");
-SuperSc.MonClear("142");
+        SuperSc.MonClear("0122");
+SuperSc.MonClear("0110");
+SuperSc.MonClear("0112");
+SuperSc.MonClear("0102");
+SuperSc.MonClear("0108");
+SuperSc.MonClear("0109");
+SuperSc.MonClear("0104");
+SuperSc.MonClear("0107");
+SuperSc.MonClear("0125");
+SuperSc.MonClear("0126");
+SuperSc.MonClear("0103");
+SuperSc.MonClear("0105");
+SuperSc.MonClear("0106");
+SuperSc.MonClear("0101");
+SuperSc.MonClear("0100");
+SuperSc.MonClear("0128");
+SuperSc.MonClear("0129");
+SuperSc.MonClear("0123");
+SuperSc.MonClear("0124");
+SuperSc.MonClear("0114");
+SuperSc.MonClear("01141");
+SuperSc.MonClear("01142");
+SuperSc.MonClear("0115");
+SuperSc.MonClear("01152");
+SuperSc.MonClear("0113");
+SuperSc.MonClear("01132");
+SuperSc.MonClear("0137");
+SuperSc.MonClear("0139");
+SuperSc.MonClear("0135");
+SuperSc.MonClear("0134");
+SuperSc.MonClear("0133");
+SuperSc.MonClear("0119");
+SuperSc.MonClear("0118");
+SuperSc.MonClear("0121");
+SuperSc.MonClear("0127");
+SuperSc.MonClear("0130");
+SuperSc.MonClear("0131");
+SuperSc.MonClear("0136");
+SuperSc.MonClear("0132");
+SuperSc.MonClear("0138");
+SuperSc.MonClear("0141");
+SuperSc.MonClear("0140");
+SuperSc.MonClear("d001");
+SuperSc.MonClear("d002");
+SuperSc.MonClear("dm001");
+SuperSc.MonClear("dm002");
+SuperSc.MonClear("d003");
+SuperSc.MonClear("d011");
+SuperSc.MonClear("d012");
+SuperSc.MonClear("dm011");
+SuperSc.MonClear("d021");
+SuperSc.MonClear("d022");
+SuperSc.MonClear("d032");
+SuperSc.MonClear("d042");
+SuperSc.MonClear("d052");
+SuperSc.MonClear("d023");
+SuperSc.MonClear("d033");
+SuperSc.MonClear("d043");
+SuperSc.MonClear("d053");
+SuperSc.MonClear("d024");
+SuperSc.MonClear("0116");
+SuperSc.MonClear("0117");
+SuperSc.MonClear("0120");
+SuperSc.MonClear("0142");
 SuperSc.MonClear("d401");
 SuperSc.MonClear("d411");
 SuperSc.MonClear("d413");
@@ -61837,49 +61837,49 @@ SuperSc.MonClear("d415");
 SuperSc.MonClear("d406");
 SuperSc.MonClear("d421");
 SuperSc.MonClear("d422");
-SuperSc.MonClear("f1");
-SuperSc.MonClear("f2");
-SuperSc.MonClear("f3");
-SuperSc.MonClear("f4");
-SuperSc.MonClear("f5");
-SuperSc.MonClear("f6");
-SuperSc.MonClear("f7");
-SuperSc.MonClear("f8");
-SuperSc.MonClear("f9");
-SuperSc.MonClear("f10");
-SuperSc.MonClear("r1");
-SuperSc.MonClear("g1");
-SuperSc.MonClear("g2");
-SuperSc.MonClear("g3");
-SuperSc.MonClear("g4");
-SuperSc.MonClear("g5");
-SuperSc.MonClear("g6");
-SuperSc.MonClear("g7");
-SuperSc.MonClear("g8");
-SuperSc.MonClear("g9");
-SuperSc.MonClear("g10");
-SuperSc.MonClear("g11");
-SuperSc.MonClear("g12");
-SuperSc.MonClear("143");
-SuperSc.MonClear("144");
-SuperSc.MonClear("145");
-SuperSc.MonClear("146");
-SuperSc.MonClear("147");
-SuperSc.MonClear("148");
-SuperSc.MonClear("149");
-SuperSc.MonClear("158");
-SuperSc.MonClear("159");
-SuperSc.MonClear("160");
-SuperSc.MonClear("161");
-SuperSc.MonClear("150");
-SuperSc.MonClear("151");
-SuperSc.MonClear("152");
-SuperSc.MonClear("153");
-SuperSc.MonClear("154");
-SuperSc.MonClear("155");
-SuperSc.MonClear("156");
-SuperSc.MonClear("162");
-SuperSc.MonClear("157");
+SuperSc.MonClear("f001");
+SuperSc.MonClear("f002");
+SuperSc.MonClear("f003");
+SuperSc.MonClear("f004");
+SuperSc.MonClear("f005");
+SuperSc.MonClear("f006");
+SuperSc.MonClear("f007");
+SuperSc.MonClear("f008");
+SuperSc.MonClear("f009");
+SuperSc.MonClear("f0010");
+SuperSc.MonClear("r001");
+SuperSc.MonClear("g001");
+SuperSc.MonClear("g002");
+SuperSc.MonClear("g003");
+SuperSc.MonClear("g004");
+SuperSc.MonClear("g005");
+SuperSc.MonClear("g006");
+SuperSc.MonClear("g007");
+SuperSc.MonClear("g008");
+SuperSc.MonClear("g009");
+SuperSc.MonClear("g0010");
+SuperSc.MonClear("g0011");
+SuperSc.MonClear("g0012");
+SuperSc.MonClear("0143");
+SuperSc.MonClear("0144");
+SuperSc.MonClear("0145");
+SuperSc.MonClear("0146");
+SuperSc.MonClear("0147");
+SuperSc.MonClear("0148");
+SuperSc.MonClear("0149");
+SuperSc.MonClear("0158");
+SuperSc.MonClear("0159");
+SuperSc.MonClear("0160");
+SuperSc.MonClear("0161");
+SuperSc.MonClear("0150");
+SuperSc.MonClear("0151");
+SuperSc.MonClear("0152");
+SuperSc.MonClear("0153");
+SuperSc.MonClear("0154");
+SuperSc.MonClear("0155");
+SuperSc.MonClear("0156");
+SuperSc.MonClear("0162");
+SuperSc.MonClear("0157");
 SuperSc.MonClear("d501");
 SuperSc.MonClear("d502");
 SuperSc.MonClear("d503");
@@ -61963,8 +61963,8 @@ SuperSc.MonClear("d618");
 SuperSc.MonClear("d701");
 SuperSc.MonClear("d702");
 SuperSc.MonClear("d703");
-SuperSc.MonClear("E1");
-SuperSc.MonClear("E2");
+SuperSc.MonClear("E001");
+SuperSc.MonClear("E002");
 SuperSc.MonClear("E401");
 SuperSc.MonClear("E402");
 SuperSc.MonClear("E403");
@@ -61974,20 +61974,20 @@ SuperSc.MonClear("E602");
 SuperSc.MonClear("E603");
 SuperSc.MonClear("E604");
 SuperSc.MonClear("E605");
-SuperSc.MonClear("q1");
-SuperSc.MonClear("q2");
-SuperSc.MonClear("q3");
-SuperSc.MonClear("q4");
-SuperSc.MonClear("q11");
-SuperSc.MonClear("q12");
-SuperSc.MonClear("q13");
-SuperSc.MonClear("q14");
-SuperSc.MonClear("q15");
-SuperSc.MonClear("q16");
-SuperSc.MonClear("b10");
-SuperSc.MonClear("b11");
-SuperSc.MonClear("b12");
-SuperSc.MonClear("b13");
+SuperSc.MonClear("q001");
+SuperSc.MonClear("q002");
+SuperSc.MonClear("q003");
+SuperSc.MonClear("q004");
+SuperSc.MonClear("q011");
+SuperSc.MonClear("q012");
+SuperSc.MonClear("q013");
+SuperSc.MonClear("q014");
+SuperSc.MonClear("q015");
+SuperSc.MonClear("q016");
+SuperSc.MonClear("b010");
+SuperSc.MonClear("b011");
+SuperSc.MonClear("b012");
+SuperSc.MonClear("b013");
 SuperSc.MonClear("b101");
 SuperSc.MonClear("b102");
 SuperSc.MonClear("b103");
@@ -62076,14 +62076,14 @@ SuperSc.MonClear("b201");
 SuperSc.MonClear("b202");
 SuperSc.MonClear("b301");
 SuperSc.MonClear("b302");
-SuperSc.MonClear("kt0");
-SuperSc.MonClear("kt1");
-SuperSc.MonClear("kt2");
-SuperSc.MonClear("rq1");
-SuperSc.MonClear("rq2");
-SuperSc.MonClear("rq3");
-SuperSc.MonClear("rq11");
-SuperSc.MonClear("rq31");
+SuperSc.MonClear("kt0000");
+SuperSc.MonClear("kt0001");
+SuperSc.MonClear("kt0002");
+SuperSc.MonClear("rq001");
+SuperSc.MonClear("rq002");
+SuperSc.MonClear("rq003");
+SuperSc.MonClear("rq0011");
+SuperSc.MonClear("rq0031");
 SuperSc.MonClear("1");
 SuperSc.MonClear("2");
 SuperSc.MonClear("3");
@@ -62197,7 +62197,7 @@ Say2Content(t, "text","\r\n");
       {
         onFnStart();
         // directs
-        SuperSc.MoveMap("F4");
+        SuperSc.MoveMap("F004");
         // ifs
         
           onFnEnd();
@@ -62621,7 +62621,7 @@ Say2Content(t, "text","\r\n");
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("鸡",1,1);
@@ -62637,7 +62637,7 @@ SuperSc.MonGen("鸡",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("鹿",1,1);
@@ -62653,7 +62653,7 @@ SuperSc.MonGen("鹿",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("半兽人",1,1);
@@ -62669,7 +62669,7 @@ SuperSc.MonGen("半兽人",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("毒蜘蛛",1,1);
@@ -62685,7 +62685,7 @@ SuperSc.MonGen("毒蜘蛛",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("蛤蟆",1,1);
@@ -62701,7 +62701,7 @@ SuperSc.MonGen("蛤蟆",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("钉耙猫",1,1);
@@ -62717,7 +62717,7 @@ SuperSc.MonGen("钉耙猫",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("多钩猫",1,1);
@@ -62733,7 +62733,7 @@ SuperSc.MonGen("多钩猫",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("稻草人",1,1);
@@ -62749,7 +62749,7 @@ SuperSc.MonGen("稻草人",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("森林雪人",1,1);
@@ -62765,7 +62765,7 @@ SuperSc.MonGen("森林雪人",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("RedSnake",1,1);
@@ -62781,7 +62781,7 @@ SuperSc.MonGen("RedSnake",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("虎蛇",1,1);
@@ -62797,7 +62797,7 @@ SuperSc.MonGen("虎蛇",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("羊",1,1);
@@ -62813,7 +62813,7 @@ SuperSc.MonGen("羊",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("猎鹰",1,1);
@@ -62829,7 +62829,7 @@ SuperSc.MonGen("猎鹰",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("盔甲虫",1,1);
@@ -62845,7 +62845,7 @@ SuperSc.MonGen("盔甲虫",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("威思而小虫",1,1);
@@ -62861,7 +62861,7 @@ SuperSc.MonGen("威思而小虫",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("多角虫",1,1);
@@ -62877,7 +62877,7 @@ SuperSc.MonGen("多角虫",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("巨型多角虫",1,1);
@@ -62893,7 +62893,7 @@ SuperSc.MonGen("巨型多角虫",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("狼",1,1);
@@ -62909,7 +62909,7 @@ SuperSc.MonGen("狼",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("沙虫",1,1);
@@ -62925,7 +62925,7 @@ SuperSc.MonGen("沙虫",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("森林雪人",1,1);
@@ -62941,7 +62941,7 @@ SuperSc.MonGen("森林雪人",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("半兽战士",1,1);
@@ -62957,7 +62957,7 @@ SuperSc.MonGen("半兽战士",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("半兽勇士",1,1);
@@ -62973,7 +62973,7 @@ SuperSc.MonGen("半兽勇士",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("山洞蝙蝠",1,1);
@@ -62989,7 +62989,7 @@ SuperSc.MonGen("山洞蝙蝠",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("洞蛆",1,1);
@@ -63005,7 +63005,7 @@ SuperSc.MonGen("洞蛆",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("暗黑战士",1,1);
@@ -63021,7 +63021,7 @@ SuperSc.MonGen("暗黑战士",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("粪虫",1,1);
@@ -63037,7 +63037,7 @@ SuperSc.MonGen("粪虫",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("沃玛战士",1,1);
@@ -63053,7 +63053,7 @@ SuperSc.MonGen("沃玛战士",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("沃玛勇士",1,1);
@@ -63069,7 +63069,7 @@ SuperSc.MonGen("沃玛勇士",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("沃玛战将",1,1);
@@ -63085,7 +63085,7 @@ SuperSc.MonGen("沃玛战将",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("沃玛护卫",1,1);
@@ -63101,7 +63101,7 @@ SuperSc.MonGen("沃玛护卫",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("沃玛教主",1,1);
@@ -63117,7 +63117,7 @@ SuperSc.MonGen("沃玛教主",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("蝎子",1,1);
@@ -63133,7 +63133,7 @@ SuperSc.MonGen("蝎子",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("骷髅",1,1);
@@ -63149,7 +63149,7 @@ SuperSc.MonGen("骷髅",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("掷斧骷髅",1,1);
@@ -63165,7 +63165,7 @@ SuperSc.MonGen("掷斧骷髅",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("骷髅战士",1,1);
@@ -63181,7 +63181,7 @@ SuperSc.MonGen("骷髅战士",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("骷髅战将",1,1);
@@ -63197,7 +63197,7 @@ SuperSc.MonGen("骷髅战将",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("骷髅精灵",1,1);
@@ -63213,7 +63213,7 @@ SuperSc.MonGen("骷髅精灵",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("僵尸1",1,1);
@@ -63229,7 +63229,7 @@ SuperSc.MonGen("僵尸1",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("僵尸2",1,1);
@@ -63245,7 +63245,7 @@ SuperSc.MonGen("僵尸2",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("僵尸3",1,1);
@@ -63261,7 +63261,7 @@ SuperSc.MonGen("僵尸3",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("僵尸4",1,1);
@@ -63277,7 +63277,7 @@ SuperSc.MonGen("僵尸4",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("僵尸5",1,1);
@@ -63293,7 +63293,7 @@ SuperSc.MonGen("僵尸5",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("尸王",1,1);
@@ -63309,7 +63309,7 @@ SuperSc.MonGen("尸王",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("楔蛾",1,1);
@@ -63325,7 +63325,7 @@ SuperSc.MonGen("楔蛾",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("大老鼠",1,1);
@@ -63341,7 +63341,7 @@ SuperSc.MonGen("大老鼠",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("祖玛弓箭手",1,1);
@@ -63357,7 +63357,7 @@ SuperSc.MonGen("祖玛弓箭手",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("祖玛雕像",1,1);
@@ -63373,7 +63373,7 @@ SuperSc.MonGen("祖玛雕像",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("祖玛卫士",1,1);
@@ -63389,7 +63389,7 @@ SuperSc.MonGen("祖玛卫士",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("祖玛教主",1,1);
@@ -63405,7 +63405,7 @@ SuperSc.MonGen("祖玛教主",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("角蝇",1,1);
@@ -63421,7 +63421,7 @@ SuperSc.MonGen("角蝇",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("蝙蝠",1,1);
@@ -63437,7 +63437,7 @@ SuperSc.MonGen("蝙蝠",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("蜈蚣",1,1);
@@ -63453,7 +63453,7 @@ SuperSc.MonGen("蜈蚣",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("黑色恶蛆",1,1);
@@ -63469,7 +63469,7 @@ SuperSc.MonGen("黑色恶蛆",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("跳跳蜂",1,1);
@@ -63485,7 +63485,7 @@ SuperSc.MonGen("跳跳蜂",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("巨型蠕虫",1,1);
@@ -63501,7 +63501,7 @@ SuperSc.MonGen("巨型蠕虫",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("钳虫",1,1);
@@ -63517,7 +63517,7 @@ SuperSc.MonGen("钳虫",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("邪恶钳虫",1,1);
@@ -63533,7 +63533,7 @@ SuperSc.MonGen("邪恶钳虫",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("触龙神",1,1);
@@ -63549,7 +63549,7 @@ SuperSc.MonGen("触龙神",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("红野猪",1,1);
@@ -63565,7 +63565,7 @@ SuperSc.MonGen("红野猪",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("黑野猪",1,1);
@@ -63581,7 +63581,7 @@ SuperSc.MonGen("黑野猪",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("白野猪",1,1);
@@ -63597,7 +63597,7 @@ SuperSc.MonGen("白野猪",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("蝎蛇",1,1);
@@ -63613,7 +63613,7 @@ SuperSc.MonGen("蝎蛇",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("邪恶蝎蛇",1,1);
@@ -63629,7 +63629,7 @@ SuperSc.MonGen("邪恶蝎蛇",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("月魔蜘蛛",1,1);
@@ -63645,7 +63645,7 @@ SuperSc.MonGen("月魔蜘蛛",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("钢牙蜘蛛",1,1);
@@ -63661,7 +63661,7 @@ SuperSc.MonGen("钢牙蜘蛛",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("天狼蜘蛛",1,1);
@@ -63677,7 +63677,7 @@ SuperSc.MonGen("天狼蜘蛛",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("黑锷蜘蛛",1,1);
@@ -63693,7 +63693,7 @@ SuperSc.MonGen("黑锷蜘蛛",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("幻影蜘蛛",1,1);
@@ -63709,7 +63709,7 @@ SuperSc.MonGen("幻影蜘蛛",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("花吻蜘蛛",1,1);
@@ -63725,7 +63725,7 @@ SuperSc.MonGen("花吻蜘蛛",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("蜘蛛",1,1);
@@ -63741,7 +63741,7 @@ SuperSc.MonGen("蜘蛛",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("血巨人",1,1);
@@ -63757,7 +63757,7 @@ SuperSc.MonGen("血巨人",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("邪恶巨人",1,1);
@@ -63773,7 +63773,7 @@ SuperSc.MonGen("邪恶巨人",1,1);
       {
         onFnStart();
         // directs
-        SuperSc.Param1("139");
+        SuperSc.Param1("0139");
 SuperSc.Param2(21);
 SuperSc.Param3(25);
 SuperSc.MonGen("赤月恶魔",1,1);

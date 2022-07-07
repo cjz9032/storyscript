@@ -278,6 +278,9 @@ const obj = {
       quantity: quantity.parse(),
     };
   },
+  mapName(ab) {
+    return ab.sourceString.trim();
+  },
   Param1(_t, mapName) {
     return {
       type: 'Param1',
