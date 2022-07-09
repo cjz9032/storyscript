@@ -186,4 +186,14 @@
   ,{"SlaveCaveNPC_0148", new NpcScript_SlaveCaveNPC_0148()}
   ,{"spawn_0139", new NpcScript_spawn_0139()}
   ,{"test_r001", new NpcScript_test_r001()}
+  ,{"传送员_0", new NpcScript_传送员_0()}
+  ,{"传送员_11", new NpcScript_传送员_11()}
+  ,{"传送员_2", new NpcScript_传送员_2()}
+  ,{"传送员_3", new NpcScript_传送员_3()}
+  ,{"传送员_r001", new NpcScript_传送员_r001()}
+  ,{"地图传送员_r001", new NpcScript_地图传送员_r001()}
+  ,{"比齐国王_0122", new NpcScript_比齐国王_0122()}
+  ,{"沙巴克管理员_0150", new NpcScript_沙巴克管理员_0150()}
+  ,{"老人_3", new NpcScript_老人_3()}
+  ,{"赌徒_0", new NpcScript_赌徒_0()}
   

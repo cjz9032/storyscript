@@ -49,7 +49,7 @@ BKS {
         SayContent =  (~"#") (Comment | sayBindingWrap | sayText)+
         sayBindingWrap = "<"spaces(sayStrBindingLVar | sayBindingBtn | sayBindingText )spaces">"
         sayBindingBtn = sayTextChars+ "/" functionNameSPNO
-        sayBindingText = "$"("LORD"| "OWNERGUILD" | "USERNAME" | "UPGRADEWEAPONFEE" | "USERWEAPON")
+        sayBindingText = "$"("LORD"| "OWNERGUILD" | "USERNAME" | "UPGRADEWEAPONFEE" | "USERWEAPON" | "GUILDWARFEE" | "CASTLEWARDATE" | "TODAYINCOME" | "CASTLEGOLD" | "CASTLEDOORSTATE" | "REPAIRDOORGOLD" | "REPAIRWALLGOLD" | "GUARDFEE" | "ARCHERFEE" | "GUARDRULE" | "LISTOFWAR")
         sayStrBindingLVar =  "$STR("lVar")" //  <$STR(D0)> \
         sayText = (sayNewLine | sayTextChars | "\r"|"\n"| "/" )+
         sayNewLine = "\\"
@@ -72,7 +72,7 @@ BKS {
     
     
     
-    CheckExp = CheckGVar
+    CheckExp = CheckGVar | CheckLVar
     					|  Checkgold
                         |  Checkitemw 
                         |  Checkpkpoint
@@ -104,6 +104,7 @@ BKS {
     RandomIs = caseInsensitive<"random"> number
     CheckGender = caseInsensitive<"gender"> "man"
     CheckGVar = caseInsensitive<"check"> gVar gVarRange
+    CheckLVar = caseInsensitive<"check"> lVar lVarRange
     Checkunit = caseInsensitive<"checkunit"> gVar gVarRange
     Checkgold = caseInsensitive<"checkgold"> quantity
     Checkdura =  (caseInsensitive<"checkduraeva"> | caseInsensitive<"checkdura">) itemName quantity // both are one thing

@@ -63933,5 +63933,5068 @@ Say2Content(t, "text","\r\n");
   
         }
         
+
+        public class NpcScript_传送员_0: NpcScriptBase
+        {
+          public string scName = "传送员_0";
+          // declare
+          
+    public int dPercent = 100;
+
+    public int[] declareDetails = new int[] { 
+        
+      };  
+
+    public string[] declareFns = new string[] { 
+      
+    }; 
+    
+          // goods
+          
+  public static List<GoodsItem> goodsItems = new List<GoodsItem>(new GoodsItem[]
+    {
+      
+    }
+  );
+  
+          // fns 
+          
+      public override void @main()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkpkpoint(2)
+              )
+            {
+              Say2Content(t, "text","我将会把你传送到你想要去的地方!\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+      // goto
+      @main_1();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @main_1()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","欢迎使用我的传送服务。\r\n每传送一个地方将用掉你10000金币。\r\n你想去什么地方？\r\n\r\n");
+Say2Content(t, "sayBindingBtn","比奇城","@bwmove");
+Say2Content(t, "sayBindingBtn","边界村","@brdmove");
+Say2Content(t, "sayBindingBtn","银杏村","@ginmove");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","毒蛇村庄","@svmove");
+Say2Content(t, "sayBindingBtn","盟重土城","@mwmove");
+Say2Content(t, "sayBindingBtn","白日门","@wwmove");
+Say2Content(t, "text","\r\n\r\n");
+Say2Content(t, "sayBindingBtn","超级无敌","@r1");
+Say2Content(t, "text","\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @bwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",333,268);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @brdmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",288,615);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @ginmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",634,612);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @svmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("2",504,484);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @mwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("3",330,330);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @wwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("11",177,324);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @r1()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("r001",98,98);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+          // btns maps
+          
+  public override void callFnMaps(string fnName){
+    switch(fnName){
+      case "@main": @main(); break;
+case "@main_1": @main_1(); break;
+case "@bwmove": @bwmove(); break;
+case "@brdmove": @brdmove(); break;
+case "@ginmove": @ginmove(); break;
+case "@svmove": @svmove(); break;
+case "@mwmove": @mwmove(); break;
+case "@wwmove": @wwmove(); break;
+case "@r1": @r1(); break;
+      default:
+        base.@quit();
+        break;
+    }
+  }
+  
+        }
+        
+
+        public class NpcScript_传送员_11: NpcScriptBase
+        {
+          public string scName = "传送员_11";
+          // declare
+          
+    public int dPercent = 100;
+
+    public int[] declareDetails = new int[] { 
+        
+      };  
+
+    public string[] declareFns = new string[] { 
+      
+    }; 
+    
+          // goods
+          
+  public static List<GoodsItem> goodsItems = new List<GoodsItem>(new GoodsItem[]
+    {
+      
+    }
+  );
+  
+          // fns 
+          
+      public override void @main()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkpkpoint(2)
+              )
+            {
+              Say2Content(t, "text","我将会把你传送到你想要去的地方!\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+      // goto
+      @main_1();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @main_1()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","欢迎使用我的传送服务。\r\n每传送一个地方将用掉你10000金币。\r\n你想去什么地方？\r\n\r\n");
+Say2Content(t, "sayBindingBtn","比奇城","@bwmove");
+Say2Content(t, "sayBindingBtn","边界村","@brdmove");
+Say2Content(t, "sayBindingBtn","银杏村","@ginmove");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","毒蛇村庄","@svmove");
+Say2Content(t, "sayBindingBtn","盟重土城","@mwmove");
+Say2Content(t, "sayBindingBtn","白日门","@wwmove");
+Say2Content(t, "text","\r\n\r\n");
+Say2Content(t, "sayBindingBtn","超级无敌","@r1");
+Say2Content(t, "text","\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @bwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",333,268);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @brdmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",288,615);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @ginmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",634,612);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @svmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("2",504,484);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @mwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("3",330,330);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @wwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("11",177,324);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @r1()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("r001",98,98);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+          // btns maps
+          
+  public override void callFnMaps(string fnName){
+    switch(fnName){
+      case "@main": @main(); break;
+case "@main_1": @main_1(); break;
+case "@bwmove": @bwmove(); break;
+case "@brdmove": @brdmove(); break;
+case "@ginmove": @ginmove(); break;
+case "@svmove": @svmove(); break;
+case "@mwmove": @mwmove(); break;
+case "@wwmove": @wwmove(); break;
+case "@r1": @r1(); break;
+      default:
+        base.@quit();
+        break;
+    }
+  }
+  
+        }
+        
+
+        public class NpcScript_传送员_2: NpcScriptBase
+        {
+          public string scName = "传送员_2";
+          // declare
+          
+    public int dPercent = 100;
+
+    public int[] declareDetails = new int[] { 
+        
+      };  
+
+    public string[] declareFns = new string[] { 
+      
+    }; 
+    
+          // goods
+          
+  public static List<GoodsItem> goodsItems = new List<GoodsItem>(new GoodsItem[]
+    {
+      
+    }
+  );
+  
+          // fns 
+          
+      public override void @main()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkpkpoint(2)
+              )
+            {
+              Say2Content(t, "text","我将会把你传送到你想要去的地方!\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+      // goto
+      @main_1();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @main_1()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","欢迎使用我的传送服务。\r\n每传送一个地方将用掉你10000金币。\r\n你想去什么地方？\r\n\r\n");
+Say2Content(t, "sayBindingBtn","比奇城","@bwmove");
+Say2Content(t, "sayBindingBtn","边界村","@brdmove");
+Say2Content(t, "sayBindingBtn","银杏村","@ginmove");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","毒蛇村庄","@svmove");
+Say2Content(t, "sayBindingBtn","盟重土城","@mwmove");
+Say2Content(t, "sayBindingBtn","白日门","@wwmove");
+Say2Content(t, "text","\r\n\r\n");
+Say2Content(t, "sayBindingBtn","超级无敌","@r1");
+Say2Content(t, "text","\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @bwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",333,268);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @brdmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",288,615);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @ginmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",634,612);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @svmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("2",504,484);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @mwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("3",330,330);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @wwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("11",177,324);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @r1()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("r001",98,98);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+          // btns maps
+          
+  public override void callFnMaps(string fnName){
+    switch(fnName){
+      case "@main": @main(); break;
+case "@main_1": @main_1(); break;
+case "@bwmove": @bwmove(); break;
+case "@brdmove": @brdmove(); break;
+case "@ginmove": @ginmove(); break;
+case "@svmove": @svmove(); break;
+case "@mwmove": @mwmove(); break;
+case "@wwmove": @wwmove(); break;
+case "@r1": @r1(); break;
+      default:
+        base.@quit();
+        break;
+    }
+  }
+  
+        }
+        
+
+        public class NpcScript_传送员_3: NpcScriptBase
+        {
+          public string scName = "传送员_3";
+          // declare
+          
+    public int dPercent = 100;
+
+    public int[] declareDetails = new int[] { 
+        
+      };  
+
+    public string[] declareFns = new string[] { 
+      
+    }; 
+    
+          // goods
+          
+  public static List<GoodsItem> goodsItems = new List<GoodsItem>(new GoodsItem[]
+    {
+      
+    }
+  );
+  
+          // fns 
+          
+      public override void @main()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkpkpoint(2)
+              )
+            {
+              Say2Content(t, "text","我将会把你传送到你想要去的地方!\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+      // goto
+      @main_1();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @main_1()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","欢迎使用我的传送服务。\r\n每传送一个地方将用掉你10000金币。\r\n你想去什么地方？\r\n\r\n");
+Say2Content(t, "sayBindingBtn","比奇城","@bwmove");
+Say2Content(t, "sayBindingBtn","边界村","@brdmove");
+Say2Content(t, "sayBindingBtn","银杏村","@ginmove");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","毒蛇村庄","@svmove");
+Say2Content(t, "sayBindingBtn","盟重土城","@mwmove");
+Say2Content(t, "sayBindingBtn","白日门","@wwmove");
+Say2Content(t, "text","\r\n\r\n");
+Say2Content(t, "sayBindingBtn","超级无敌","@r1");
+Say2Content(t, "text","\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @bwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",333,268);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @brdmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",288,615);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @ginmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",634,612);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @svmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("2",504,484);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @mwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("3",330,330);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @wwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("11",177,324);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @r1()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("r001",98,98);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+          // btns maps
+          
+  public override void callFnMaps(string fnName){
+    switch(fnName){
+      case "@main": @main(); break;
+case "@main_1": @main_1(); break;
+case "@bwmove": @bwmove(); break;
+case "@brdmove": @brdmove(); break;
+case "@ginmove": @ginmove(); break;
+case "@svmove": @svmove(); break;
+case "@mwmove": @mwmove(); break;
+case "@wwmove": @wwmove(); break;
+case "@r1": @r1(); break;
+      default:
+        base.@quit();
+        break;
+    }
+  }
+  
+        }
+        
+
+        public class NpcScript_传送员_r001: NpcScriptBase
+        {
+          public string scName = "传送员_r001";
+          // declare
+          
+    public int dPercent = 100;
+
+    public int[] declareDetails = new int[] { 
+        
+      };  
+
+    public string[] declareFns = new string[] { 
+      
+    }; 
+    
+          // goods
+          
+  public static List<GoodsItem> goodsItems = new List<GoodsItem>(new GoodsItem[]
+    {
+      
+    }
+  );
+  
+          // fns 
+          
+      public override void @main()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkpkpoint(2)
+              )
+            {
+              Say2Content(t, "text","我将会把你传送到你想要去的地方!\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+      // goto
+      @main_1();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @main_1()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","欢迎使用我的传送服务。\r\n每传送一个地方将用掉你10000金币。\r\n你想去什么地方？\r\n\r\n");
+Say2Content(t, "sayBindingBtn","比奇城","@bwmove");
+Say2Content(t, "sayBindingBtn","边界村","@brdmove");
+Say2Content(t, "sayBindingBtn","银杏村","@ginmove");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","毒蛇村庄","@svmove");
+Say2Content(t, "sayBindingBtn","盟重土城","@mwmove");
+Say2Content(t, "sayBindingBtn","白日门","@wwmove");
+Say2Content(t, "text","\r\n\r\n");
+Say2Content(t, "sayBindingBtn","超级无敌","@r1");
+Say2Content(t, "text","\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @bwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",333,268);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @brdmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",288,615);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @ginmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("0",634,612);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @svmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("2",504,484);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @mwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("3",330,330);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @wwmove()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("11",177,324);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @r1()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              SuperSc.TakeItem("金币",10000);
+SuperSc.MoveMapPos("r001",98,98);
+
+      // break
+      return;
+            }
+            else {
+              Say2Content(t, "text","你没有足够的黄金使用我们的服务!\r\n快走开~不要浪费我们的时间!\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+          // btns maps
+          
+  public override void callFnMaps(string fnName){
+    switch(fnName){
+      case "@main": @main(); break;
+case "@main_1": @main_1(); break;
+case "@bwmove": @bwmove(); break;
+case "@brdmove": @brdmove(); break;
+case "@ginmove": @ginmove(); break;
+case "@svmove": @svmove(); break;
+case "@mwmove": @mwmove(); break;
+case "@wwmove": @wwmove(); break;
+case "@r1": @r1(); break;
+      default:
+        base.@quit();
+        break;
+    }
+  }
+  
+        }
+        
+
+        public class NpcScript_地图传送员_r001: NpcScriptBase
+        {
+          public string scName = "地图传送员_r001";
+          // declare
+          
+    public int dPercent = 100;
+
+    public int[] declareDetails = new int[] { 
+        
+      };  
+
+    public string[] declareFns = new string[] { 
+      
+    }; 
+    
+          // goods
+          
+  public static List<GoodsItem> goodsItems = new List<GoodsItem>(new GoodsItem[]
+    {
+      
+    }
+  );
+  
+          // fns 
+          
+      public override void @main()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checklevel(50)
+              )
+            {
+              Say2Content(t, "text","欢迎光临！我是地图传送员。 \r\n现在你想去哪里？\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","比奇城","@bmove");
+Say2Content(t, "text","\r\n赌场的");
+Say2Content(t, "sayBindingBtn","房间40","@tmove");
+Say2Content(t, "text","\r\n游戏地图 ");
+Say2Content(t, "sayBindingBtn","地图1","@gmove1");
+Say2Content(t, "sayBindingBtn","地图2","@gmove2");
+Say2Content(t, "sayBindingBtn","地图3","@gmove3");
+Say2Content(t, "sayBindingBtn","地图4","@gmove4");
+Say2Content(t, "sayBindingBtn","地图5","@gmove5");
+Say2Content(t, "sayBindingBtn","地图6","@gmove6");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","地图7","@gmove7");
+Say2Content(t, "sayBindingBtn","地图8","@gmove8");
+Say2Content(t, "sayBindingBtn","地图9","@gmove9");
+Say2Content(t, "sayBindingBtn","地图10","@gmove10");
+Say2Content(t, "sayBindingBtn","地图11","@gmove11");
+Say2Content(t, "sayBindingBtn","地图12","@gmove12");
+Say2Content(t, "sayBindingBtn","地图13","@gmove13");
+Say2Content(t, "sayBindingBtn","地图14","@gmove14");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","沙巴克宫殿","@sumove");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","更多...","@more");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              Say2Content(t, "text","这个功能有级别限制的!!\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @more()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","移动到 ");
+Say2Content(t, "sayBindingBtn","丛林迷宫","@mmove");
+Say2Content(t, "text","\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","白日门城外","@mmove1");
+Say2Content(t, "text","\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","沃玛森林","@mcmove");
+Say2Content(t, "text","\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","毒蛇山谷","@smove");
+Say2Content(t, "text","\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","盟重土城","@rmove");
+Say2Content(t, "text","\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","尸王殿","@gcmove");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","更多...","@mmore");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @mmore()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","移动到 ");
+Say2Content(t, "sayBindingBtn","石墓入口","@moves1");
+Say2Content(t, "text","\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","石墓七曾","@moves7");
+Say2Content(t, "text","\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","图书馆","@movez1");
+Say2Content(t, "text","\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","祖玛大殿","@movez7");
+Say2Content(t, "text","\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","祖玛教主之家","@movezt");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","更多...","@mmmore");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @mmmore()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","移动到 ");
+Say2Content(t, "sayBindingBtn","香石古墓","@movee");
+Say2Content(t, "text","\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","任务房间1","@moveq");
+Say2Content(t, "text","\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","未知地图","@movek");
+Say2Content(t, "text","\r\n移动到 ");
+Say2Content(t, "sayBindingBtn","石路连接通道","@bcmove");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @tmove()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("B140",5,5);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove1()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G001",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove2()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G002",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove3()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G003",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove4()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G004",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove5()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G005",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove6()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G006",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove7()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G007",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove8()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G008",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove9()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G009",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove10()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G010",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove11()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G011",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove12()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G012",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove13()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G013",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gmove14()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("G014",30,30);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @mmove()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("12",200,200);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @mmove1()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("11",250,250);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @mcmove()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("1",306,72);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @smove()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("2",330,450);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @rmove()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("3",330,330);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @moves7()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("D717",26,74);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @moves1()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("D710",27,19);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @movee()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("E701",15,15);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @moveq()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("Q001",15,15);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @movek()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("kt0001",15,15);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @bmove()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("0",330,267);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @mvmove()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("M001",200,200);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @gcmove()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("Q004",60,60);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @sumove()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("0150",7,16);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @bcmove()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("D611",55,58);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @movezt()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("D515",14,31);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @movez7()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("0157",17,19);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @movez1()
+      {
+        onFnStart();
+        // directs
+        SuperSc.MoveMapPos("D511",29,21);
+
+      // break
+      return;
+        // ifs
+        
+          onFnEnd();
+      }
+          // btns maps
+          
+  public override void callFnMaps(string fnName){
+    switch(fnName){
+      case "@main": @main(); break;
+case "@more": @more(); break;
+case "@mmore": @mmore(); break;
+case "@mmmore": @mmmore(); break;
+case "@tmove": @tmove(); break;
+case "@gmove1": @gmove1(); break;
+case "@gmove2": @gmove2(); break;
+case "@gmove3": @gmove3(); break;
+case "@gmove4": @gmove4(); break;
+case "@gmove5": @gmove5(); break;
+case "@gmove6": @gmove6(); break;
+case "@gmove7": @gmove7(); break;
+case "@gmove8": @gmove8(); break;
+case "@gmove9": @gmove9(); break;
+case "@gmove10": @gmove10(); break;
+case "@gmove11": @gmove11(); break;
+case "@gmove12": @gmove12(); break;
+case "@gmove13": @gmove13(); break;
+case "@gmove14": @gmove14(); break;
+case "@mmove": @mmove(); break;
+case "@mmove1": @mmove1(); break;
+case "@mcmove": @mcmove(); break;
+case "@smove": @smove(); break;
+case "@rmove": @rmove(); break;
+case "@moves7": @moves7(); break;
+case "@moves1": @moves1(); break;
+case "@movee": @movee(); break;
+case "@moveq": @moveq(); break;
+case "@movek": @movek(); break;
+case "@bmove": @bmove(); break;
+case "@mvmove": @mvmove(); break;
+case "@gcmove": @gcmove(); break;
+case "@sumove": @sumove(); break;
+case "@bcmove": @bcmove(); break;
+case "@movezt": @movezt(); break;
+case "@movez7": @movez7(); break;
+case "@movez1": @movez1(); break;
+      default:
+        base.@quit();
+        break;
+    }
+  }
+  
+        }
+        
+
+        public class NpcScript_比齐国王_0122: NpcScriptBase
+        {
+          public string scName = "比齐国王_0122";
+          // declare
+          
+    public int dPercent = 100;
+
+    public int[] declareDetails = new int[] { 
+        
+      };  
+
+    public string[] declareFns = new string[] { 
+      
+    }; 
+    
+          // goods
+          
+  public static List<GoodsItem> goodsItems = new List<GoodsItem>(new GoodsItem[]
+    {
+      
+    }
+  );
+  
+          // fns 
+          
+      public override void @main()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","这里是比齐的皇宫，我是比齐国王，掌管着许多事物的人。\r\n有什么事需要我帮助吗？\r\n\r\n");
+Say2Content(t, "sayBindingBtn","请求创建公会","@buildguildnow");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","申请公会战争","@guildwar");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","如何建立公会","@buildguildexp");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","有关公会战争","@guildwarexp");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","申请攻城战争","@requestcastlewar");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @buildguildexp()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","为了要建立公会，你应该证明你有资格。要证明你的资格，应该 \r\n提供一百万金币。\r\n而且要取得位于沃玛森林地底深处的沃玛教主所捅有的号角！\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","返回","@main");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @guildwar()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","让我知道你愿作战的敌对公会的名字。允许合法的公会战争将会 \r\n花费30000金币。\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","点击后开始战争","@guildwar");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","返回","@main");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @guildwarexp()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "sayBindingBtn","行会战","@guildwar2");
+Say2Content(t, "text","是一种合法的战争，因为目前有许多公会和许多英雄都同 \r\n意。这是");
+Say2Content(t, "sayBindingBtn","合法的","@warrule");
+Say2Content(t, "text","的公会间战争。你是否");
+Say2Content(t, "sayBindingBtn","请求","@propose");
+Say2Content(t, "text","行会战争？战争将进 \r\n行3小时，你应该支付");
+Say2Content(t, "sayBindingText","GUILDWARFEE");
+Say2Content(t, "text","如请求费用的金币。\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","返回","@main");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @guildwar2()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","当你请求公会战争的时候，相同公会成员的名字将会出现在蓝色 \r\n的。在另一方面，敌人的公会成员名字将会变成橘色的。\r\n如果你在公会战争期间连接，信息窗口会有：'有某公会的战争' \r\n的信息出现，在这个时候，如果你杀敌了人的公会一个成员对， \r\n你的行为将不会被视为 PK 。 \r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","返回","@guildwarexp");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @warrule()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","公会战争在城市中不能发生，它在城市某范围外或内部竞赛区域 \r\n(一些建筑物之内)被启动。否则你PK你的身份将会是红色的！\r\n甚至在战争期间。\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","返回","@guildwarexp");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @propose()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","公会战争的提议只能由行会首领提出。\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","返回","@guildwarexp");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @requestcastlewar()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","请求攻城作战你应该有祖玛教主的头像，你有它吗？ \r\n战争将会在3天内开始。\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","给祖玛头像","@requestcastlewarnow");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","返回","@main");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @request_ok_CB()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","你的请求被受理，\r\n战争将会发生在有一个伟大的日子！");
+Say2Content(t, "sayBindingText","CASTLEWARDATE");
+Say2Content(t, "text","\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+          // btns maps
+          
+  public override void callFnMaps(string fnName){
+    switch(fnName){
+      case "@main": @main(); break;
+case "@buildguildexp": @buildguildexp(); break;
+case "@guildwar": @guildwar(); break;
+case "@guildwarexp": @guildwarexp(); break;
+case "@guildwar2": @guildwar2(); break;
+case "@warrule": @warrule(); break;
+case "@propose": @propose(); break;
+case "@requestcastlewar": @requestcastlewar(); break;
+case "@request_ok_CB": @request_ok_CB(); break;
+      default:
+        base.@quit();
+        break;
+    }
+  }
+  
+        }
+        
+
+        public class NpcScript_沙巴克管理员_0150: NpcScriptBase
+        {
+          public string scName = "沙巴克管理员_0150";
+          // declare
+          
+    public int dPercent = 100;
+
+    public int[] declareDetails = new int[] { 
+        
+      };  
+
+    public string[] declareFns = new string[] { 
+      
+    }; 
+    
+          // goods
+          
+  public static List<GoodsItem> goodsItems = new List<GoodsItem>(new GoodsItem[]
+    {
+      
+    }
+  );
+  
+          // fns 
+          
+      public override void @main()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","沙巴克是在");
+Say2Content(t, "sayBindingText","OWNERGUILD");
+Say2Content(t, "text","的管理下，并且受约束于");
+Say2Content(t, "sayBindingText","LORD");
+Say2Content(t, "text","。 \r\n城堡的总黄金是：");
+Say2Content(t, "sayBindingText","CASTLEGOLD");
+Say2Content(t, "text","\r\n今天的收入是：");
+Say2Content(t, "sayBindingText","TODAYINCOME");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","收回现金","@withdrawal");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","贮藏现金","@receipts");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","控制城门","@treatdoor");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","修理城堡","@repaircastle");
+Say2Content(t, "text","\r\n");
+// <租用弓箭手/@guardcmd> \
+Say2Content(t, "sayBindingBtn","租用守卫","@guardcmd");
+Say2Content(t, "text","\r\n");
+// --------------------------------------------------
+// 己巩阑 炼沥
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @treatdoor()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","城堡门的门现再是的");
+Say2Content(t, "sayBindingText","CASTLEDOORSTATE");
+Say2Content(t, "text","的。 \r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","关闭大门","@closemaindoor");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","打开大门","@openmaindoor");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","返回","@main");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @openmaindoor()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","现再打开大门。 \r\n\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","返回","@treatdoor");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @closemaindoor()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","现再关闭大门。 \r\n\r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","返回","@treatdoor");
+Say2Content(t, "text","\r\n");
+// --------------------------------------------------
+// 荐府 包访
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @repaircastle()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","你想要修复什么？ \r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","修理大门","@repairdoor");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","修理城墙","@repairwalls");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","返回","@main");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @repairdoor()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","将要把");
+Say2Content(t, "sayBindingText","REPAIRDOORGOLD");
+Say2Content(t, "text","现金用于修理大门！ \r\n\r\n\r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","马上修复大门","@repairdoornow");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","返回","@repaircastle");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @repairwalls()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","将要把");
+Say2Content(t, "sayBindingText","REPAIRWALLGOLD");
+Say2Content(t, "text","现金用于修理城墙！ \r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","修理城墙","@repairwallnow1");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","修理城墙","@repairwallnow2");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","修理城墙","@repairwallnow3");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","返回","@repaircastle");
+Say2Content(t, "text","\r\n");
+// --------------------------------------------------
+// 版厚 包访
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @guardcmd()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","你想你要租用弓箭手吗？ \r\n\r\n\r\n\r\n");
+// <租用守卫/@hireguards> \
+Say2Content(t, "sayBindingBtn","租用弓箭手","@hirearchers");
+Say2Content(t, "text","\r\n");
+// <指定工做/@commandorder> \
+Say2Content(t, "sayBindingBtn","返回","@main");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @hireguards()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","你想租用守卫吗？ \r\n你要用");
+Say2Content(t, "sayBindingText","GUARDFEE");
+Say2Content(t, "text","现金来租用守卫。 \r\n\r\n\r\n\r\n可以是");
+Say2Content(t, "sayBindingBtn","守卫1","@hireguardnow1");
+Say2Content(t, "text","，");
+Say2Content(t, "sayBindingBtn","守卫2","@hireguardnow2");
+Say2Content(t, "text","\r\n也可以");
+Say2Content(t, "sayBindingBtn","守卫3","@hireguardnow3");
+Say2Content(t, "text","，");
+Say2Content(t, "sayBindingBtn","守卫4","@hireguardnow4");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","返回","@main");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @hirearchers()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","你应该负一些租金给他们。 \r\n他们来去是自由的，他们每个要");
+Say2Content(t, "sayBindingText","ARCHERFEE");
+Say2Content(t, "text","现金。 \r\n\r\n租用");
+Say2Content(t, "sayBindingBtn","弓箭手1","@hirearchernow1");
+Say2Content(t, "text","，");
+Say2Content(t, "sayBindingBtn","弓箭手2","@hirearchernow2");
+Say2Content(t, "text","，");
+Say2Content(t, "sayBindingBtn","弓箭手3","@hirearchernow3");
+Say2Content(t, "text","\r\n租用");
+Say2Content(t, "sayBindingBtn","弓箭手4","@hirearchernow4");
+Say2Content(t, "text","，");
+Say2Content(t, "sayBindingBtn","弓箭手5","@hirearchernow5");
+Say2Content(t, "text","，");
+Say2Content(t, "sayBindingBtn","弓箭手6","@hirearchernow6");
+Say2Content(t, "text","\r\n租用");
+Say2Content(t, "sayBindingBtn","弓箭手7","@hirearchernow7");
+Say2Content(t, "text","，");
+Say2Content(t, "sayBindingBtn","弓箭手8","@hirearchernow8");
+Say2Content(t, "text","\r\n租用");
+Say2Content(t, "sayBindingBtn","弓箭手9","@hirearchernow9");
+Say2Content(t, "text","，");
+Say2Content(t, "sayBindingBtn","弓箭手10","@hirearchernow10");
+Say2Content(t, "text","\r\n租用");
+Say2Content(t, "sayBindingBtn","弓箭手11","@hirearchernow11");
+Say2Content(t, "text","，");
+Say2Content(t, "sayBindingBtn","弓箭手12","@hirearchernow12");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","返回","@main");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @commandorder()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","守卫门正在进行");
+Say2Content(t, "sayBindingText","GUARDRULE");
+Say2Content(t, "text","的工做。\r\n你想改变他？ \r\n\r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","守卫正常","@guardrule_normalnow");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","进攻PK者","@guardrule_pkattack");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","返回","@guardcmd");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+          // btns maps
+          
+  public override void callFnMaps(string fnName){
+    switch(fnName){
+      case "@main": @main(); break;
+case "@treatdoor": @treatdoor(); break;
+case "@openmaindoor": @openmaindoor(); break;
+case "@closemaindoor": @closemaindoor(); break;
+case "@repaircastle": @repaircastle(); break;
+case "@repairdoor": @repairdoor(); break;
+case "@repairwalls": @repairwalls(); break;
+case "@guardcmd": @guardcmd(); break;
+case "@hireguards": @hireguards(); break;
+case "@hirearchers": @hirearchers(); break;
+case "@commandorder": @commandorder(); break;
+      default:
+        base.@quit();
+        break;
+    }
+  }
+  
+        }
+        
+
+        public class NpcScript_老人_3: NpcScriptBase
+        {
+          public string scName = "老人_3";
+          // declare
+          
+    public int dPercent = 100;
+
+    public int[] declareDetails = new int[] { 
+        
+      };  
+
+    public string[] declareFns = new string[] { 
+      
+    }; 
+    
+          // goods
+          
+  public static List<GoodsItem> goodsItems = new List<GoodsItem>(new GoodsItem[]
+    {
+      
+    }
+  );
+  
+          // fns 
+          
+      public override void @main()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","你想知道万纳和沙吧克的战役？ \r\n\r\n\r\n");
+Say2Content(t, "sayBindingBtn","关于","@aboutwar");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @aboutwar()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","你想知道关于万纳的战役吗， \r\n下一次战役记录在");
+Say2Content(t, "sayBindingText","CASTLEWARDATE");
+Say2Content(t, "text",", 下午8点。\r\n\r\n");
+Say2Content(t, "sayBindingBtn","查看","@listwar");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","返回","@main");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @listwar()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "sayBindingText","LISTOFWAR");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","返回","@aboutwar");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+          // btns maps
+          
+  public override void callFnMaps(string fnName){
+    switch(fnName){
+      case "@main": @main(); break;
+case "@aboutwar": @aboutwar(); break;
+case "@listwar": @listwar(); break;
+      default:
+        base.@quit();
+        break;
+    }
+  }
+  
+        }
+        
+
+        public class NpcScript_赌徒_0: NpcScriptBase
+        {
+          public string scName = "赌徒_0";
+          // declare
+          
+    public int dPercent = 100;
+
+    public int[] declareDetails = new int[] { 
+        
+      };  
+
+    public string[] declareFns = new string[] { 
+      
+    }; 
+    
+          // goods
+          
+  public static List<GoodsItem> goodsItems = new List<GoodsItem>(new GoodsItem[]
+    {
+      
+    }
+  );
+  
+          // fns 
+          
+      public override void @main()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_UselessIf
+            Say2Content(t, "text","欢迎加入我为你准备的一个小游戏。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","我想了解一下这个游戏的规则","@display");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","让我去试试运气","@play_dice");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","我不想参加","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.MoveLVar("p2",0);
+          onFnEnd();
+      }
+
+      public  void @display()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_UselessIf
+            Say2Content(t, "sayBindingText","USERNAME");
+Say2Content(t, "text","：这是一个比大小的游戏，我们在游戏中给你两 \r\n次投骰子的机会，第一次比第二次大，那么你就赢得了奖金反之 \r\n我们就得扣除你下注的本金，如果遇到二次相同那么我们互不赔付 \r\n要说明的是三个骰子点数超过十点就以个位数的计算如: 投出了10 \r\n点，实际就是0点，游戏中设立了大奖赔付第一次投出9点会赔付三 \r\n赔本金。第二次投9点你得付出一些金币。好了");
+Say2Content(t, "sayBindingText","USERNAME");
+Say2Content(t, "text","我就 \r\n介绍到这。 \r\n");
+Say2Content(t, "sayBindingBtn","返回","@main");
+Say2Content(t, "text","\r\n");
+          onFnEnd();
+      }
+
+      public  void @play_dice()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_UselessIf
+            Say2Content(t, "sayBindingText","USERNAME");
+Say2Content(t, "text","：感谢你的光顾，看我象不象财主？ \r\n呵呵~~~从事一项职业每天也得纳税啊...所以参加 \r\n这个游戏你每一次必须支付1000金币的服务费。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","1000算什么，给你就是了","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","赚点钱不容易，我还得养家糊口","@exit");
+Say2Content(t, "text","\r\n");
+          onFnEnd();
+      }
+
+      public  void @event()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(1000)
+               && 
+                // 0
+                SuperSc.RandomIs(5)
+              )
+            {
+              Say2Content(t, "text","这是一个随机运气，如果你在这次投注中二次投出的点数 \r\n相同，我们将赔付你 5 赔的奖金，但是你必须多交纳一次 \r\n的入场费用，你愿意再交纳 1000金币吗？ \r\n\r\n");
+Say2Content(t, "sayBindingBtn","机会难得，管它中不中我决定要参加","@event1");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","我才不上你当，这种事情也会有？我不信","@play_dices");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+      // goto
+      @play_dice1();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @event1()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_UselessIf
+            SuperSc.MoveLVar("p2",1);
+
+      // goto
+      @play_dice1();
+      
+          onFnEnd();
+      }
+
+      public  void @play_dice1()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(1000)
+              )
+            {
+              SuperSc.TakeItem("金币",1000);
+Say2Content(t, "text","现在请挑选一项你能接受的方式下注。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","马上下注","@play_dices");
+            }
+            else {
+              Say2Content(t, "text","你都没有金币了还来玩？我也得靠收点服务费来吃饭。 \r\n快去准备好足够的金币再来玩吧。\r\n\r\n");
+Say2Content(t, "sayBindingBtn","关闭","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @play_dices()
+      {
+        onFnStart();
+        // directs
+        Say2Content(t, "text","仔细看清除哦~!\r\n");
+Say2Content(t, "sayBindingBtn","下注2000金币","@m2000");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","下注5000金币","@m5000");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","下注10000金币","@m10000");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","下注20000金币","@m20000");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","下注50000金币","@m50000");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","下注100000金币","@m100000");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","后悔还来得急","@exit");
+Say2Content(t, "text","\r\n");
+        // ifs
+        
+          onFnEnd();
+      }
+
+      public  void @m2000()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(2000)
+              )
+            {
+              Say2Content(t, "text","你选择的是2000金币下注方式。 \r\n现在你可以开始游戏了。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","开始","@play_dice2");
+Say2Content(t, "text","\r\n");
+SuperSc.TakeItem("金币",2000);
+SuperSc.MoveLVar("p0",0);
+            }
+            else {
+              Say2Content(t, "text","开玩笑...2000金币都没有还来玩？ \r\n\r\n");
+Say2Content(t, "sayBindingBtn","离开","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @m5000()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(5000)
+              )
+            {
+              Say2Content(t, "text","你选择的是5000金币下注方式。 \r\n现在你可以开始游戏了。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","开始","@play_dice2");
+Say2Content(t, "text","\r\n");
+SuperSc.TakeItem("金币",5000);
+SuperSc.MoveLVar("p0",1);
+            }
+            else {
+              Say2Content(t, "text","你已经没有5000金币来支付这项投注.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","我去投注2000金币的","@play_dices");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @m10000()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(10000)
+              )
+            {
+              Say2Content(t, "text","你选择的是10000金币下注方式。 \r\n现在你可以开始游戏了。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","开始","@play_dice2");
+Say2Content(t, "text","\r\n");
+SuperSc.TakeItem("金币",10000);
+SuperSc.MoveLVar("p0",2);
+            }
+            else {
+              Say2Content(t, "text","你已经没有10000金币来支付这项投注.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","去投注其它的看看","@play_dices");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @m20000()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(20000)
+              )
+            {
+              Say2Content(t, "text","你选择的是20000金币下注方式。 \r\n现在你可以开始游戏了。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","开始","@play_dice2");
+Say2Content(t, "text","\r\n");
+SuperSc.TakeItem("金币",20000);
+SuperSc.MoveLVar("p0",3);
+            }
+            else {
+              Say2Content(t, "text","你已经没有20000金币来支付这项投注.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","去投注其它的看看","@play_dices");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @m50000()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(50000)
+              )
+            {
+              Say2Content(t, "text","你选择的是50000金币下注方式。 \r\n现在你可以开始游戏了。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","开始","@play_dice2");
+Say2Content(t, "text","\r\n");
+SuperSc.TakeItem("金币",50000);
+SuperSc.MoveLVar("p0",4);
+            }
+            else {
+              Say2Content(t, "text","你已经没有50000金币来支付这项投注.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","去投注其它的看看","@play_dices");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @m100000()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0
+                SuperSc.Checkgold(100000)
+              )
+            {
+              Say2Content(t, "text","你选择的是100000金币下注方式。 \r\n现在你可以开始游戏了。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","开始","@play_dice2");
+Say2Content(t, "text","\r\n");
+SuperSc.TakeItem("金币",100000);
+SuperSc.MoveLVar("p0",5);
+            }
+            else {
+              Say2Content(t, "text","你已经没有100000金币来支付这项投注.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","去投注其它的看看","@play_dices");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @play_dice2()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_UselessIf
+            Say2Content(t, "text","现在开始一次投注，请仔细观注三个骰子的点数。\r\n\r\n");
+SuperSc.MoveLVarRandom("d0",6);
+SuperSc.MoveLVarRandom("d1",6);
+SuperSc.MoveLVarRandom("d2",6);
+SuperSc.IncLVar("d0",1);
+SuperSc.IncLVar("d1",1);
+SuperSc.IncLVar("d2",1);
+SuperSc.MoveLVar("d9",0);
+SuperSc.SumVar_SumTwoVars("d0","d1");
+SuperSc.SumVar_SumToTarget("d2");
+SuperSc.Playdice(3,"@check_event");
+          onFnEnd();
+      }
+
+      public  void @check_event()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p2",1)
+              )
+            {
+              
+      // goto
+      @event_next();
+      
+            }
+            else {
+              
+      // goto
+      @check_gold();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @event_next()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.CheckLVar("d0",9)
+               && 
+                // 0,0
+                SuperSc.CheckLVar("d1",9)
+               && 
+                // 0,0
+                SuperSc.CheckLVar("d2",9)
+              )
+            {
+              
+      // goto
+      @event_result();
+      
+            }
+            else {
+              
+      // goto
+      @check_gold();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @check_gold()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.LargeLVar("d9",9)
+              )
+            {
+              SuperSc.DecLVar("d9",10);
+
+      // goto
+      @play_dice3();
+      
+            }
+            else {
+              
+      // goto
+      @play_dice3();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @play_dice3()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",0)
+              )
+            {
+              SuperSc.MoveLVar("p1",0);
+
+      // goto
+      @check_message();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",1)
+              )
+            {
+              SuperSc.MoveLVar("p1",1);
+
+      // goto
+      @check_message();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",2)
+              )
+            {
+              SuperSc.MoveLVar("p1",2);
+
+      // goto
+      @check_message();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",3)
+              )
+            {
+              SuperSc.MoveLVar("p1",3);
+
+      // goto
+      @check_message();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",4)
+              )
+            {
+              SuperSc.MoveLVar("p1",4);
+
+      // goto
+      @check_message();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",5)
+              )
+            {
+              SuperSc.MoveLVar("p1",5);
+
+      // goto
+      @check_message();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",6)
+              )
+            {
+              SuperSc.MoveLVar("p1",6);
+
+      // goto
+      @check_message();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",7)
+              )
+            {
+              SuperSc.MoveLVar("p1",7);
+
+      // goto
+      @check_message();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",8)
+              )
+            {
+              SuperSc.MoveLVar("p1",8);
+
+      // goto
+      @check_message();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",9)
+              )
+            {
+              SuperSc.MoveLVar("p1",9);
+
+      // goto
+      @check_message();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @check_message()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_UselessIf
+            Say2Content(t, "text","你这次投出的点数是 ");
+
+Say2Content(t, "text","点。\r\n现在开始投第二次，祝你好运。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","继续","@play_dice4");
+Say2Content(t, "text","\r\n");
+          onFnEnd();
+      }
+
+      public  void @play_dice4()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_UselessIf
+            Say2Content(t, "text","现在是第二次投注，请仔细注意三个骰子的点数。\r\n\r\n");
+SuperSc.MoveLVarRandom("d0",6);
+SuperSc.MoveLVarRandom("d1",6);
+SuperSc.MoveLVarRandom("d2",6);
+SuperSc.IncLVar("d0",1);
+SuperSc.IncLVar("d1",1);
+SuperSc.IncLVar("d2",1);
+SuperSc.MoveLVar("d9",0);
+SuperSc.SumVar_SumTwoVars("d0","d1");
+SuperSc.SumVar_SumToTarget("d2");
+SuperSc.Playdice(3,"@play_dice5");
+          onFnEnd();
+      }
+
+      public  void @play_dice5()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.LargeLVar("d9",9)
+              )
+            {
+              SuperSc.DecLVar("d9",10);
+
+      // goto
+      @play_dice6();
+      
+            }
+            else {
+              
+      // goto
+      @play_dice6();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @play_dice6()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",0)
+              )
+            {
+              
+      // goto
+      @result0();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",1)
+              )
+            {
+              
+      // goto
+      @result1();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",2)
+              )
+            {
+              
+      // goto
+      @result2();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",3)
+              )
+            {
+              
+      // goto
+      @result3();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",4)
+              )
+            {
+              
+      // goto
+      @result4();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",5)
+              )
+            {
+              
+      // goto
+      @result5();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",6)
+              )
+            {
+              
+      // goto
+      @result6();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",7)
+              )
+            {
+              
+      // goto
+      @result7();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",8)
+              )
+            {
+              
+      // goto
+      @result8();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",9)
+              )
+            {
+              
+      // goto
+      @result9();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @result0()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",0)
+              )
+            {
+              
+      // goto
+      @draw();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.LargeLVar("p0",0)
+              )
+            {
+              
+      // goto
+      @win();
+      
+            }
+            else {
+              
+      // goto
+      @defeat();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @result1()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",1)
+              )
+            {
+              
+      // goto
+      @draw();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.LargeLVar("p1",1)
+              )
+            {
+              
+      // goto
+      @win();
+      
+            }
+            else {
+              
+      // goto
+      @defeat();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @result2()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",2)
+              )
+            {
+              
+      // goto
+      @draw();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.LargeLVar("p1",2)
+              )
+            {
+              
+      // goto
+      @win();
+      
+            }
+            else {
+              
+      // goto
+      @defeat();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @result3()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",3)
+              )
+            {
+              
+      // goto
+      @draw();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.LargeLVar("p1",3)
+              )
+            {
+              
+      // goto
+      @win();
+      
+            }
+            else {
+              
+      // goto
+      @defeat();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @result4()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",4)
+              )
+            {
+              
+      // goto
+      @draw();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.LargeLVar("p1",4)
+              )
+            {
+              
+      // goto
+      @win();
+      
+            }
+            else {
+              
+      // goto
+      @defeat();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @result5()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",5)
+              )
+            {
+              
+      // goto
+      @draw();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.LargeLVar("p1",5)
+              )
+            {
+              
+      // goto
+      @win();
+      
+            }
+            else {
+              
+      // goto
+      @defeat();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @result6()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",6)
+              )
+            {
+              
+      // goto
+      @draw();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.LargeLVar("p1",6)
+              )
+            {
+              
+      // goto
+      @win();
+      
+            }
+            else {
+              
+      // goto
+      @defeat();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @result7()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",7)
+              )
+            {
+              
+      // goto
+      @draw();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.LargeLVar("p1",7)
+              )
+            {
+              
+      // goto
+      @win();
+      
+            }
+            else {
+              
+      // goto
+      @defeat();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @result8()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",8)
+              )
+            {
+              
+      // goto
+      @draw();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.LargeLVar("p1",8)
+              )
+            {
+              
+      // goto
+      @win();
+      
+            }
+            else {
+              
+      // goto
+      @defeat();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @result9()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",9)
+              )
+            {
+              
+      // goto
+      @draw();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.LargeLVar("p1",9)
+              )
+            {
+              
+      // goto
+      @win();
+      
+            }
+            else {
+              
+      // goto
+      @defeat();
+      
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @draw()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",0)
+              )
+            {
+              SuperSc.GiveItem("金币",2000);
+
+      // break
+      return;
+Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n第一次点数与第二次相同，我们已经退回给你2000本金。 \r\n坚持住哟.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",1)
+              )
+            {
+              SuperSc.GiveItem("金币",5000);
+
+      // break
+      return;
+Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n第一次点数与第二次相同，我们已经退回给你5000本金。 \r\n坚持住哟.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",2)
+              )
+            {
+              SuperSc.GiveItem("金币",10000);
+
+      // break
+      return;
+Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n第一次点数与第二次相同，我们已经退回给你10000本金。 \r\n坚持住哟.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",3)
+              )
+            {
+              SuperSc.GiveItem("金币",20000);
+
+      // break
+      return;
+Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n第一次点数与第二次相同，我们已经退回给你20000本金。 \r\n坚持住哟.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",4)
+              )
+            {
+              SuperSc.GiveItem("金币",50000);
+
+      // break
+      return;
+Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n第一次点数与第二次相同，我们已经退回给你50000本金。 \r\n坚持住哟.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",5)
+              )
+            {
+              SuperSc.GiveItem("金币",100000);
+
+      // break
+      return;
+Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n第一次点数与第二次相同，我们已经退回给你100000本金。 \r\n坚持住哟.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @win()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",0)
+              )
+            {
+              
+      // goto
+      @win0();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",1)
+              )
+            {
+              
+      // goto
+      @win1();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",2)
+              )
+            {
+              
+      // goto
+      @win2();
+      
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",3)
+              )
+            {
+              
+      // goto
+      @win3();
+      
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",4)
+              )
+            {
+              
+      // goto
+      @win4();
+      
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",5)
+              )
+            {
+              
+      // goto
+      @win5();
+      
+            }
+            else {
+              
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @defeat()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",0)
+              )
+            {
+              
+      // goto
+      @defeat0();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",1)
+              )
+            {
+              
+      // goto
+      @defeat1();
+      
+
+      // break
+      return;
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",2)
+              )
+            {
+              
+      // goto
+      @defeat2();
+      
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",3)
+              )
+            {
+              
+      // goto
+      @defeat3();
+      
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",4)
+              )
+            {
+              
+      // goto
+      @defeat4();
+      
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",5)
+              )
+            {
+              
+      // goto
+      @defeat5();
+      
+            }
+            else {
+              
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @win0()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",9)
+              )
+            {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n由于你在第一次投出了 9 点，第二次的点数又比 9 小。 \r\n按照我们规定双倍奖励的原则..(嘻嘻！！) \r\n你另外获得了2000金币的加奖。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.GiveItem("金币",4000);
+SuperSc.GiveItem("金币",2000);
+            }
+            else {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n第一次点数比第二次大，这样你获得了我们为你准备4000金币的 \r\n奖励。呵呵~运气不错啊，有没有兴趣再来一把？ \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.GiveItem("金币",4000);
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @win1()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",9)
+              )
+            {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n由于你在第一次投出了 9 点，第二次的点数又比 9 小。 \r\n按照我们规定双倍奖励的原则..(嘻嘻！！) \r\n你另外获得了5000金币的加奖。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.GiveItem("金币",10000);
+SuperSc.GiveItem("金币",5000);
+            }
+            else {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n第一次点数大于第二次..这样你获得了10000金币的奖励。 \r\n呵呵~运气不错啊，有没有兴趣再来一把？ \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.GiveItem("金币",10000);
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @win2()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",9)
+              )
+            {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n由于你在第一次投出了 9 点，第二次的点数又比 9 小。 \r\n按照我们规定双倍奖励的原则..(嘻嘻！！) \r\n你另外获得了10000金币的加奖。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.GiveItem("金币",20000);
+SuperSc.GiveItem("金币",10000);
+            }
+            else {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n第一次点数大于第二次..这样你获得了20000金币的奖励。 \r\n呵呵~运气不错啊，有没有兴趣再来一把？ \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.GiveItem("金币",20000);
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @win3()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",9)
+              )
+            {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n由于你在第一次投出了 9 点，第二次的点数又比 9 小。 \r\n按照我们规定双倍奖励的原则..(嘻嘻！！) \r\n你另外获得了200000金币的加奖。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.GiveItem("金币",40000);
+SuperSc.GiveItem("金币",20000);
+            }
+            else {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n第一次点数大于第二次..这样你获得了40000金币的奖励。 \r\n呵呵~运气不错啊，有没有兴趣再来一把？ \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.GiveItem("金币",40000);
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @win4()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",9)
+              )
+            {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n由于你在第一次投出了 9 点，第二次的点数又比 9 小。 \r\n按照我们规定双倍奖励的原则..(嘻嘻！！) \r\n你另外获得了50000金币的加奖。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.GiveItem("金币",100000);
+SuperSc.GiveItem("金币",50000);
+            }
+            else {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n第一次点数大于第二次..这样你获得了100000金币的奖励。 \r\n呵呵~运气不错啊，有没有兴趣再来一把？ \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.GiveItem("金币",100000);
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @win5()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p1",9)
+              )
+            {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n由于你在第一次投出了 9 点，第二次的点数又比 9 小。 \r\n按照我们规定双倍奖励的原则..(嘻嘻！！) \r\n你另外获得了100000金币的加奖。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.GiveItem("金币",200000);
+SuperSc.GiveItem("金币",100000);
+            }
+            else {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n第一次点数大于第二次，你获得了200000金币的奖励。 \r\n呵呵~运气不错啊，有没有兴趣再来一把？ \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.GiveItem("金币",200000);
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @defeat0()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",9)
+              )
+            {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n由于你在第二次投出了 9 点，第一次的点数比 9 小。 \r\n按照我们规定输赢奖惩的原则..(呜呜~~) \r\n必须再扣除你的2000金币... \r\n\r\n");
+Say2Content(t, "sayBindingBtn","别拦我!我要继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.TakeItem("金币",2000);
+            }
+            else {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n你在第二次所投出的点数大于第一次，我们无法给你奖励.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","2000算什么，我要继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","好伤心啊..走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @defeat1()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",9)
+              )
+            {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n由于你在第二次投出了 9 点，第一次的点数比 9 小。 \r\n按照我们规定输赢奖惩的原则..(呜呜~~) \r\n必须再扣除你的5000金币... \r\n\r\n");
+Say2Content(t, "sayBindingBtn","别拦我!我要翻本","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","好伤心啊..走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.TakeItem("金币",5000);
+            }
+            else {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n你在第二次所投出的点数大于第一次，我们无法给你奖励.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @defeat2()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",9)
+              )
+            {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n由于你在第二次投出了 9 点，第一次的点数比 9 小。 \r\n按照我们规定输赢奖惩的原则..(呜呜~~) \r\n必须再扣除你的10000金币... \r\n\r\n");
+Say2Content(t, "sayBindingBtn","别拦我!我要翻本","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","好伤心啊..走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.TakeItem("金币",10000);
+            }
+            else {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n你在第二次所投出的点数大于第一次，我们无法给你奖励.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @defeat3()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",9)
+              )
+            {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n由于你在第二次投出了 9 点，第一次的点数比 9 小。 \r\n按照我们规定输赢奖惩的原则..(呜呜~~) \r\n必须再扣除你的20000金币... \r\n\r\n");
+Say2Content(t, "sayBindingBtn","别拦我!我要翻本","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","好伤心啊..走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.TakeItem("金币",20000);
+            }
+            else {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n你在第二次所投出的点数大于第一次，我们无法给你奖励.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","很有意思，继续玩下去","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @defeat4()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",9)
+              )
+            {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n由于你在第二次投出了 9 点，第一次的点数比 9 小。 \r\n按照我们规定输赢奖惩的原则..(呜呜~~) \r\n必须再扣除你的50000金币... \r\n\r\n");
+Say2Content(t, "sayBindingBtn","别拦我!我要翻本","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","悲痛万分..走人","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.TakeItem("金币",50000);
+            }
+            else {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n你在第二次所投出的点数大于第一次，我们无法给你奖励.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","继续玩，运气不等人","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","没意思，走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @defeat5()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("d9",9)
+              )
+            {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n由于你在第二次投出了 9 点，第一次的点数比 9 小。 \r\n按照我们规定输赢奖惩的原则..(呜呜~~) \r\n必须再扣除你的100000金币... \r\n\r\n");
+Say2Content(t, "sayBindingBtn","打死我也不敢相信~！让我翻本","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","我去跳楼了，再见","@exit");
+Say2Content(t, "text","\r\n");
+SuperSc.TakeItem("金币",100000);
+            }
+            else {
+              Say2Content(t, "text","你第一次投出的是：");
+
+Say2Content(t, "text","点，第二次是：");
+
+Say2Content(t, "text","点。 \r\n你在第二次所投出的点数大于第一次，我们无法给你奖励.. \r\n\r\n");
+Say2Content(t, "sayBindingBtn","继续玩，运气不等人","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","没意思，走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            
+          onFnEnd();
+      }
+
+      public  void @event_result()
+      {
+        onFnStart();
+        // directs
+        
+        // ifs
+        
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",0)
+              )
+            {
+              SuperSc.GiveItem("金币",10000);
+
+      // break
+      return;
+Say2Content(t, "text","恭喜你，你这次赢得了1万金币。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","继续玩，运气不等人","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","不玩了，走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",1)
+              )
+            {
+              SuperSc.GiveItem("金币",25000);
+
+      // break
+      return;
+Say2Content(t, "text","恭喜你，你这次赢得了2.5万金币。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","继续玩，运气不等人","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","见好就收，我走人","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",2)
+              )
+            {
+              SuperSc.GiveItem("金币",50000);
+
+      // break
+      return;
+Say2Content(t, "text","恭喜你，你这次赢得了5万金币。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","继续玩，运气不等人","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","见好就收，走了哦","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",3)
+              )
+            {
+              SuperSc.GiveItem("金币",100000);
+
+      // break
+      return;
+Say2Content(t, "text","呵呵~10万？运气不错啊，真羡慕你有这样好的手气。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","这算什么？我继续玩","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","见好就收，拜拜","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",4)
+              )
+            {
+              SuperSc.GiveItem("金币",250000);
+
+      // break
+      return;
+Say2Content(t, "text","天啊~25万？运气真不错，真羡慕你有这样好的手气。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","我要赢得更多的金币","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","见好就收，再见","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+            }
+            
+
+            // IfWrap_IfElse
+            if(
+                // 0,0
+                SuperSc.EqualLVar("p0",5)
+              )
+            {
+              SuperSc.GiveItem("金币",500000);
+
+      // break
+      return;
+Say2Content(t, "text","晕死~50万？囍从天降！！真羡慕你有这样好的手气。 \r\n\r\n");
+Say2Content(t, "sayBindingBtn","财运挡不住，我继续玩","@event");
+Say2Content(t, "text","\r\n");
+Say2Content(t, "sayBindingBtn","好累哦...我明天再来","@exit");
+Say2Content(t, "text","\r\n");
+            }
+            else {
+              
+            }
+            
+          onFnEnd();
+      }
+          // btns maps
+          
+  public override void callFnMaps(string fnName){
+    switch(fnName){
+      case "@main": @main(); break;
+case "@display": @display(); break;
+case "@play_dice": @play_dice(); break;
+case "@event": @event(); break;
+case "@event1": @event1(); break;
+case "@play_dice1": @play_dice1(); break;
+case "@play_dices": @play_dices(); break;
+case "@m2000": @m2000(); break;
+case "@m5000": @m5000(); break;
+case "@m10000": @m10000(); break;
+case "@m20000": @m20000(); break;
+case "@m50000": @m50000(); break;
+case "@m100000": @m100000(); break;
+case "@play_dice2": @play_dice2(); break;
+case "@check_event": @check_event(); break;
+case "@event_next": @event_next(); break;
+case "@check_gold": @check_gold(); break;
+case "@play_dice3": @play_dice3(); break;
+case "@check_message": @check_message(); break;
+case "@play_dice4": @play_dice4(); break;
+case "@play_dice5": @play_dice5(); break;
+case "@play_dice6": @play_dice6(); break;
+case "@result0": @result0(); break;
+case "@result1": @result1(); break;
+case "@result2": @result2(); break;
+case "@result3": @result3(); break;
+case "@result4": @result4(); break;
+case "@result5": @result5(); break;
+case "@result6": @result6(); break;
+case "@result7": @result7(); break;
+case "@result8": @result8(); break;
+case "@result9": @result9(); break;
+case "@draw": @draw(); break;
+case "@win": @win(); break;
+case "@defeat": @defeat(); break;
+case "@win0": @win0(); break;
+case "@win1": @win1(); break;
+case "@win2": @win2(); break;
+case "@win3": @win3(); break;
+case "@win4": @win4(); break;
+case "@win5": @win5(); break;
+case "@defeat0": @defeat0(); break;
+case "@defeat1": @defeat1(); break;
+case "@defeat2": @defeat2(); break;
+case "@defeat3": @defeat3(); break;
+case "@defeat4": @defeat4(); break;
+case "@defeat5": @defeat5(); break;
+case "@event_result": @event_result(); break;
+      default:
+        base.@quit();
+        break;
+    }
+  }
+  
+        }
+        
   #endregion
   

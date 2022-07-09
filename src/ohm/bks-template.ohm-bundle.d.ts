@@ -95,6 +95,7 @@ export interface BKSActionDict<T> extends ActionDict<T> {
   RandomIs?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
   CheckGender?: (this: NonterminalNode, arg0: NonterminalNode, arg1: TerminalNode) => T;
   CheckGVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
+  CheckLVar?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
   Checkunit?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;
   Checkgold?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode) => T;
   Checkdura?: (this: NonterminalNode, arg0: NonterminalNode, arg1: NonterminalNode, arg2: NonterminalNode) => T;

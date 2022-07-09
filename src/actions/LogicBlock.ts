@@ -462,6 +462,13 @@ const obj = {
       value: gVarRange.parse() as ReturnType<typeof obj.gVarRange>,
     };
   },
+  CheckLVar(_header, lVar, lVarRange) {
+    return {
+      type: 'CheckLVar',
+      name: lVar.parse() as ReturnType<typeof obj.lVar>,
+      value: lVarRange.parse() as ReturnType<typeof obj.lVarRange>,
+    };
+  },
   RandomIs(_Header, num) {
     return {
       type: 'RandomIs',
